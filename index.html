@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RykenRealm — Dokumen Legal</title>
+<style>
+  :root {
+    --bg: #0b0e14; --panel: #131826; --text: #dbe2f0; --muted: #8a93a8;
+    --accent: #7c5cff; --accent2: #22d3ee; --border: #232a3d;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    background: radial-gradient(1200px 600px at 50% -10%, #1a2036 0%, var(--bg) 60%);
+    color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .card { max-width: 480px; width: 100%; padding: 40px 28px; text-align: center; }
+  h1 {
+    font-size: 34px; margin: 0 0 8px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  p.sub { color: var(--muted); margin: 0 0 32px; font-size: 15px; }
+  .links { display: flex; flex-direction: column; gap: 12px; }
+  a.doc-link {
+    display: block; padding: 16px 20px; border-radius: 10px;
+    background: var(--panel); border: 1px solid var(--border);
+    color: var(--text); text-decoration: none; font-weight: 600; font-size: 15px;
+    transition: border-color 0.15s ease;
+  }
+  a.doc-link:hover { border-color: var(--accent2); }
+  a.doc-link span { display: block; font-weight: 400; color: var(--muted); font-size: 13px; margin-top: 4px; }
+  footer { margin-top: 36px; color: var(--muted); font-size: 13px; }
+  footer a { color: var(--accent2); text-decoration: none; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>RykenRealm</h1>
+    <p class="sub">Dokumen resmi untuk bot Discord RykenRealm</p>
+    <div class="links">
+      <a class="doc-link" href="./terms-of-service.html">Terms of Service<span>Ketentuan penggunaan bot</span></a>
+      <a class="doc-link" href="./privacy-policy.html">Privacy Policy<span>Kebijakan privasi &amp; data pengguna</span></a>
+    </div>
+    <footer>Owner &amp; Dev: Rizuki (@ryin.r) &middot; <a href="https://discord.gg/kME469thr6">Server Discord</a></footer>
+  </div>
+</body>
+</html>
