@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RykenRealm — Discord Bot</title>
+<title>RykenRealm — Legal Hub</title>
 <style>
   :root {
     --bg: #07090e; 
-    --panel: rgba(19, 24, 38, 0.65); 
+    --panel: rgba(19, 24, 38, 0.7); 
     --text: #f3f6fc; 
     --muted: #94a3b8;
     --accent: #7c5cff; 
@@ -19,10 +19,10 @@
     margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
     background: radial-gradient(1000px 500px at 50% -10%, #1c1936 0%, var(--bg) 70%);
     color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    overflow-x: hidden;
+    padding: 20px;
   }
   .card { 
-    max-width: 520px; width: 100%; margin: 20px; padding: 48px 36px; text-align: center; 
+    max-width: 540px; width: 100%; padding: 42px 32px; text-align: center; 
     background: var(--panel);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -33,57 +33,92 @@
   .badge {
     display: inline-block; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
     color: var(--accent2); background: rgba(34, 211, 238, 0.1); border: 1px solid rgba(34, 211, 238, 0.25);
-    border-radius: 999px; padding: 6px 14px; margin-bottom: 18px; font-weight: 600;
+    border-radius: 999px; padding: 6px 14px; margin-bottom: 16px; font-weight: 600;
   }
   h1 {
-    font-size: 38px; margin: 0 0 10px; font-weight: 800; letter-spacing: -0.5px;
+    font-size: 32px; margin: 0 0 8px; font-weight: 800; letter-spacing: -0.5px;
     background: linear-gradient(135deg, #fff 30%, var(--accent2) 100%);
     -webkit-background-clip: text; background-clip: text; color: transparent;
   }
-  p.sub { color: var(--muted); margin: 0 0 32px; font-size: 15px; line-height: 1.5; }
+  p.sub { color: var(--muted); margin: 0 0 28px; font-size: 14px; line-height: 1.5; }
   
-  .cta-box { display: flex; gap: 12px; margin-bottom: 28px; justify-content: center; }
-  .btn-primary {
-    background: linear-gradient(135deg, var(--accent), #6366f1);
-    color: #fff; padding: 14px 24px; border-radius: 12px; font-weight: 600; font-size: 14px;
-    text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-    box-shadow: 0 4px 20px rgba(124, 92, 255, 0.4);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  .section-title {
+    font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted);
+    margin: 24px 0 12px; text-align: left; font-weight: 600; border-left: 2px solid var(--accent); padding-left: 8px;
   }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(124, 92, 255, 0.6); }
 
   .links { display: flex; flex-direction: column; gap: 10px; }
-  a.doc-link {
+  
+  .doc-card {
     display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; border-radius: 12px;
     background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border);
-    color: var(--text); text-decoration: none; font-weight: 600; font-size: 14px;
-    transition: all 0.25s ease;
+    text-decoration: none; transition: all 0.25s ease;
   }
-  a.doc-link:hover { 
+  .doc-card:hover { 
     border-color: var(--accent2); 
     background: rgba(34, 211, 238, 0.04);
     transform: translateY(-2px);
   }
-  a.doc-link span { font-weight: 400; color: var(--muted); font-size: 12px; }
+  .doc-info { text-align: left; }
+  .doc-title { font-weight: 600; font-size: 14px; color: var(--text); display: block; }
+  .doc-desc { font-weight: 400; color: var(--muted); font-size: 12px; margin-top: 2px; display: block; }
   
-  footer { margin-top: 36px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--border); padding-top: 20px; }
+  .lang-badges { display: flex; gap: 6px; }
+  .lang-btn {
+    font-size: 11px; font-weight: 600; padding: 4px 8px; border-radius: 6px;
+    background: rgba(124, 92, 255, 0.15); color: var(--accent2); border: 1px solid rgba(124, 92, 255, 0.3);
+    text-decoration: none; transition: background 0.2s;
+  }
+  .lang-btn:hover { background: var(--accent); color: #fff; }
+
+  .discord-ref {
+    margin-top: 20px; font-size: 12px; color: var(--muted);
+    background: rgba(0, 0, 0, 0.2); padding: 10px; border-radius: 8px; border: 1px solid var(--border);
+  }
+  .discord-ref a { color: var(--accent2); text-decoration: none; }
+  .discord-ref a:hover { text-decoration: underline; }
+
+  footer { margin-top: 28px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--border); padding-top: 16px; }
   footer a { color: var(--accent2); text-decoration: none; font-weight: 500; }
   footer a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
   <div class="card">
-    <div class="badge">Official Discord Bot</div>
+    <div class="badge">Official Legal Documentation</div>
     <h1>RykenRealm</h1>
-    <p class="sub">Sistem ekonomi multi-mata uang, petualangan RPG Chronos Override, minigame seru, dan AI interaktif dalam satu bot.</p>
+    <p class="sub">Pusat informasi dokumen legal, ketentuan penggunaan, dan kebijakan privasi bot Discord RykenRealm.</p>
     
-    <div class="cta-box">
-      <a class="btn-primary" href="https://discord.com/oauth2/authorize?client_id=1540888527745716285">✨ Invite to Discord</a>
+    <div class="section-title">Daftar Dokumen / Documents</div>
+    
+    <div class="links">
+      <!-- Terms of Service -->
+      <div class="doc-card">
+        <div class="doc-info">
+          <span class="doc-title">Terms of Service</span>
+          <span class="doc-desc">Ketentuan penggunaan layanan bot</span>
+        </div>
+        <div class="lang-badges">
+          <a class="lang-btn" href="./terms-of-service.html">ID</a>
+          <a class="lang-btn" href="./terms-of-service-en.html">EN</a>
+        </div>
+      </div>
+
+      <!-- Privacy Policy -->
+      <div class="doc-card">
+        <div class="doc-info">
+          <span class="doc-title">Privacy Policy</span>
+          <span class="doc-desc">Kebijakan privasi &amp; data pengguna</span>
+        </div>
+        <div class="lang-badges">
+          <a class="lang-btn" href="./privacy-policy.html">ID</a>
+          <a class="lang-btn" href="./privacy-policy-en.html">EN</a>
+        </div>
+      </div>
     </div>
 
-    <div class="links">
-      <a class="doc-link" href="./terms-of-service.html">Terms of Service <span>Ketentuan Penggunaan</span></a>
-      <a class="doc-link" href="./privacy-policy.html">Privacy Policy <span>Kebijakan Data</span></a>
+    <div class="discord-ref">
+      Mengacu pada <a href="https://discord.com/terms" target="_blank">Discord ToS</a> &amp; <a href="https://discord.com/guidelines" target="_blank">Community Guidelines</a>.
     </div>
     
     <footer>
