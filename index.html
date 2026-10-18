@@ -195,4 +195,32 @@
       id: {
         badge: "Official Legal Documentation",
         sub: "Pusat informasi dokumen legal, ketentuan penggunaan, dan kebijakan privasi bot Discord RykenRealm.",
-        sectionTitle: "Daftar Dokumen / Documents
+        sectionTitle: "Daftar Dokumen / Documents",
+        tosDesc: "Ketentuan penggunaan layanan bot",
+        privacyDesc: "Kebijakan privasi & data pengguna",
+        discordRef: "Mengacu pada <a href='https://discord.com/terms' target='_blank'>Discord ToS</a> & <a href='https://discord.com/guidelines' target='_blank'>Community Guidelines</a>.",
+        footer: "Owner & Dev: Rizuki (@ryin.r) &middot; <a href='https://discord.gg/kME469thr6'>Support Server</a>"
+      },
+      en: {
+        badge: "Official Legal Documentation",
+        sub: "Central hub for legal documents, terms of service, and privacy policy for the RykenRealm Discord bot.",
+        sectionTitle: "Available Documents",
+        tosDesc: "Bot service terms and user agreement",
+        privacyDesc: "User data protection & privacy policy",
+        discordRef: "Compliant with <a href='https://discord.com/terms' target='_blank'>Discord ToS</a> & <a href='https://discord.com/guidelines' target='_blank'>Community Guidelines</a>.",
+        footer: "Owner & Dev: Rizuki (@ryin.r) &middot; <a href='https://discord.gg/kME469thr6'>Support Server</a>"
+      }
+    };
+
+    function switchLang(lang) {
+      document.getElementById('badge-text').textContent = texts[lang].badge;
+      document.getElementById('sub-text').textContent = texts[lang].sub;
+      document.getElementById('doc-section-title').textContent = texts[lang].sectionTitle;
+      document.getElementById('tos-desc').textContent = texts[lang].tosDesc;
+      document.getElementById('privacy-desc').textContent = texts[lang].privacyDesc;
+      document.getElementById('discord-ref-text').innerHTML = texts[lang].discordRef;
+      document.getElementById('footer-text').innerHTML = texts[lang].footer;
+    }
+  </script>
+</body>
+</html>
