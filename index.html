@@ -33,66 +33,68 @@
   body {
     margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
     background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    overflow-x: hidden;
+    overflow-x: hidden; padding: 20px;
   }
 
   .card {
-    max-width: 520px; width: 92%; padding: 40px 32px; text-align: center;
-    background: var(--card-bg); border: 1px solid var(--border); border-radius: 24px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.3); position: relative;
-    opacity: 0; transform: translateY(20px);
-    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    max-width: 500px; width: 100%; padding: 36px 28px; text-align: center;
+    background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3); position: relative;
+    opacity: 0; transform: translateY(15px);
+    animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   @keyframes fadeInUp {
     to { opacity: 1; transform: translateY(0); }
   }
 
-  .top-controls {
-    display: flex; justify-content: flex-end; gap: 8px; margin-bottom: 16px;
+  /* Header Judul & Tombol Kontrol yang Sejajar Rapi */
+  .header-section {
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 20px; text-align: left;
+  }
+
+  .title-group h1 {
+    font-size: 26px; margin: 0 0 4px; font-weight: 700; letter-spacing: -0.5px;
   }
   
+  .title-group p.sub { color: var(--muted); margin: 0; font-size: 13px; font-weight: 400; }
+
+  .controls-group {
+    display: flex; gap: 6px; flex-shrink: 0;
+  }
+
   .btn-toggle {
     background: transparent; border: 1px solid var(--border); color: var(--text);
-    padding: 6px 14px; font-size: 11px; font-weight: 600; border-radius: 20px; cursor: pointer;
+    padding: 6px 10px; font-size: 11px; font-weight: 600; border-radius: 10px; cursor: pointer;
     letter-spacing: 0.5px;
   }
   .btn-toggle:hover { border-color: var(--hover-border); transform: scale(1.05); }
 
-  h1 {
-    font-size: 30px; margin: 0 0 6px; font-weight: 700; letter-spacing: -0.5px;
-  }
-  
-  p.sub { color: var(--muted); margin: 0 0 24px; font-size: 13px; font-weight: 400; }
-
-  /* Kotak Terminal Kode (C++ & HTML Aesthetic) */
+  /* Kotak Terminal Kode (C++ & HTML Mix) */
   .code-preview {
-    background: var(--code-bg); border: 1px solid var(--border); border-radius: 14px;
-    padding: 16px; text-align: left; margin-bottom: 24px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    background: var(--code-bg); border: 1px solid var(--border); border-radius: 12px;
+    padding: 14px; text-align: left; margin-bottom: 20px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     font-size: 12px; position: relative; overflow: hidden;
   }
 
   .code-header {
-    display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;
-    border-bottom: 1px solid var(--border); padding-bottom: 8px; color: var(--muted);
+    display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;
+    border-bottom: 1px solid var(--border); padding-bottom: 6px; color: var(--muted);
   }
 
-  .code-dots {
-    display: flex; gap: 6px;
-  }
-  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); }
+  .code-dots { display: flex; gap: 5px; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--border); }
 
   .code-body {
-    color: var(--code-text); line-height: 1.5; min-height: 48px;
+    color: var(--code-text); line-height: 1.5; min-height: 40px;
   }
-
   .code-body span { color: var(--code-highlight); font-weight: 600; }
 
   /* Tombol Dokumen */
-  .links { display: flex; flex-direction: column; gap: 12px; }
+  .links { display: flex; flex-direction: column; gap: 10px; }
   
   a.doc-link {
-    display: block; padding: 16px 20px; border-radius: 14px;
+    display: block; padding: 14px 18px; border-radius: 12px;
     background: var(--bg); border: 1px solid var(--border);
     color: var(--text); text-decoration: none; font-weight: 600; font-size: 14px;
     text-align: left; position: relative;
@@ -101,16 +103,16 @@
   a.doc-link:hover {
     border-color: var(--hover-border);
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   }
 
   a.doc-link span { 
-    display: block; font-weight: 400; color: var(--muted); font-size: 11px; margin-top: 3px; 
+    display: block; font-weight: 400; color: var(--muted); font-size: 11px; margin-top: 2px; 
   }
   
   footer { 
-    margin-top: 32px; color: var(--muted); font-size: 11px; 
-    border-top: 1px solid var(--border); padding-top: 20px; 
+    margin-top: 24px; color: var(--muted); font-size: 11px; 
+    border-top: 1px solid var(--border); padding-top: 16px; 
   }
   footer a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
   footer a:hover { opacity: 0.7; }
@@ -118,13 +120,17 @@
 </head>
 <body>
   <div class="card">
-    <div class="top-controls">
-      <button class="btn-toggle" id="langBtn" onclick="toggleLang()">EN</button>
-      <button class="btn-toggle" id="themeBtn" onclick="toggleTheme()">Light</button>
+    <!-- Header dengan Layout Sejajar Rapi -->
+    <div class="header-section">
+      <div class="title-group">
+        <h1 id="title">RykenRealm</h1>
+        <p class="sub" id="subtitle">Dokumen resmi bot Discord</p>
+      </div>
+      <div class="controls-group">
+        <button class="btn-toggle" id="langBtn" onclick="toggleLang()">EN</button>
+        <button class="btn-toggle" id="themeBtn" onclick="toggleTheme()">Light</button>
+      </div>
     </div>
-
-    <h1 id="title">RykenRealm</h1>
-    <p class="sub" id="subtitle">Dokumen resmi untuk bot Discord RykenRealm</p>
     
     <!-- Elemen Preview Kode Interaktif (C++ & HTML Mix) -->
     <div class="code-preview">
@@ -138,7 +144,7 @@
       </div>
       <div class="code-body" id="typingCode">
         <span>#include &lt;iostream&gt;</span><br>
-        std::string bot = "RykenRealm"; // Secured & Optimized
+        std::string bot = "RykenRealm"; // Secured
       </div>
     </div>
 
@@ -162,7 +168,6 @@
     let currentLang = 'id';
     let currentTheme = 'dark';
 
-    // Efek ganti baris kode interaktif secara estetik
     const codeSnippets = [
       '<span>#include &lt;iostream&gt;</span><br>std::string bot = "RykenRealm"; // Optimized',
       '<span>&lt;html lang=&quot;id&quot;&gt;</span><br>&lt;head&gt;&lt;title&gt;Legal&lt;/title&gt;&lt;/head&gt;',
@@ -196,14 +201,14 @@
 
       if (currentLang === 'en') {
         langBtn.textContent = 'ID';
-        subtitle.textContent = 'Official documentation for RykenRealm Discord bot';
+        subtitle.textContent = 'Official Discord bot documents';
         tosLink.href = './terms-of-service-en.html';
         ppLink.href = './privacy-policy-en.html';
         tosDesc.textContent = 'Bot usage terms & conditions';
         ppDesc.textContent = 'User privacy policy & data handling';
       } else {
         langBtn.textContent = 'EN';
-        subtitle.textContent = 'Dokumen resmi untuk bot Discord RykenRealm';
+        subtitle.textContent = 'Dokumen resmi bot Discord';
         tosLink.href = './terms-of-service.html';
         ppLink.href = './privacy-policy.html';
         tosDesc.textContent = 'Ketentuan penggunaan bot';
@@ -212,4 +217,5 @@
     }
   </script>
 </body>
-</html>
+  </html>
+  
