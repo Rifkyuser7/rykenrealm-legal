@@ -12,9 +12,6 @@
     --muted: #777777; 
     --border: #222222; 
     --hover-border: #ffffff;
-    --code-bg: #050505;
-    --code-text: #a8a8a8;
-    --code-highlight: #ffffff;
   }
   [data-theme="light"] {
     --bg: #f2f2f7; 
@@ -23,12 +20,9 @@
     --muted: #666666; 
     --border: #e0e0e0; 
     --hover-border: #000000;
-    --code-bg: #fafafa;
-    --code-text: #555555;
-    --code-highlight: #000000;
   }
 
-  * { box-sizing: border-box; transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease; }
+  * { box-sizing: border-box; }
   
   body {
     margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
@@ -39,7 +33,6 @@
   .card {
     max-width: 480px; width: 100%; padding: 32px 24px; text-align: left;
     background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
   }
 
   .top-bar {
@@ -62,27 +55,6 @@
     color: var(--muted); margin: 0; font-size: 13px; font-weight: 400; 
   }
 
-  /* Perbaikan Kotak Kode Agar Tidak Bug / Keluar Kotak di HP */
-  .code-preview {
-    background: var(--code-bg); border: 1px solid var(--border); border-radius: 12px;
-    padding: 14px; margin-bottom: 20px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-size: 11.5px; overflow-x: auto;
-  }
-
-  .code-header {
-    display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;
-    border-bottom: 1px solid var(--border); padding-bottom: 6px; color: var(--muted);
-  }
-
-  .code-dots { display: flex; gap: 5px; }
-  .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--border); }
-
-  .code-body {
-    color: var(--code-text); line-height: 1.6; min-height: 42px;
-    white-space: pre-wrap; word-break: break-all;
-  }
-  .code-body span { color: var(--code-highlight); font-weight: 600; }
-
   .links { display: flex; flex-direction: column; gap: 10px; }
   
   a.doc-link {
@@ -93,7 +65,6 @@
   
   a.doc-link:hover {
     border-color: var(--hover-border);
-    transform: translateY(-2px);
   }
 
   a.doc-link span { 
@@ -118,21 +89,6 @@
       <h1 id="title">RykenRealm</h1>
       <p class="sub" id="subtitle">Dokumen resmi bot Discord</p>
     </div>
-    
-    <div class="code-preview">
-      <div class="code-header">
-        <div class="code-dots">
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-        </div>
-        <span id="codeLangLabel">core.cpp &bull; html</span>
-      </div>
-      <div class="code-body" id="typingCode">
-        <span>#include &lt;iostream&gt;</span>
-        std::string bot = "RykenRealm";
-      </div>
-    </div>
 
     <div class="links">
       <a class="doc-link" id="tosLink" href="./terms-of-service.html">
@@ -153,24 +109,6 @@
   <script>
     let currentLang = 'id';
     let currentTheme = 'dark';
-
-    const codeSnippets = [
-      '<span>#include &lt;iostream&gt;</span>\nstd::string bot = "RykenRealm";',
-      '<span>&lt;html lang="id"&gt;</span>\n&lt;head&gt;&lt;title&gt;Legal&lt;/title&gt;&lt;/head&gt;',
-      '<span>void initCore()</span>\n{ system("RykenRealm.exe --secure"); }'
-    ];
-    let codeIndex = 0;
-    setInterval(() => {
-      codeIndex = (codeIndex + 1) % codeSnippets.length;
-      const codeBox = document.getElementById('typingCode');
-      codeBox.style.opacity = '0';
-      setTimeout(() => {
-        codeBox.innerText = '';
-        // Render safe text/html structure
-        codeBox.innerHTML = codeSnippets[codeIndex];
-        codeBox.style.opacity = '1';
-      }, 300);
-    }, 4000);
 
     function toggleTheme() {
       currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
