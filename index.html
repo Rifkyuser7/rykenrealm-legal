@@ -1,276 +1,98 @@
 <!DOCTYPE html>
-<html lang="id" data-theme="dark">
+<html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title id="page-title">RykenRealm — Legal Hub</title>
+<title>RykenRealm — Dokumen Legal</title>
 <style>
-  :root[data-theme="dark"] {
-    --bg: #07090e; 
-    --panel: rgba(19, 24, 38, 0.7); 
-    --text: #f3f6fc; 
-    --muted: #94a3b8;
-    --accent: #7c5cff; 
-    --accent2: #22d3ee; 
-    --border: rgba(255, 255, 255, 0.08);
-    --card-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 40px rgba(124, 92, 255, 0.15);
+  :root {
+    --bg: #0b0e14; --panel: #131826; --text: #dbe2f0; --muted: #8a93a8;
+    --accent: #7c5cff; --accent2: #22d3ee; --border: #232a3d;
   }
-  :root[data-theme="light"] {
-    --bg: #f1f5f9; 
-    --panel: rgba(255, 255, 255, 0.8); 
-    --text: #1e293b; 
-    --muted: #64748b;
-    --accent: #6366f1; 
-    --accent2: #0284c7; 
-    --border: rgba(0, 0, 0, 0.08);
-    --card-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 0 20px rgba(99, 102, 241, 0.05);
-  }
-
-  * { box-sizing: border-box; transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease; }
-  
+  * { box-sizing: border-box; }
   body {
     margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
-    background-color: var(--bg);
+    background: radial-gradient(1200px 600px at 50% -10%, #1a2036 0%, var(--bg) 60%);
     color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    padding: 20px; overflow-x: hidden; position: relative;
   }
-
-  /* --- ANIMASI BACKGROUND LAVA LAMP --- */
-  .lava-background {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    overflow: hidden;
-    z-index: -1;
-    filter: blur(60px);
-    opacity: 0.6;
-  }
-
-  .blob {
-    position: absolute;
-    border-radius: 50%;
-    will-change: transform;
-    animation: floatBlob 18s infinite alternate ease-in-out;
-  }
-
-  .blob-1 {
-    width: 350px; height: 350px;
-    background: var(--accent);
-    top: -10%; left: 10%;
-    animation-duration: 15s;
-  }
-
-  .blob-2 {
-    width: 400px; height: 400px;
-    background: var(--accent2);
-    bottom: -15%; right: 10%;
-    animation-duration: 20s;
-    animation-delay: -3s;
-  }
-
-  .blob-3 {
-    width: 300px; height: 300px;
-    background: #ec4899;
-    top: 40%; left: 60%;
-    animation-duration: 12s;
-    animation-delay: -5s;
-  }
-
-  @keyframes floatBlob {
-    0% { transform: translate(0px, 0px) scale(1); }
-    50% { transform: translate(60px, 80px) scale(1.15); }
-    100% { transform: translate(-50px, 40px) scale(0.9); }
-  }
-
-  /* --- KARTU KONTEN UTAMA --- */
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .card { 
-    max-width: 540px; width: 100%; padding: 40px 32px; text-align: center; 
-    background: var(--panel);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--border);
-    border-radius: 22px;
-    box-shadow: var(--card-shadow);
-    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    z-index: 1;
-  }
-
-  .top-controls {
-    display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;
-  }
-  .control-group { display: flex; gap: 6px; }
-  
-  .ctrl-btn {
-    background: rgba(124, 92, 255, 0.1); border: 1px solid var(--border);
-    color: var(--text); padding: 6px 12px; border-radius: 8px; font-size: 12px; font-weight: 600;
-    cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;
-  }
-  .ctrl-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
-
-  .badge {
-    display: inline-block; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--accent2); background: rgba(34, 211, 238, 0.1); border: 1px solid rgba(34, 211, 238, 0.25);
-    border-radius: 999px; padding: 6px 14px; margin-bottom: 12px; font-weight: 600;
-  }
-
+  .card { max-width: 480px; width: 100%; padding: 40px 28px; text-align: center; }
   h1 {
-    font-size: 32px; margin: 0 0 8px; font-weight: 800; letter-spacing: -0.5px;
-    background: linear-gradient(135deg, var(--text) 30%, var(--accent2) 100%);
+    font-size: 34px; margin: 0 0 8px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
     -webkit-background-clip: text; background-clip: text; color: transparent;
   }
-  p.sub { color: var(--muted); margin: 0 0 24px; font-size: 14px; line-height: 1.5; }
-  
-  .section-title {
-    font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted);
-    margin: 20px 0 10px; text-align: left; font-weight: 600; border-left: 2px solid var(--accent); padding-left: 8px;
+  p.sub { color: var(--muted); margin: 0 0 32px; font-size: 15px; }
+  .links { display: flex; flex-direction: column; gap: 12px; }
+  a.doc-link {
+    display: block; padding: 16px 20px; border-radius: 10px;
+    background: var(--panel); border: 1px solid var(--border);
+    color: var(--text); text-decoration: none; font-weight: 600; font-size: 15px;
+    transition: border-color 0.15s ease;
   }
-
-  .links { display: flex; flex-direction: column; gap: 10px; }
-  
-  .doc-card {
-    display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; border-radius: 12px;
-    background: rgba(124, 92, 255, 0.02); border: 1px solid var(--border);
-    text-decoration: none; transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
-  }
-  .doc-card:hover { 
-    border-color: var(--accent2); 
-    background: rgba(34, 211, 238, 0.04);
-    transform: translateY(-2px);
-  }
-  .doc-info { text-align: left; }
-  .doc-title { font-weight: 600; font-size: 14px; color: var(--text); display: block; }
-  .doc-desc { font-weight: 400; color: var(--muted); font-size: 12px; margin-top: 2px; display: block; }
-  
-  .lang-badges { display: flex; gap: 6px; }
-  .lang-btn {
-    font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 6px;
-    background: rgba(124, 92, 255, 0.15); color: var(--accent2); border: 1px solid rgba(124, 92, 255, 0.3);
-    text-decoration: none; transition: all 0.2s;
-  }
-  .lang-btn:hover { background: var(--accent); color: #fff; transform: scale(1.05); }
-
-  .discord-ref {
-    margin-top: 20px; font-size: 12px; color: var(--muted);
-    background: rgba(124, 92, 255, 0.03); padding: 10px; border-radius: 8px; border: 1px solid var(--border);
-  }
-  .discord-ref a { color: var(--accent2); text-decoration: none; }
-  .discord-ref a:hover { text-decoration: underline; }
-
-  footer { margin-top: 24px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--border); padding-top: 16px; }
-  footer a { color: var(--accent2); text-decoration: none; font-weight: 500; }
-  footer a:hover { text-decoration: underline; }
+  a.doc-link:hover { border-color: var(--accent2); }
+  a.doc-link span { display: block; font-weight: 400; color: var(--muted); font-size: 13px; margin-top: 4px; }
+  footer { margin-top: 36px; color: var(--muted); font-size: 13px; }
+  footer a { color: var(--accent2); text-decoration: none; }
 </style>
 </head>
 <body>
-  <!-- Animasi Background Lava Lamp -->
-  <div class="lava-background">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
-  </div>
-
   <div class="card">
-    <div class="top-controls">
-      <div class="control-group">
-        <button class="ctrl-btn" onclick="switchLang('id')">🇮🇩 ID</button>
-        <button class="ctrl-btn" onclick="switchLang('en')">🇬🇧 EN</button>
-      </div>
-      <button class="ctrl-btn" onclick="toggleTheme()" id="theme-toggle">🌙 Theme</button>
-    </div>
-
-    <div class="badge" id="badge-text">Official Legal Documentation</div>
-    <h1 id="main-heading">RykenRealm</h1>
-    <p class="sub" id="sub-text">Pusat informasi dokumen legal, ketentuan penggunaan, dan kebijakan privasi bot Discord RykenRealm.</p>
-    
-    <div class="section-title" id="doc-section-title">Daftar Dokumen / Documents</div>
-    
+    <h1>RykenRealm</h1>
+    <p class="sub">Dokumen resmi untuk bot Discord RykenRealm</p>
     <div class="links">
-      <div class="doc-card">
-        <div class="doc-info">
-          <span class="doc-title">Terms of Service</span>
-          <span class="doc-desc" id="tos-desc">Ketentuan penggunaan layanan bot</span>
-        </div>
-        <div class="lang-badges">
-          <a class="lang-btn" href="./terms-of-service.html">ID</a>
-          <a class="lang-btn" href="./terms-of-service-en.html">EN</a>
-        </div>
-      </div>
-
-      <div class="doc-card">
-        <div class="doc-info">
-          <span class="doc-title">Privacy Policy</span>
-          <span class="doc-desc" id="privacy-desc">Kebijakan privasi &amp; data pengguna</span>
-        </div>
-        <div class="lang-badges">
-          <a class="lang-btn" href="./privacy-policy.html">ID</a>
-          <a class="lang-btn" href="./privacy-policy-en.html">EN</a>
-        </div>
-      </div>
+      <a class="doc-link" href="./terms-of-service.html">Terms of Service<span>Ketentuan penggunaan bot</span></a>
+      <a class="doc-link" href="./privacy-policy.html">Privacy Policy<span>Kebijakan privasi &amp; data pengguna</span></a>
     </div>
-
-    <div class="discord-ref" id="discord-ref-text">
-      Mengacu pada <a href="https://discord.com/terms" target="_blank">Discord ToS</a> &amp; <a href="https://discord.com/guidelines" target="_blank">Community Guidelines</a>.
-    </div>
-    
-    <footer id="footer-text">
-      Owner &amp; Dev: Rizuki (@ryin.r) &middot; <a href="https://discord.gg/kME469thr6">Support Server</a>
-    </footer>
+    <footer>Owner &amp; Dev: Rizuki (@ryin.r) &middot; <a href="https://discord.gg/kME469thr6">Server Discord</a></footer>
   </div>
-
-  <script>
-    function toggleTheme() {
-      const root = document.documentElement;
-      const currentTheme = root.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', newTheme);
-      document.getElementById('theme-toggle').textContent = newTheme === 'dark' ? '🌙 Theme' : '☀️ Theme';
-      localStorage.setItem('theme', newTheme);
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      const savedTheme = localStorage.getItem('theme') || 'dark';
-      document.documentElement.setAttribute('data-theme', savedTheme);
-      document.getElementById('theme-toggle').textContent = savedTheme === 'dark' ? '🌙 Theme' : '☀️ Theme';
-    });
-
-    const texts = {
-      id: {
-        badge: "Official Legal Documentation",
-        sub: "Pusat informasi dokumen legal, ketentuan penggunaan, dan kebijakan privasi bot Discord RykenRealm.",
-        sectionTitle: "Daftar Dokumen / Documents",
-        tosDesc: "Ketentuan penggunaan layanan bot",
-        privacyDesc: "Kebijakan privasi & data pengguna",
-        discordRef: "Mengacu pada <a href='https://discord.com/terms' target='_blank'>Discord ToS</a> & <a href='https://discord.com/guidelines' target='_blank'>Community Guidelines</a>.",
-        footer: "Owner & Dev: Rizuki (@ryin.r) &middot; <a href='https://discord.gg/kME469thr6'>Support Server</a>"
-      },
-      en: {
-        badge: "Official Legal Documentation",
-        sub: "Central hub for legal documents, terms of service, and privacy policy for the RykenRealm Discord bot.",
-        sectionTitle: "Available Documents",
-        tosDesc: "Bot service terms and user agreement",
-        privacyDesc: "User data protection & privacy policy",
-        discordRef: "Compliant with <a href='https://discord.com/terms' target='_blank'>Discord ToS</a> & <a href='https://discord.com/guidelines' target='_blank'>Community Guidelines</a>.",
-        footer: "Owner & Dev: Rizuki (@ryin.r) &middot; <a href='https://discord.gg/kME469thr6'>Support Server</a>"
-      }
-    };
-
-    function switchLang(lang) {
-      document.getElementById('badge-text').textContent = texts[lang].badge;
-      document.getElementById('sub-text').textContent = texts[lang].sub;
-      document.getElementById('doc-section-title').textContent = texts[lang].sectionTitle;
-      document.getElementById('tos-desc').textContent = texts[lang].tosDesc;
-      document.getElementById('privacy-desc').textContent = texts[lang].privacyDesc;
-      document.getElementById('discord-ref-text').innerHTML = texts[lang].discordRef;
-      document.getElementById('footer-text').innerHTML = texts[lang].footer;
-    }
-  </script>
 </body>
 </html>
-
-  </script>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RykenRealm — Dokumen Legal</title>
+<style>
+  :root {
+    --bg: #0b0e14; --panel: #131826; --text: #dbe2f0; --muted: #8a93a8;
+    --accent: #7c5cff; --accent2: #22d3ee; --border: #232a3d;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    background: radial-gradient(1200px 600px at 50% -10%, #1a2036 0%, var(--bg) 60%);
+    color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .card { max-width: 480px; width: 100%; padding: 40px 28px; text-align: center; }
+  h1 {
+    font-size: 34px; margin: 0 0 8px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  p.sub { color: var(--muted); margin: 0 0 32px; font-size: 15px; }
+  .links { display: flex; flex-direction: column; gap: 12px; }
+  a.doc-link {
+    display: block; padding: 16px 20px; border-radius: 10px;
+    background: var(--panel); border: 1px solid var(--border);
+    color: var(--text); text-decoration: none; font-weight: 600; font-size: 15px;
+    transition: border-color 0.15s ease;
+  }
+  a.doc-link:hover { border-color: var(--accent2); }
+  a.doc-link span { display: block; font-weight: 400; color: var(--muted); font-size: 13px; margin-top: 4px; }
+  footer { margin-top: 36px; color: var(--muted); font-size: 13px; }
+  footer a { color: var(--accent2); text-decoration: none; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>RykenRealm</h1>
+    <p class="sub">Dokumen resmi untuk bot Discord RykenRealm</p>
+    <div class="links">
+      <a class="doc-link" href="./terms-of-service.html">Terms of Service<span>Ketentuan penggunaan bot</span></a>
+      <a class="doc-link" href="./privacy-policy.html">Privacy Policy<span>Kebijakan privasi &amp; data pengguna</span></a>
+    </div>
+    <footer>Owner &amp; Dev: Rizuki (@ryin.r) &middot; <a href="https://discord.gg/kME469thr6">Server Discord</a></footer>
+  </div>
 </body>
 </html>
