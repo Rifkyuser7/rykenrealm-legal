@@ -11,126 +11,91 @@
   }
   * { box-sizing: border-box; }
   body {
-    margin: 0;
-    background: radial-gradient(1200px 600px at 50% -10%, #1a2036 0%, var(--bg) 60%);
-    color: var(--text);
+    margin: 0; background: var(--bg); color: var(--text);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.65;
+    line-height: 1.65; padding: 40px 20px;
   }
-  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px 80px; }
-  header.doc-header { margin-bottom: 32px; border-bottom: 1px solid var(--border); padding-bottom: 24px; }
-  header.doc-header .tag {
-    display: inline-block; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--accent2); background: rgba(34, 211, 238, 0.1); border: 1px solid rgba(34, 211, 238, 0.3);
-    border-radius: 999px; padding: 4px 12px; margin-bottom: 14px;
-  }
-  h1 {
-    font-size: 28px; margin: 0 0 6px;
-    background: linear-gradient(90deg, var(--accent), var(--accent2));
-    -webkit-background-clip: text; background-clip: text; color: transparent;
-  }
-  .updated { color: var(--muted); font-size: 14px; }
-  h2 { font-size: 19px; color: var(--text); margin-top: 40px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
-  p { color: #c4cbdb; }
-  ul { padding-left: 22px; color: #c4cbdb; }
-  li { margin-bottom: 8px; }
+  .container { max-width: 800px; margin: 0 auto; background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 40px; }
+  h1 { font-size: 28px; margin-top: 0; background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  h2 { font-size: 20px; margin-top: 30px; color: var(--accent2); border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+  p, li { color: var(--text); font-size: 15px; }
+  ul { padding-left: 20px; }
+  .update-date { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
   a { color: var(--accent2); text-decoration: none; }
   a:hover { text-decoration: underline; }
-  strong { color: #fff; }
-  .callout {
-    background: var(--panel); border: 1px solid var(--border); border-left: 3px solid var(--accent);
-    border-radius: 8px; padding: 16px 18px; margin: 18px 0;
-  }
-  hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
-  footer { color: var(--muted); font-size: 13px; text-align: center; margin-top: 48px; }
-  .home-link { display: inline-block; margin-top: 20px; font-size: 14px; }
-  .lang-switch { font-size: 13px; margin-bottom: 20px; }
-  .lang-switch a { margin-right: 12px; }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 30px 0; }
+  .back { display: inline-block; margin-bottom: 20px; font-weight: 600; font-size: 14px; }
 </style>
 </head>
 <body>
-<div class="wrap">
-
-  <header class="doc-header">
-    <span class="tag">Legal Document</span>
+  <div class="container">
+    <a class="back" href="./index.html">&larr; Back to Home</a>
     <h1>Terms of Service — RykenRealm</h1>
-    <p class="updated">Last updated: September 13, 2026</p>
-    <p class="lang-switch"><a href="./terms-of-service.html">Bahasa Indonesia</a> · <strong>English</strong></p>
-  </header>
+    <div class="update-date"><strong>Last updated:</strong> October 22, 2026</div>
 
-  <p>Welcome! This document governs your use of the Discord bot <strong>RykenRealm</strong> (hereinafter referred to as <strong>&quot;RykenRealm&quot;</strong> or the <strong>&quot;Bot&quot;</strong>), developed and operated by <strong>Rizuki (@ryin.r)</strong>. By inviting, running, or using any command of the Bot in any Discord server, you agree to be bound by the terms below.</p>
+    <p>Welcome! These terms apply to the use of the Discord bot <strong>RykenRealm</strong> (hereinafter referred to as <strong>"RykenRealm"</strong> or the <strong>"Bot"</strong>), developed and managed by <strong>Rizuki (@ryin.r)</strong>. By inviting, running, or using Bot commands on any Discord server, you are deemed to agree to the terms below.</p>
+    <p>Official community server: <a href="https://discord.gg/kME469thr6">https://discord.gg/kME469thr6</a></p>
 
-  <p>Official community server: <a href="https://discord.gg/kME469thr6">discord.gg/kME469thr6</a></p>
+    <hr>
 
-  <hr>
+    <h2>1. User Eligibility</h2>
+    <ul>
+      <li>This bot may only be used by users who meet Discord's minimum age requirement (13 years or older, or the minimum age applicable in your country if higher) in accordance with the <a href="https://discord.com/terms" target="_blank">Discord Terms of Service</a>.</li>
+      <li>You are fully responsible for the Discord account you use to interact with the Bot.</li>
+    </ul>
 
-  <h2>1. Eligibility</h2>
-  <ul>
-    <li>The Bot may only be used by users who meet Discord's minimum age requirement (13 years or older, or the higher minimum age required in your country of residence) under Discord's <a href="https://discord.com/terms">Terms of Service</a>.</li>
-    <li>You are solely responsible for the Discord account you use to interact with the Bot.</li>
-  </ul>
+    <h2>2. Description of Service</h2>
+    <p>The Bot provides various entertainment features based on slash commands (<code>/</code>), including but not limited to:</p>
+    <ul>
+      <li>Multi-currency virtual economy system (including clean cash & fictional "dirty cash")</li>
+      <li>RPG system ("Chronos Override"), inventory, dungeons, and crafting</li>
+      <li>Virtual casino features (blackjack, roulette, slots, horse/drone racing, heists) using virtual currency</li>
+      <li>Fictional partner/family system based on anime characters (via public MyAnimeList/Jikan database)</li>
+      <li>Minigames, trivia, and utility tools (media downloader, file conversion, QR generator, etc.)</li>
+      <li>AI chat feature powered by a third-party model</li>
+    </ul>
+    <p>The Bot may be updated, expanded, reduced in features, or discontinued at any time without prior notice.</p>
 
-  <h2>2. Description of Service</h2>
-  <p>The Bot provides various entertainment features accessed through dot-prefixed commands (<code>.</code>), including but not limited to:</p>
-  <ul>
-    <li>A multi-currency virtual economy system (including "clean cash" and fictional "dirty cash")</li>
-    <li>An RPG system ("Chronos Override"), inventory, dungeons, and crafting</li>
-    <li>Virtual casino features (blackjack, roulette, slots, horse/drone racing, heists) using virtual currency only</li>
-    <li>A fictional partner/family system based on anime characters (via the public MyAnimeList/Jikan database)</li>
-    <li>Minigames, trivia, and utility tools (media downloader, file conversion, QR generator, etc.)</li>
-    <li>An AI chat feature powered by a third-party model</li>
-  </ul>
-  <p>The Bot may be updated, expanded, reduced in features, or discontinued at any time without prior notice.</p>
+    <h2>3. Virtual Currency & Items — No Real Value</h2>
+    <p><strong>Important:</strong> All currencies, balances, assets, RPG items, gambling winnings, and "wealth" within the Bot are <strong>purely virtual and fictional</strong>, created solely for entertainment purposes.</p>
+    <ul>
+      <li>Virtual currencies in the Bot <strong>cannot be exchanged, sold, bought, or converted into real money</strong> or goods/services of real-world value in any form.</li>
+      <li>Casino-themed features (blackjack, roulette, slots, heists, etc.) <strong>do not involve real money</strong> in any way and are not intended as gambling under any legal definition.</li>
+      <li>Rizuki (@ryin.r) is not responsible for any loss of virtual balance due to bugs, data resets, service termination, or other causes.</li>
+    </ul>
 
-  <h2>3. Virtual Currency &amp; Items — No Real-World Value</h2>
-  <div class="callout">
-    <strong>Important:</strong> All currency, balances, assets, RPG items, gambling winnings, and any form of "wealth" within the Bot are <strong>purely virtual and fictional</strong>, created solely for entertainment purposes.
+    <h2>4. Rules of Use</h2>
+    <p>You agree <strong>not</strong> to:</p>
+    <ul>
+      <li>Exploit bugs, glitches, or system errors to gain unfair advantages (e.g., item/balance duplication). Bugs must be reported to the Bot owner.</li>
+      <li>Use multiple accounts (multi-accounting) to manipulate the economy system, leaderboards, or daily rewards.</li>
+      <li>Use the Bot to violate the <a href="https://discord.com/terms" target="_blank">Discord Terms of Service</a> or <a href="https://discord.com/guidelines" target="_blank">Discord Community Guidelines</a>, including spam, harassment, or illegal content.</li>
+      <li>Abuse the AI chat or downloader features to generate/spread illegal, harmful, or copyright-infringing content.</li>
+      <li>Attempt to reverse-engineer, scrape other users' data, or intentionally disrupt the Bot's operations.</li>
+    </ul>
+
+    <h2>5. Moderation & Access Termination</h2>
+    <p>The Bot owner reserves the right, at their sole discretion, to:</p>
+    <ul>
+      <li>Limit, suspend, or reset economy data/progress of users proven to violate Section 4.</li>
+      <li>Deny Bot access to specific servers (e.g., via a server whitelist system) without needing to provide a reason.</li>
+    </ul>
+
+    <h2>6. No Warranty</h2>
+    <p>The Bot is provided <strong>"as-is"</strong> without guarantees of uptime, availability, or being bug-free. Economy/progress data may be lost or reset due to maintenance, server migrations, or other technical constraints. Rizuki (@ryin.r) will try to minimize this, but cannot fully guarantee it.</p>
+
+    <h2>7. Limitation of Liability</h2>
+    <p>To the maximum extent permitted by applicable law, Rizuki (@ryin.r) shall not be liable for any indirect, incidental, or consequential damages arising from the use or inability to use the Bot.</p>
+
+    <h2>8. Changes to Terms</h2>
+    <p>These terms may be updated from time to time. Changes will be announced through the Bot's official community server. Continued use of the Bot after changes constitutes acceptance of the new terms.</p>
+
+    <h2>9. Contact</h2>
+    <p>Questions, bug reports, or privacy-related requests can be directed via:</p>
+    <ul>
+      <li>Discord Server: <a href="https://discord.gg/kME469thr6">https://discord.gg/kME469thr6</a></li>
+      <li>Owner & Developer: <strong>Rizuki</strong> (@ryin.r)</li>
+    </ul>
   </div>
-  <ul>
-    <li>Virtual currency in the Bot <strong>cannot be exchanged, sold, purchased, or converted into real money</strong> or any real-world goods or services in any way.</li>
-    <li>Casino-themed features (blackjack, roulette, slots, heist, etc.) <strong>do not involve real money</strong> in any manner and are not intended to constitute gambling under any jurisdiction's laws.</li>
-    <li>Rizuki (@ryin.r) is not liable for any loss of virtual balance due to bugs, data resets, service discontinuation, or any other cause.</li>
-  </ul>
-
-  <h2>4. Rules of Use</h2>
-  <p>You agree <strong>not</strong> to:</p>
-  <ul>
-    <li>Exploit bugs, glitches, or system errors to gain an unfair advantage (e.g. duplicating items/balances). Bugs must be reported to the Bot owner.</li>
-    <li>Use multiple accounts to manipulate the economy system, leaderboards, or daily rewards.</li>
-    <li>Use the Bot to violate Discord's <a href="https://discord.com/terms">Terms of Service</a> or <a href="https://discord.com/guidelines">Community Guidelines</a>, including spam, harassment, or illegal content.</li>
-    <li>Misuse the AI chat or downloader feature to generate or distribute illegal, harmful, or copyright-infringing content.</li>
-    <li>Attempt to reverse-engineer, scrape other users' data, or intentionally disrupt the Bot's operation.</li>
-  </ul>
-
-  <h2>5. Moderation &amp; Access Termination</h2>
-  <p>The Bot owner reserves the right, at their sole discretion, to:</p>
-  <ul>
-    <li>Restrict, suspend, or reset the economy/progress data of users found to have violated Section 4.</li>
-    <li>Deny the Bot's access to specific servers (e.g. via the server whitelist system) without needing to provide a reason.</li>
-  </ul>
-
-  <h2>6. No Warranty of Service</h2>
-  <p>The Bot is provided <strong>"as is"</strong> without any warranty of uptime, availability, or freedom from bugs. Economy/progress data may be lost or reset due to maintenance, server migration, or other technical issues. Rizuki (@ryin.r) will make reasonable efforts to minimize this, but cannot guarantee it fully.</p>
-
-  <h2>7. Limitation of Liability</h2>
-  <p>To the fullest extent permitted by applicable law, Rizuki (@ryin.r) shall not be liable for any indirect, incidental, or consequential damages arising from your use or inability to use the Bot.</p>
-
-  <h2>8. Changes to These Terms</h2>
-  <p>These Terms may be updated from time to time. Changes will be announced via the Bot's official community server. Continued use of the Bot after such changes constitutes acceptance of the revised Terms.</p>
-
-  <h2>9. Contact</h2>
-  <p>Questions, bug reports, or requests related to personal data may be submitted via:</p>
-  <ul>
-    <li>Discord server: <a href="https://discord.gg/kME469thr6">discord.gg/kME469thr6</a></li>
-    <li>Owner &amp; Developer: <strong>Rizuki</strong> (@ryin.r)</li>
-  </ul>
-
-  <hr>
-  <p><em>This document applies together with RykenRealm's <a href="./privacy-policy-en.html">Privacy Policy</a>.</em></p>
-
-  <a class="home-link" href="./index.html">&larr; Back to home</a>
-
-  <footer>RykenRealm &middot; Discord Bot &middot; Owner &amp; Dev: Rizuki (@ryin.r)</footer>
-</div>
 </body>
 </html>
