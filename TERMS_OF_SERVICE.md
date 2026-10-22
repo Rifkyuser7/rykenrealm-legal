@@ -1,6 +1,6 @@
 # Terms of Service — RykenRealm
 
-**Terakhir diperbarui:** 13 September 2026
+**Terakhir diperbarui:** 22 Oktober 2026
 
 Selamat datang! Dokumen ini berlaku untuk penggunaan bot Discord **RykenRealm** (selanjutnya disebut **"RykenRealm"** atau **"Bot"**), dikembangkan dan dikelola oleh **Rizuki (@ryin.r)**. Dengan mengundang, menjalankan, atau menggunakan perintah Bot di server Discord manapun, kamu dianggap menyetujui ketentuan di bawah ini.
 
@@ -15,7 +15,7 @@ Server komunitas resmi: https://discord.gg/kME469thr6
 
 ## 2. Deskripsi Layanan
 
-Bot menyediakan berbagai fitur hiburan berbasis command awalan titik (`.`), antara lain namun tidak terbatas pada:
+Bot menyediakan berbagai fitur hiburan berbasis slash command (`/`), antara lain namun tidak terbatas pada:
 
 - Sistem ekonomi virtual multi-mata uang (termasuk clean cash & dirty cash / "uang haram" fiktif)
 - Sistem RPG ("Chronos Override"), inventaris, dungeon, dan crafting
@@ -72,4 +72,4 @@ Pertanyaan, laporan bug, atau permintaan terkait data pribadi dapat disampaikan 
 
 ---
 
-*Dokumen ini berlaku bersamaan dengan [Privacy Policy](./PRIVACY_POLICY.md) Bot.*
+*Dokumen ini berlaku bersamaan dengan [Privacy Policy](./PRIVACY_POLICY.md) RykenRealm.*
