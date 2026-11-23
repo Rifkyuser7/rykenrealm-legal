@@ -1,105 +1,485 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terms of Service — RykenRealm</title>
-<style>
-  :root {
-    --bg: #0b0e14; --panel: #131826; --text: #dbe2f0; --muted: #8a93a8;
-    --accent: #7c5cff; --accent2: #22d3ee; --border: #232a3d;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; background: var(--bg); color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.65; padding: 40px 20px;
-  }
-  .container { max-width: 800px; margin: 0 auto; background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 40px; }
-  h1 { font-size: 28px; margin-top: 0; background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  h2 { font-size: 20px; margin-top: 30px; color: var(--accent2); border-bottom: 1px solid var(--border); padding-bottom: 8px; }
-  p, li { color: var(--text); font-size: 15px; }
-  ul { padding-left: 20px; }
-  .update-date { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
-  a { color: var(--accent2); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  hr { border: 0; border-top: 1px solid var(--border); margin: 30px 0; }
-  .back { display: inline-block; margin-bottom: 20px; font-weight: 600; font-size: 14px; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101010">
+  <meta name="description" content="Official Terms of Service of the RykenRealm Discord Bot.">
+  <title>Terms of Service — RykenRealm</title>
+
+  <style>
+    :root {
+      --bg: #101010;
+      --surface: #171717;
+      --border: #303030;
+      --text: #ededed;
+      --muted: #a1a1a1;
+      --accent: #ffffff;
+      --link: #b9c5ff;
+    }
+
+    body.light {
+      --bg: #f7f7f7;
+      --surface: #ffffff;
+      --border: #dedede;
+      --text: #202020;
+      --muted: #666666;
+      --accent: #202020;
+      --link: #4056a1;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.75;
+      transition: background .2s, color .2s;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(100% - 40px, 900px);
+      margin: auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+
+    .navbar {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+
+    .brand span {
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .controls {
+      display: flex;
+      gap: 8px;
+    }
+
+    .control-btn {
+      padding: 7px 11px;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      background: transparent;
+      color: var(--text);
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    .control-btn:hover {
+      background: var(--surface);
+    }
+
+    main {
+      padding: 65px 0 90px;
+    }
+
+    .breadcrumb {
+      margin-bottom: 30px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .breadcrumb a {
+      color: var(--muted);
+    }
+
+    .heading {
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h1 {
+      margin-bottom: 12px;
+      font-size: clamp(30px, 5vw, 42px);
+      font-weight: 700;
+      letter-spacing: -1.2px;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .updated {
+      margin-top: 17px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .document {
+      max-width: 760px;
+      padding-top: 30px;
+    }
+
+    .document section {
+      margin-bottom: 34px;
+    }
+
+    h2 {
+      margin-bottom: 11px;
+      font-size: 19px;
+      font-weight: 650;
+      letter-spacing: -.2px;
+    }
+
+    p {
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    ul {
+      margin: 10px 0 15px 23px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    li {
+      margin-bottom: 8px;
+      padding-left: 3px;
+    }
+
+    strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .contact {
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 13px;
+    }
+
+    footer {
+      padding: 24px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 30px, 900px);
+      }
+
+      .navbar {
+        min-height: 60px;
+      }
+
+      main {
+        padding: 42px 0 65px;
+      }
+
+      .document {
+        padding-top: 25px;
+      }
+
+      .document section {
+        margin-bottom: 29px;
+      }
+
+      h2 {
+        font-size: 17px;
+      }
+
+      p, ul {
+        font-size: 13px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <div class="container">
-    <a class="back" href="./index.html">&larr; Back to Home</a>
-    <h1>Terms of Service — RykenRealm</h1>
-    <div class="update-date"><strong>Last updated:</strong> November 23, 2026</div>
+  <header>
+    <div class="container navbar">
+      <a class="brand" href="index.html">
+        RykenRealm <span>/ Legal Center</span>
+      </a>
 
-    <p>Welcome! These terms apply to the use of the Discord bot <strong>RykenRealm</strong> (hereinafter referred to as <strong>"RykenRealm"</strong> or the <strong>"Bot"</strong>), developed and managed by <strong>Rizuki (@ryin.r)</strong>. By inviting, running, or using Bot commands on any Discord server, you are deemed to agree to the terms below.</p>
-    <p>Official community server: <a href="https://discord.gg/kME469thr6">https://discord.gg/kME469thr6</a></p>
+      <div class="controls">
+        <button class="control-btn" id="languageBtn" type="button">
+          ID
+        </button>
+        <button class="control-btn" id="themeBtn" type="button">
+          Light mode
+        </button>
+      </div>
+    </div>
+  </header>
 
-    <hr>
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Legal Center</a> / Terms of Service
+    </div>
 
-    <h2>1. User Eligibility</h2>
-    <ul>
-      <li>This Bot may only be used by users who meet Discord's minimum age requirement (13 years or older, or the minimum age applicable in your country if higher), in accordance with the <a href="https://discord.com/terms" target="_blank" rel="noopener noreferrer">Discord Terms of Service</a>.</li>
-      <li>You are responsible for the Discord account you use to interact with the Bot.</li>
-    </ul>
+    <div class="heading">
+      <h1>Terms of Service</h1>
+      <p class="subtitle">
+        Terms and rules governing the use of the RykenRealm Discord Bot.
+      </p>
+      <p class="updated">
+        Last updated: November 23, 2026
+      </p>
+    </div>
 
-    <h2>2. Description of Service</h2>
-    <p>The Bot provides various entertainment and utility features through slash commands (<code>/</code>), including but not limited to:</p>
-    <ul>
-      <li>Multi-currency virtual economy system, including fictional clean cash and dirty cash.</li>
-      <li>RPG system ("Chronos Override"), including inventory, dungeons, and crafting.</li>
-      <li>Virtual casino-style games, including blackjack, roulette, slots, racing, and heists, using virtual currency only.</li>
-      <li>Fictional partner and family features based on anime characters, using publicly available anime-related data through Jikan.</li>
-      <li>Minigames, trivia, and utility tools.</li>
-      <li>File conversion and media-processing tools that operate on files uploaded by users, as well as tools such as QR generation.</li>
-      <li>AI chat features powered by a third-party AI service.</li>
-    </ul>
-    <p>Features may be updated, modified, restricted, removed, or discontinued at any time. The Bot owner will make reasonable efforts to communicate significant changes through the official community server.</p>
+    <article class="document">
+      <section>
+        <h2>1. Acceptance of Terms</h2>
+        <p>
+          By inviting, accessing, or using RykenRealm, you
+          acknowledge that you have read and understood
+          these Terms of Service.
+        </p>
+        <p>
+          If you do not agree with these terms, you may
+          discontinue using RykenRealm.
+        </p>
+      </section>
 
-    <h2>3. Virtual Currency & Items — No Real Value</h2>
-    <p><strong>Important:</strong> All currencies, balances, assets, RPG items, game winnings, and other forms of wealth within the Bot are <strong>virtual and fictional</strong>, created solely for entertainment purposes.</p>
-    <ul>
-      <li>Virtual currencies and items cannot be exchanged, sold, or redeemed for real money, physical goods, or real-world services.</li>
-      <li>Casino-style features do not involve real-money betting or payouts. All outcomes and rewards are limited to the Bot's virtual economy.</li>
-      <li>The Bot owner is not responsible for the loss of virtual balances, items, or progress caused by bugs, data loss, maintenance, service termination, or other technical issues.</li>
-    </ul>
+      <section>
+        <h2>2. About RykenRealm</h2>
+        <p>
+          RykenRealm is a Discord bot that provides various
+          interactive and entertainment features, including:
+        </p>
+        <ul>
+          <li>Virtual economy and in-bot trading systems.</li>
+          <li>RPG, adventures, inventory, and character progression.</li>
+          <li>Social features, virtual partners, and virtual families.</li>
+          <li>Multiplayer games and minigames.</li>
+          <li>Entertainment and anime-related information features.</li>
+          <li>Utilities such as attachment-based media conversion, GIF, QR, and image processing.</li>
+        </ul>
+        <p>
+          Features may be changed, updated, restricted, or
+          discontinued as required for development and operation.
+        </p>
+      </section>
 
-    <h2>4. Rules of Use</h2>
-    <p>By using the Bot, you agree not to:</p>
-    <ul>
-      <li>Exploit bugs, glitches, or system errors to gain unfair advantages, including duplicating items or balances. You should report discovered bugs to the Bot owner.</li>
-      <li>Use multiple accounts to manipulate the economy, leaderboards, rewards, or other Bot systems.</li>
-      <li>Use the Bot to violate the <a href="https://discord.com/terms" target="_blank" rel="noopener noreferrer">Discord Terms of Service</a> or <a href="https://discord.com/guidelines" target="_blank" rel="noopener noreferrer">Discord Community Guidelines</a>, including through spam, harassment, or illegal content.</li>
-      <li>Abuse AI or other Bot features to generate, distribute, or facilitate illegal, harmful, or infringing content.</li>
-      <li>Attempt to reverse-engineer the Bot, access other users' data without authorization, or intentionally disrupt its operation.</li>
-      <li>Use the Bot in a way that interferes with its availability, security, or normal operation for other users.</li>
-    </ul>
+      <section>
+        <h2>3. User Requirements</h2>
+        <p>
+          Users must use RykenRealm in accordance with these
+          Terms of Service, Discord's rules, and applicable
+          laws and regulations.
+        </p>
+        <p>
+          Users are responsible for activities performed
+          through their respective Discord accounts.
+        </p>
+      </section>
 
-    <h2>5. Moderation & Access Termination</h2>
-    <p>The Bot owner may take reasonable action when users or servers violate these terms or threaten the Bot's operation. Such actions may include:</p>
-    <ul>
-      <li>Limiting or suspending access to Bot features.</li>
-      <li>Resetting or correcting economy data or progress affected by confirmed abuse or exploitation.</li>
-      <li>Restricting access from specific servers, including through a server whitelist system.</li>
-      <li>Terminating access for users who repeatedly or seriously violate these terms.</li>
-    </ul>
+      <section>
+        <h2>4. Rules and Prohibited Activities</h2>
+        <p>
+          Users must not engage in the following activities:
+        </p>
+        <ul>
+          <li>Exploiting bugs, system vulnerabilities, or calculation errors for unauthorized benefits.</li>
+          <li>Using multiple accounts to manipulate rewards, the economy, or game systems.</li>
+          <li>Intentionally disrupting, damaging, or overloading the service.</li>
+          <li>Using bot features for illegal activities or abuse.</li>
+          <li>Spamming, manipulating, or disturbing other users.</li>
+          <li>Attempting to access internal systems, data, or functions without authorization.</li>
+          <li>Using the service in ways that violate Discord's rules.</li>
+        </ul>
+      </section>
 
-    <h2>6. No Warranty</h2>
-    <p>The Bot is provided <strong>"as is"</strong> without guarantees of uninterrupted availability, uptime, or error-free operation. Features may become temporarily unavailable, and data or progress may be lost due to maintenance, technical issues, migrations, or other circumstances. The Bot owner will make reasonable efforts to maintain the service but cannot guarantee that data will always be preserved.</p>
+      <section>
+        <h2>5. Virtual Currency and Assets</h2>
+        <p>
+          Balances, items, properties, stocks, rewards, and
+          other assets available in RykenRealm are part of
+          the bot's virtual system.
+        </p>
+        <ul>
+          <li>Virtual assets have no real-world monetary value.</li>
+          <li>Virtual assets must not be considered savings, investments, or official payment instruments.</li>
+          <li>Administrators may make adjustments when bugs, exploits, or system errors are identified.</li>
+          <li>Progress or virtual assets may change due to updates, maintenance, or technical issues.</li>
+        </ul>
+      </section>
 
-    <h2>7. Limitation of Liability</h2>
-    <p>To the maximum extent permitted by applicable law, the Bot owner shall not be liable for indirect, incidental, or consequential damages arising from the use of, or inability to use, the Bot. Nothing in these terms excludes liability that cannot legally be excluded under applicable law.</p>
+      <section>
+        <h2>6. Donations and Support</h2>
+        <p>
+          Donations or contributions to RykenRealm are voluntary.
+          Support-related rewards may be provided according to
+          conditions announced through official channels.
+        </p>
+        <p>
+          Donations do not grant ownership of the bot,
+          administrative access, or control over the service.
+        </p>
+        <p>
+          Reward conditions, verification, and support periods
+          may be subject to the policies of the relevant
+          payment platforms.
+        </p>
+      </section>
 
-    <h2>8. Changes to Terms</h2>
-    <p>These terms may be updated from time to time. Significant changes may be announced through the Bot's official community server. The updated date at the top of this page indicates when these terms were last revised. Continued use of the Bot after updated terms take effect constitutes acceptance of those terms, to the extent permitted by applicable law.</p>
+      <section>
+        <h2>7. Service Availability</h2>
+        <p>
+          RykenRealm is provided on an as-available basis.
+          We do not guarantee that the bot will always be
+          online, uninterrupted, or error-free.
+        </p>
+        <p>
+          Maintenance, updates, network interruptions,
+          provider issues, or other circumstances may
+          temporarily affect feature availability.
+        </p>
+      </section>
 
-    <h2>9. Contact</h2>
-    <p>Questions, bug reports, or requests related to these terms can be directed through:</p>
-    <ul>
-      <li>Discord Server: <a href="https://discord.gg/kME469thr6">https://discord.gg/kME469thr6</a></li>
-      <li>Owner & Developer: <strong>Rizuki</strong> (@ryin.r)</li>
-    </ul>
-  </div>
+      <section>
+        <h2>8. Moderation and Enforcement</h2>
+        <p>
+          RykenRealm administrators may take reasonable
+          action against use that violates these terms,
+          including restricting feature access or taking
+          other administrative measures.
+        </p>
+        <p>
+          Actions may depend on the severity of the violation,
+          its impact on the service, and security requirements.
+        </p>
+      </section>
+
+      <section>
+        <h2>9. Third-Party Services</h2>
+        <p>
+          Certain features rely on external services to
+          retrieve information or process data, including
+          Discord, Jikan API, Frankfurter API, CoinGecko API,
+          MongoDB, and Vyro Inference Engine.
+        </p>
+        <p>
+          Third-party services have their own terms and
+          policies. RykenRealm is not responsible for
+          changes, interruptions, or policies outside
+          the administrators' control.
+        </p>
+      </section>
+
+      <section>
+        <h2>10. Limitation of Liability</h2>
+        <p>
+          To the extent permitted by applicable law,
+          RykenRealm is provided without guarantees that
+          all features will always operate without
+          interruptions or errors.
+        </p>
+        <p>
+          Administrators do not guarantee that lost
+          progress, data changes, or service interruptions
+          can always be restored.
+        </p>
+      </section>
+
+      <section>
+        <h2>11. Changes to These Terms</h2>
+        <p>
+          These Terms of Service may be updated from time
+          to time to reflect changes to RykenRealm's
+          features, systems, or operational requirements.
+        </p>
+        <p>
+          The latest version will be available through
+          the official Legal Center. Continued use of
+          the service after updated terms are published
+          is subject to those updated terms.
+        </p>
+      </section>
+
+      <section class="contact">
+        <h2>12. Contact</h2>
+        <p>
+          For questions or reports concerning these
+          Terms of Service, please contact the
+          administrators through the RykenRealm Discord
+          server or an official project contact channel.
+        </p>
+      </section>
+    </article>
+
+    <a class="back" href="index.html">← Back to Legal Center</a>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <span>RykenRealm · Legal Center</span>
+      <span>© 2026 RykenRealm. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script>
+    const languageBtn = document.getElementById("languageBtn");
+    const themeBtn = document.getElementById("themeBtn");
+
+    languageBtn.addEventListener("click", () => {
+      window.location.href = "terms-of-service.html";
+    });
+
+    themeBtn.addEventListener("click", () => {
+      document.body.classList.toggle("light");
+
+      const isLight = document.body.classList.contains("light");
+      themeBtn.textContent = isLight ? "Dark mode" : "Light mode";
+
+      document.querySelector('meta[name="theme-color"]')
+        .setAttribute("content", isLight ? "#f7f7f7" : "#101010");
+    });
+  </script>
 </body>
 </html>
