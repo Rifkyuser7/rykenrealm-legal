@@ -8,13 +8,25 @@
 
 <style>
 :root {
+    color-scheme: dark;
     --bg: #0b0b0d;
-    --panel: #141417;
-    --panel-hover: #1b1b20;
-    --text: #f2f2f2;
-    --muted: #92929b;
-    --border: #29292f;
-    --accent: #ffffff;
+    --panel: #151518;
+    --panel-hover: #1c1c20;
+    --text: #eeeeef;
+    --muted: #92929a;
+    --border: #2a2a30;
+    --glow: rgba(255,255,255,.08);
+}
+
+body.light {
+    color-scheme: light;
+    --bg: #f3f3f3;
+    --panel: #ffffff;
+    --panel-hover: #e9e9e9;
+    --text: #171717;
+    --muted: #707070;
+    --border: #dddddd;
+    --glow: rgba(0,0,0,.07);
 }
 
 * {
@@ -23,19 +35,20 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     min-height: 100vh;
     background: var(--bg);
     color: var(--text);
     font-family: Arial, Helvetica, sans-serif;
     overflow-x: hidden;
+    transition: background .5s ease, color .5s ease;
 }
 
-/* Animated background */
+button, a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* LOOP BACKGROUND */
 .background {
     position: fixed;
     inset: 0;
@@ -44,153 +57,125 @@ body {
     z-index: -1;
 }
 
-.glow {
+.orb {
     position: absolute;
-    width: 420px;
-    height: 420px;
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
-    filter: blur(110px);
-    opacity: 0.12;
-    background: #aeb5c5;
-    top: -220px;
-    right: -150px;
-    animation: glowFloat 14s ease-in-out infinite alternate;
+    background: var(--glow);
+    filter: blur(90px);
+    top: 10%;
+    left: 50%;
+    animation: orbit 18s ease-in-out infinite alternate;
 }
 
-.glow-two {
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    filter: blur(110px);
-    opacity: 0.07;
-    background: #777777;
-    bottom: -180px;
-    left: -120px;
-    animation: glowFloatTwo 17s ease-in-out infinite alternate;
+.orb.second {
+    width: 260px;
+    height: 260px;
+    top: 55%;
+    left: 5%;
+    animation: orbit 14s ease-in-out infinite alternate-reverse;
 }
 
-@keyframes glowFloat {
+@keyframes orbit {
     0% {
-        transform: translate(0, 0);
+        transform: translate(-50px, -30px) scale(.9);
     }
     50% {
-        transform: translate(-100px, 100px);
+        transform: translate(100px, 80px) scale(1.15);
     }
     100% {
-        transform: translate(-30px, 180px);
+        transform: translate(-100px, 130px) scale(.95);
     }
 }
 
-@keyframes glowFloatTwo {
-    from {
-        transform: translate(0, 0);
-    }
-    to {
-        transform: translate(100px, -100px);
-    }
-}
-
-/* Light sweep */
 .light-line {
     position: absolute;
     top: 0;
     left: -100%;
-    width: 70%;
+    width: 65%;
     height: 1px;
     background: linear-gradient(
         90deg,
         transparent,
-        rgba(255,255,255,0.22),
+        var(--muted),
         transparent
     );
-    animation: lightSweep 9s linear infinite;
+    opacity: .35;
+    animation: sweep 8s linear infinite;
 }
 
-@keyframes lightSweep {
-    0% {
-        left: -100%;
-    }
-    100% {
+@keyframes sweep {
+    to {
         left: 150%;
     }
 }
 
-/* Navigation */
+/* NAVIGATION */
 nav {
     max-width: 1100px;
     margin: auto;
-    padding: 26px 24px;
+    padding: 25px 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    animation: navEnter 1s ease both;
 }
 
 .logo {
-    font-size: 17px;
-    font-weight: 700;
-    letter-spacing: 0.6px;
     color: var(--text);
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: .5px;
     text-decoration: none;
-    transition: opacity 0.3s ease;
+    animation: logoPulse 3s ease-in-out infinite;
 }
 
-.logo:hover {
-    opacity: 0.65;
+@keyframes logoPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .65; }
 }
 
-.nav-actions {
+.actions {
     display: flex;
     gap: 9px;
 }
 
 .nav-button {
-    padding: 8px 13px;
+    background: var(--panel);
     border: 1px solid var(--border);
+    color: var(--text);
+    padding: 9px 13px;
     border-radius: 6px;
-    background: transparent;
-    color: var(--muted);
     font-size: 12px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: .3s ease;
 }
 
 .nav-button:hover {
-    color: var(--text);
-    border-color: #777;
     transform: translateY(-2px);
+    border-color: var(--muted);
 }
 
-/* Main content */
+/* MAIN */
 main {
     max-width: 850px;
     margin: auto;
-    padding: 115px 24px 85px;
-}
-
-.hero {
-    margin-bottom: 65px;
+    padding: 110px 24px 80px;
 }
 
 .eyebrow {
-    color: var(--muted);
     font-size: 11px;
-    letter-spacing: 2.5px;
+    color: var(--muted);
+    letter-spacing: 2px;
     text-transform: uppercase;
-    margin-bottom: 23px;
-    opacity: 0;
-    animation: revealText 0.8s ease 0.3s forwards;
+    margin-bottom: 22px;
 }
 
 h1 {
-    font-size: clamp(39px, 8vw, 64px);
-    line-height: 1.1;
+    font-size: clamp(40px, 8vw, 62px);
     font-weight: 600;
-    letter-spacing: -2.5px;
-    margin-bottom: 23px;
-    opacity: 0;
-    animation: titleEnter 1s cubic-bezier(.2,.8,.2,1) 0.5s forwards;
+    letter-spacing: -2px;
+    margin-bottom: 22px;
 }
 
 .description {
@@ -198,19 +183,15 @@ h1 {
     color: var(--muted);
     font-size: 15px;
     line-height: 1.9;
-    opacity: 0;
-    animation: revealText 0.9s ease 0.9s forwards;
 }
 
-/* Document section */
+/* DOCUMENTS */
 .section-label {
+    margin-bottom: 18px;
     color: var(--muted);
     font-size: 11px;
     letter-spacing: 1.7px;
     text-transform: uppercase;
-    margin-bottom: 18px;
-    opacity: 0;
-    animation: revealText 0.8s ease 1.1s forwards;
 }
 
 .documents {
@@ -221,62 +202,75 @@ h1 {
 
 .document {
     position: relative;
-    min-height: 175px;
-    padding: 28px 25px;
     display: block;
-    overflow: hidden;
-    text-decoration: none;
-    color: var(--text);
-    background: var(--panel);
+    min-height: 165px;
+    padding: 27px 24px;
     border: 1px solid var(--border);
     border-radius: 8px;
-    opacity: 0;
-    transform: translateY(35px);
-    animation: cardEnter 0.85s cubic-bezier(.2,.8,.2,1) forwards;
+    background: var(--panel);
+    color: var(--text);
+    text-decoration: none;
+    overflow: hidden;
     transition:
-        transform 0.35s ease,
-        border-color 0.35s ease,
-        background 0.35s ease,
-        box-shadow 0.35s ease;
-}
-
-.document:nth-child(1) {
-    animation-delay: 1.2s;
+        background .4s ease,
+        border-color .4s ease,
+        transform .4s ease,
+        box-shadow .4s ease;
+    animation: cardFloat 5s ease-in-out infinite;
 }
 
 .document:nth-child(2) {
-    animation-delay: 1.4s;
+    animation-delay: -2.5s;
+}
+
+@keyframes cardFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.document:hover {
+    background: var(--panel-hover);
+    border-color: var(--muted);
+    box-shadow: 0 12px 35px rgba(0,0,0,.12);
+    animation-play-state: paused;
+    transform: translateY(-7px);
+}
+
+.document:active {
+    transform: scale(.98);
 }
 
 .document::before {
     content: "";
     position: absolute;
     top: 0;
-    left: -110%;
-    width: 80%;
+    left: -120%;
+    width: 70%;
     height: 100%;
     background: linear-gradient(
         100deg,
         transparent,
-        rgba(255,255,255,0.045),
+        rgba(255,255,255,.07),
         transparent
     );
-    transition: left 0.65s ease;
+    animation: cardShine 7s ease-in-out infinite;
 }
 
-.document:hover::before {
-    left: 130%;
+.document:nth-child(2)::before {
+    animation-delay: 3.5s;
 }
 
-.document:hover {
-    transform: translateY(-7px) scale(1.015);
-    background: var(--panel-hover);
-    border-color: #62626b;
-    box-shadow: 0 12px 35px rgba(0,0,0,0.25);
-}
-
-.document:active {
-    transform: scale(0.98);
+@keyframes cardShine {
+    0%, 65% {
+        left: -120%;
+    }
+    100% {
+        left: 150%;
+    }
 }
 
 .document-number {
@@ -284,13 +278,12 @@ h1 {
     color: var(--muted);
     font-size: 10px;
     letter-spacing: 1.5px;
-    margin-bottom: 24px;
+    margin-bottom: 23px;
 }
 
 .document h2 {
     font-size: 19px;
-    font-weight: 600;
-    margin-bottom: 11px;
+    margin-bottom: 10px;
 }
 
 .document p {
@@ -301,99 +294,63 @@ h1 {
 
 .arrow {
     position: absolute;
-    top: 25px;
-    right: 24px;
+    right: 23px;
+    top: 24px;
     color: var(--muted);
-    font-size: 19px;
-    transition: transform 0.35s ease, color 0.35s ease;
+    transition: transform .3s ease;
 }
 
 .document:hover .arrow {
     transform: translate(4px, -4px);
-    color: var(--text);
 }
 
-/* Footer */
+/* FOOTER */
 footer {
     max-width: 850px;
     margin: auto;
-    padding: 24px;
+    padding: 23px 24px;
     border-top: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
     gap: 15px;
     color: var(--muted);
     font-size: 11px;
-    line-height: 1.7;
-    opacity: 0;
-    animation: revealText 1s ease 1.7s forwards;
+    transition: border-color .5s ease;
 }
 
-/* Animations */
-@keyframes navEnter {
-    from {
-        opacity: 0;
-        transform: translateY(-18px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* THEME SWITCH ANIMATION */
+body.theme-changing::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    opacity: .25;
+    pointer-events: none;
+    animation: themeFlash .45s ease forwards;
 }
 
-@keyframes titleEnter {
-    from {
-        opacity: 0;
-        transform: translateY(35px);
-        filter: blur(8px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-        filter: blur(0);
-    }
+@keyframes themeFlash {
+    from { opacity: .3; }
+    to { opacity: 0; }
 }
 
-@keyframes revealText {
-    from {
-        opacity: 0;
-        transform: translateY(17px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes cardEnter {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
+/* MOBILE */
+@media(max-width: 600px) {
     nav {
         padding: 21px 19px;
     }
 
     main {
-        padding: 95px 20px 65px;
-    }
-
-    .hero {
-        margin-bottom: 48px;
+        padding: 90px 20px 60px;
     }
 
     .documents {
         grid-template-columns: 1fr;
-        gap: 12px;
+        gap: 13px;
     }
 
     .document {
-        min-height: 155px;
-        padding: 25px 22px;
+        min-height: 150px;
     }
 
     footer {
@@ -402,24 +359,12 @@ footer {
     }
 }
 
-/* Reduced motion accessibility */
-@media (prefers-reduced-motion: reduce) {
+/* ACCESSIBILITY */
+@media(prefers-reduced-motion: reduce) {
     *, *::before, *::after {
-        animation-duration: 0.01ms !important;
+        animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-
-    .eyebrow,
-    h1,
-    .description,
-    .section-label,
-    .document,
-    footer {
-        opacity: 1;
-        transform: none;
-        filter: none;
+        transition-duration: .01ms !important;
     }
 }
 </style>
@@ -428,23 +373,23 @@ footer {
 <body>
 
 <div class="background">
-    <div class="glow"></div>
-    <div class="glow-two"></div>
+    <div class="orb"></div>
+    <div class="orb second"></div>
     <div class="light-line"></div>
 </div>
 
 <nav>
     <a href="index.html" class="logo">RykenRealm</a>
 
-    <div class="nav-actions">
+    <div class="actions">
         <button class="nav-button" id="languageBtn">ID</button>
+        <button class="nav-button" id="themeBtn">☀ Light</button>
     </div>
 </nav>
 
 <main>
-    <section class="hero">
+    <section>
         <div class="eyebrow" id="eyebrow">Official Documentation</div>
-
         <h1 id="heading">Legal Center</h1>
 
         <p class="description" id="description">
@@ -453,10 +398,11 @@ footer {
         </p>
     </section>
 
-    <section>
+    <section style="margin-top:65px">
         <div class="section-label" id="sectionLabel">Legal Documents</div>
 
         <div class="documents">
+
             <a href="terms-of-service-en.html" class="document" id="tosLink">
                 <span class="arrow">↗</span>
                 <span class="document-number">01 / TERMS</span>
@@ -474,6 +420,7 @@ footer {
                     How information is collected, used, and handled.
                 </p>
             </a>
+
         </div>
     </section>
 </main>
@@ -485,9 +432,11 @@ footer {
 
 <script>
 const languageBtn = document.getElementById("languageBtn");
+const themeBtn = document.getElementById("themeBtn");
 
 let currentLanguage = "en";
 
+/* LANGUAGE */
 const translations = {
     en: {
         eyebrow: "Official Documentation",
@@ -500,7 +449,6 @@ const translations = {
         ppDescription: "How information is collected, used, and handled.",
         footerText: "Official Legal Documentation"
     },
-
     id: {
         eyebrow: "Dokumentasi Resmi",
         heading: "Pusat Legal",
@@ -541,7 +489,35 @@ function setLanguage() {
 }
 
 languageBtn.addEventListener("click", setLanguage);
+
+/* DARK / LIGHT MODE */
+function applyTheme(theme) {
+    document.body.classList.toggle("light", theme === "light");
+
+    themeBtn.textContent =
+        theme === "light" ? "☾ Dark" : "☀ Light";
+
+    document.querySelector('meta[name="theme-color"]').content =
+        theme === "light" ? "#f3f3f3" : "#0b0b0d";
+}
+
+const savedTheme = localStorage.getItem("rykenrealm-theme") || "dark";
+applyTheme(savedTheme);
+
+themeBtn.addEventListener("click", () => {
+    const nextTheme = document.body.classList.contains("light")
+        ? "dark"
+        : "light";
+
+    document.body.classList.add("theme-changing");
+    applyTheme(nextTheme);
+    localStorage.setItem("rykenrealm-theme", nextTheme);
+
+    setTimeout(() => {
+        document.body.classList.remove("theme-changing");
+    }, 450);
+});
 </script>
 
 </body>
-        </html>
+            </html>
