@@ -1,499 +1,360 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#090c12">
-  <meta name="description" content="Official Privacy Policy of the RykenRealm Discord Bot.">
-  <title>Privacy Policy — RykenRealm</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — RykenRealm</title>
+<style>
+:root {
+  --bg: #0b0b0b;
+  --panel: #111111;
+  --border: #262626;
+  --text: #e8e8e8;
+  --muted: #929292;
+  --accent: #ffffff;
+}
 
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #090c12;
-      --surface: #111722;
-      --surface-hover: #182131;
-      --border: rgba(255,255,255,.09);
-      --text: #edf2fa;
-      --muted: #929daf;
-      --accent: #8b9cff;
-      --accent-soft: rgba(139,156,255,.12);
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body.light {
-      color-scheme: light;
-      --bg: #f3f5fa;
-      --surface: #fff;
-      --surface-hover: #edf0f8;
-      --border: rgba(20,30,50,.10);
-      --text: #172033;
-      --muted: #657087;
-      --accent: #536ce0;
-      --accent-soft: rgba(83,108,224,.10);
-    }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               sans-serif;
+  line-height: 1.75;
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+a {
+  color: #d8d8d8;
+  text-decoration: none;
+}
 
-    body {
-      min-height: 100vh;
-      background:
-        radial-gradient(ellipse at 50% -15%, rgba(105,125,255,.12), transparent 55%),
-        var(--bg);
-      color: var(--text);
-      font-family: Inter, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", sans-serif;
-      line-height: 1.75;
-      transition: background .25s, color .25s;
-    }
+a:hover {
+  color: #ffffff;
+}
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
+.container {
+  width: min(100% - 40px, 920px);
+  margin: auto;
+}
 
-    a:hover {
-      text-decoration: underline;
-    }
+header {
+  border-bottom: 1px solid var(--border);
+  padding: 22px 0;
+}
 
-    button {
-      font: inherit;
-    }
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
 
-    .container {
-      width: min(100% - 36px, 850px);
-      margin: auto;
-    }
+.brand {
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: white;
+}
 
-    header {
-      padding: 19px 0;
-      border-bottom: 1px solid var(--border);
-    }
+.nav-links {
+  display: flex;
+  gap: 22px;
+  font-size: 14px;
+  color: var(--muted);
+}
 
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
+main {
+  padding: 70px 0 90px;
+}
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--text);
-      font-weight: 750;
-    }
+.label {
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  margin-bottom: 18px;
+}
 
-    .brand-mark {
-      width: 36px;
-      height: 36px;
-      display: grid;
-      place-items: center;
-      border-radius: 11px;
-      background: var(--accent-soft);
-      color: var(--accent);
-    }
+h1 {
+  font-size: clamp(34px, 6vw, 56px);
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+  margin-bottom: 18px;
+}
 
-    .brand small {
-      display: block;
-      color: var(--muted);
-      font-size: 10px;
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-    }
+.subtitle {
+  color: var(--muted);
+  max-width: 650px;
+  font-size: 16px;
+}
 
-    .controls {
-      display: flex;
-      gap: 7px;
-    }
+.updated {
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 13px;
+}
 
-    .control-btn {
-      padding: 8px 12px;
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      background: var(--surface);
-      color: var(--text);
-      cursor: pointer;
-    }
+.content {
+  margin-top: 55px;
+}
 
-    .control-btn:hover {
-      border-color: var(--accent);
-    }
+section {
+  border-top: 1px solid var(--border);
+  padding: 30px 0;
+}
 
-    main {
-      padding: 58px 0 75px;
-    }
+section h2 {
+  font-size: 20px;
+  margin-bottom: 14px;
+  letter-spacing: -0.3px;
+}
 
-    .page-label {
-      display: inline-block;
-      margin-bottom: 15px;
-      padding: 5px 11px;
-      border: 1px solid var(--border);
-      border-radius: 30px;
-      background: var(--surface);
-      color: var(--accent);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1.3px;
-      text-transform: uppercase;
-    }
+section p {
+  color: #bcbcbc;
+  margin-bottom: 12px;
+}
 
-    h1 {
-      margin-bottom: 10px;
-      font-size: clamp(30px, 6vw, 43px);
-      line-height: 1.2;
-      letter-spacing: -1.5px;
-    }
+section ul {
+  padding-left: 22px;
+  color: #bcbcbc;
+  margin: 12px 0;
+}
 
-    .subtitle {
-      margin-bottom: 12px;
-      color: var(--muted);
-      font-size: 14px;
-    }
+section li {
+  margin-bottom: 7px;
+}
 
-    .updated {
-      margin-bottom: 34px;
-      color: var(--muted);
-      font-size: 12px;
-    }
+footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
 
-    .content {
-      padding: 30px;
-      border: 1px solid var(--border);
-      border-radius: 17px;
-      background: var(--surface);
-    }
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
 
-    h2 {
-      margin: 30px 0 10px;
-      font-size: 19px;
-      line-height: 1.4;
-      letter-spacing: -.3px;
-    }
+@media (max-width: 600px) {
+  .container {
+    width: min(100% - 32px, 920px);
+  }
 
-    h2:first-child {
-      margin-top: 0;
-    }
+  header {
+    padding: 18px 0;
+  }
 
-    p {
-      margin-bottom: 13px;
-      color: var(--muted);
-      font-size: 14px;
-    }
+  .nav {
+    align-items: flex-start;
+  }
 
-    ul {
-      margin: 8px 0 17px 21px;
-      color: var(--muted);
-      font-size: 14px;
-    }
+  .nav-links {
+    gap: 14px;
+    font-size: 12px;
+  }
 
-    li {
-      margin-bottom: 7px;
-      padding-left: 3px;
-    }
+  main {
+    padding: 48px 0 65px;
+  }
 
-    strong {
-      color: var(--text);
-      font-weight: 650;
-    }
+  .content {
+    margin-top: 38px;
+  }
 
-    .note {
-      margin-top: 25px;
-      padding: 16px 18px;
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--accent);
-      border-radius: 10px;
-      background: var(--accent-soft);
-      color: var(--muted);
-      font-size: 13px;
-    }
+  section {
+    padding: 24px 0;
+  }
 
-    .back {
-      display: inline-flex;
-      margin-top: 25px;
-      font-size: 13px;
-      font-weight: 650;
-    }
+  section h2 {
+    font-size: 18px;
+  }
 
-    footer {
-      padding: 23px 0;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 12px;
-      text-align: center;
-    }
-
-    footer strong {
-      color: var(--text);
-      font-weight: 650;
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        width: min(100% - 26px, 850px);
-      }
-
-      main {
-        padding: 42px 0 55px;
-      }
-
-      .content {
-        padding: 21px 18px;
-      }
-
-      h2 {
-        font-size: 17px;
-      }
-
-      p, ul {
-        font-size: 13px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        transition-duration: .01ms !important;
-      }
-    }
-  </style>
+  .subtitle {
+    font-size: 15px;
+  }
+}
+</style>
 </head>
 
 <body>
-  <header>
-    <div class="container navbar">
-      <a class="brand" href="index.html">
-        <span class="brand-mark">R</span>
-        <span>
-          RykenRealm
-          <small>Legal Center</small>
-        </span>
-      </a>
 
-      <div class="controls">
-        <button class="control-btn" id="languageBtn" type="button">ID</button>
-        <button class="control-btn" id="themeBtn"
-          type="button" aria-label="Toggle theme">☼</button>
-      </div>
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">RYKENREALM</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="terms-of-service-en.html">Terms</a>
+      <a href="privacy-policy.html">ID</a>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main class="container">
-    <span class="page-label">Legal Documentation</span>
+<main class="container">
+  <div class="label">Legal Documentation</div>
 
-    <h1>Privacy Policy</h1>
-    <p class="subtitle">
-      Information about the data processed by RykenRealm and how it is handled.
-    </p>
-    <p class="updated">
-      Last updated: November 23, 2026
-    </p>
+  <h1>Privacy Policy</h1>
 
-    <article class="content">
-      <h2>1. Introduction</h2>
+  <p class="subtitle">
+    This policy explains how RykenRealm handles information and data
+    when users interact with the Discord bot.
+  </p>
+
+  <div class="updated">
+    Last updated: November 23, 2026
+  </div>
+
+  <div class="content">
+
+    <section>
+      <h2>01. Introduction</h2>
       <p>
-        Welcome to RykenRealm. This Privacy Policy explains how the
-        RykenRealm Discord bot collects, processes, uses, and stores
-        information when users interact with our services.
+        RykenRealm respects user privacy. This policy explains the types
+        of information that may be processed, how information is used,
+        and matters related to data storage and protection when using
+        the RykenRealm Discord bot.
       </p>
-      <p>
-        By using RykenRealm, you acknowledge that certain information
-        may be necessary for the bot's features to function.
-      </p>
+    </section>
 
-      <h2>2. Information We Process</h2>
+    <section>
+      <h2>02. Information We Process</h2>
       <p>
-        Depending on the features you use, RykenRealm may process
-        the following information:
+        RykenRealm may process information necessary to operate its features,
+        including:
       </p>
       <ul>
-        <li><strong>Discord information:</strong> User ID, username or display name, and server information required for bot functionality.</li>
-        <li><strong>Economy data:</strong> Virtual balances, transactions, jobs, assets, stocks, and in-bot economic activity.</li>
-        <li><strong>Game data:</strong> XP, levels, RPG statistics, inventory, missions, game progress, and related information.</li>
-        <li><strong>Social data:</strong> Virtual partner, family, virtual children, and related settings.</li>
-        <li><strong>Preferences:</strong> Language, notifications, customization, and available feature preferences.</li>
-        <li><strong>Donation and support records:</strong> Records of donations or support status needed to manage rewards.</li>
-        <li><strong>Activity data:</strong> Cooldowns, feature activity records, and other information required to prevent abuse.</li>
+        <li>Discord user IDs.</li>
+        <li>Game data and user progression.</li>
+        <li>Virtual economy and inventory data.</li>
+        <li>Virtual partner, family, and related interaction data.</li>
+        <li>Settings and internal data required for bot operation.</li>
       </ul>
+    </section>
 
-      <h2>3. Discord Message Processing</h2>
+    <section>
+      <h2>03. How Information Is Used</h2>
       <p>
-        RykenRealm may process Discord message content in certain
-        situations to support bot functionality.
+        Information is used to operate features, maintain progression,
+        preserve data consistency, address misuse, and improve the
+        stability and functionality of RykenRealm.
+      </p>
+      <p>
+        Information is not intended to be used for personal activity
+        tracking outside the operational needs of the bot.
+      </p>
+    </section>
+
+    <section>
+      <h2>04. Discord Messages and Interactions</h2>
+      <p>
+        RykenRealm may read certain message content required by active
+        features, such as XP systems, birthday celebrations,
+        or game interactions.
+      </p>
+      <p>
+        RykenRealm is not designed to store users' entire conversation
+        history as a chat archive.
+      </p>
+    </section>
+
+    <section>
+      <h2>05. Data Storage</h2>
+      <p>
+        Bot data is stored using database systems and storage mechanisms
+        intended to maintain user data and the state of bot features.
+      </p>
+      <p>
+        Storage may involve third-party services required to operate
+        RykenRealm's infrastructure.
+      </p>
+    </section>
+
+    <section>
+      <h2>06. Third-Party Services</h2>
+      <p>
+        Some RykenRealm features may use external services to process
+        specific requests.
       </p>
       <ul>
-        <li>Guild messages may be processed for the XP system and certain activity features.</li>
-        <li>Messages may be checked to trigger birthday celebrations for registered birthdays.</li>
-        <li>Direct messages (DMs) may be processed as input for certain games, such as Third Seven Eleven.</li>
+        <li>Discord — bot platform and user interactions.</li>
+        <li>MongoDB — data storage.</li>
+        <li>Jikan — retrieval of certain anime information.</li>
+        <li>Frankfurter — exchange rate data.</li>
+        <li>CoinGecko — cryptocurrency information.</li>
+        <li>Vyro — image processing for certain features.</li>
       </ul>
       <p>
-        RykenRealm is not designed to store all user conversations
-        as chat history. However, temporary message processing may
-        occur when relevant features are used.
+        External services have their own privacy policies and data handling
+        practices, which are outside RykenRealm's direct control.
       </p>
+    </section>
 
-      <h2>4. How We Use Information</h2>
-      <p>Processed information may be used to:</p>
-      <ul>
-        <li>Provide and operate RykenRealm features.</li>
-        <li>Maintain account progress, virtual economy data, and game progress.</li>
-        <li>Manage XP, levels, cooldowns, and rewards.</li>
-        <li>Operate social and personalization features.</li>
-        <li>Prevent abuse, manipulation, and rule violations.</li>
-        <li>Maintain system stability and improve service quality.</li>
-        <li>Handle user support and donation records.</li>
-      </ul>
+    <section>
+      <h2>07. Data Protection</h2>
+      <p>
+        Reasonable efforts are made to protect data against unauthorized
+        access, loss, alteration, or misuse. However, no digital storage
+        or transmission system can be guaranteed to be completely secure.
+      </p>
+    </section>
 
-      <h2>5. Data Storage</h2>
+    <section>
+      <h2>08. Data Retention</h2>
       <p>
-        Service data is stored using database infrastructure,
-        including MongoDB. The system also has local storage
-        fallback mechanisms in certain configurations.
+        Data may be retained for as long as necessary to support features,
+        maintain system integrity, and meet operational requirements.
+        Retention periods may vary depending on the type of data
+        and system conditions.
       </p>
-      <p>
-        Data is retained for as long as necessary to provide
-        features, maintain system integrity, support operations,
-        or address abuse and security issues.
-      </p>
-      <p>
-        Access to data is restricted to authorized parties
-        for service operation and management purposes.
-      </p>
+    </section>
 
-      <h2>6. Third-Party Services</h2>
+    <section>
+      <h2>09. Data Deletion</h2>
       <p>
-        Some RykenRealm features rely on external services
-        to provide specific functionality. Relevant information
-        may be sent to these services when those features are used.
-      </p>
-      <ul>
-        <li><strong>Discord:</strong> The platform where the bot operates and interacts with users.</li>
-        <li><strong>MongoDB:</strong> Database infrastructure used to store service data.</li>
-        <li><strong>Jikan API:</strong> Used to retrieve anime character information.</li>
-        <li><strong>Frankfurter API:</strong> Used to retrieve currency exchange rate information.</li>
-        <li><strong>CoinGecko API:</strong> Used to retrieve cryptocurrency market price information.</li>
-        <li><strong>Vyro Inference Engine:</strong> Used by the image upscaling feature. Images selected by users are sent to this external service for processing.</li>
-      </ul>
-      <p>
-        Each third-party service has its own privacy policy
-        and terms. RykenRealm does not control all data-handling
-        practices of external providers.
+        Users who wish to request the deletion of data associated with
+        their account may contact the RykenRealm administrator through
+        the available official contact channels.
       </p>
       <p>
-        For image upscaling, we cannot confirm the external
-        provider's image retention or deletion practices.
-        Avoid uploading sensitive or confidential images.
+        Requests will be reviewed based on the administrator's capabilities
+        and the condition of the stored data.
       </p>
+    </section>
 
-      <h2>7. Files and Media</h2>
+    <section>
+      <h2>10. Policy Changes</h2>
       <p>
-        Certain features allow users to upload attachments
-        for processing, including media conversion and image
-        processing.
+        This policy may be updated from time to time to reflect changes
+        in features, systems, services, or operational requirements.
+        Updates will be published on this page.
       </p>
+    </section>
+
+    <section>
+      <h2>11. Contact</h2>
       <p>
-        Media conversion uses the processing mechanisms
-        available within the bot. Image upscaling uses an
-        external service as described above.
+        For questions, concerns, or requests regarding privacy and data,
+        please contact the RykenRealm administrator through the official
+        community channels or Discord.
       </p>
-      <p>
-        Do not submit files containing private, confidential,
-        or unauthorized material.
-      </p>
+    </section>
 
-      <h2>8. Information Security</h2>
-      <p>
-        We aim to apply reasonable measures to protect
-        information against unauthorized access, alteration,
-        or misuse.
-      </p>
-      <p>
-        However, no data storage or transmission system
-        can be guaranteed to be completely secure.
-      </p>
+  </div>
+</main>
 
-      <h2>9. Data Deletion</h2>
-      <p>
-        If you wish to request deletion of data associated
-        with your Discord account, please contact the
-        RykenRealm administrators through an official
-        contact channel.
-      </p>
-      <p>
-        Requests may require account ownership verification
-        to prevent unauthorized deletion. Certain information
-        may need to be retained for security, system integrity,
-        or applicable legal requirements.
-      </p>
+<footer>
+  <div class="container footer-inner">
+    <span>© RykenRealm</span>
+    <span>Privacy Policy · EN</span>
+  </div>
+</footer>
 
-      <h2>10. Children's Privacy</h2>
-      <p>
-        RykenRealm is a Discord bot, and its use is subject
-        to Discord's age requirements and applicable laws
-        in each user's region.
-      </p>
-      <p>
-        We do not intend to knowingly collect children's
-        personal information beyond what is necessary
-        for service operation.
-      </p>
-
-      <h2>11. Policy Changes</h2>
-      <p>
-        This Privacy Policy may be updated from time to time
-        to reflect changes to features, systems, services,
-        or applicable requirements.
-      </p>
-      <p>
-        The latest version will be published through
-        the RykenRealm Legal Center.
-      </p>
-
-      <h2>12. Contact</h2>
-      <p>
-        If you have questions, requests, or concerns about
-        this Privacy Policy, please contact the RykenRealm
-        administrators through our Discord server or
-        an official project contact channel.
-      </p>
-
-      <div class="note">
-        By using RykenRealm, you acknowledge that you have
-        read and understood this Privacy Policy.
-      </div>
-    </article>
-
-    <a class="back" href="index.html">← Back to Legal Center</a>
-  </main>
-
-  <footer>
-    <div class="container">
-      <strong>RykenRealm</strong> · Legal Center
-      <br>
-      © 2026 RykenRealm. All rights reserved.
-    </div>
-  </footer>
-
-  <script>
-    const languageBtn = document.getElementById("languageBtn");
-    const themeBtn = document.getElementById("themeBtn");
-
-    languageBtn.addEventListener("click", () => {
-      window.location.href = "privacy-policy.html";
-    });
-
-    themeBtn.addEventListener("click", () => {
-      document.body.classList.toggle("light");
-
-      const isLight = document.body.classList.contains("light");
-      themeBtn.textContent = isLight ? "☾" : "☼";
-
-      document.querySelector('meta[name="theme-color"]')
-        .setAttribute("content", isLight ? "#f3f5fa" : "#090c12");
-    });
-  </script>
 </body>
-          </html>
+  </html>
