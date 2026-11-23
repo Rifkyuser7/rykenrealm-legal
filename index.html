@@ -1,32 +1,37 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#08090b">
+<meta name="description" content="Official Terms of Service and Privacy Policy for RykenRealm.">
 <title>RykenRealm — Legal Center</title>
 
 <style>
 :root {
+    color-scheme: dark;
     --bg: #08090b;
-    --panel: rgba(20, 21, 25, .82);
-    --panel-hover: rgba(34, 35, 40, .92);
-    --text: #f1f1f1;
-    --muted: #999ba3;
-    --border: rgba(255,255,255,.12);
-    --wave-opacity: .24;
-    --particle: rgba(255,255,255,.55);
+    --panel: rgba(20,20,23,.78);
+    --panel-hover: rgba(35,35,39,.9);
+    --text: #f3f3f3;
+    --muted: #a0a0a5;
+    --border: rgba(255,255,255,.14);
+    --wave: #dedee4;
+    --wave-opacity: .19;
+    --line: rgba(255,255,255,.16);
 }
 
 body.light {
-    --bg: #eeeeef;
-    --panel: rgba(255,255,255,.82);
-    --panel-hover: rgba(255,255,255,.97);
+    color-scheme: light;
+    --bg: #ededed;
+    --panel: rgba(255,255,255,.8);
+    --panel-hover: rgba(255,255,255,.96);
     --text: #171719;
-    --muted: #707078;
-    --border: rgba(0,0,0,.13);
-    --wave-opacity: .15;
-    --particle: rgba(30,30,35,.4);
+    --muted: #66666d;
+    --border: rgba(0,0,0,.15);
+    --wave: #55555d;
+    --wave-opacity: .13;
+    --line: rgba(0,0,0,.13);
 }
 
 * {
@@ -45,220 +50,132 @@ body {
     background: var(--bg);
     color: var(--text);
     font-family: Arial, Helvetica, sans-serif;
-    transition: background .6s ease, color .6s ease;
+    transition: background .5s ease, color .5s ease;
 }
 
-/* =================================
-   ANIMATED WALLPAPER BACKGROUND
-================================= */
+/* ==================================
+   MONOCHROME ANIMATED WALLPAPER
+================================== */
 
 .wallpaper {
     position: fixed;
     inset: 0;
-    z-index: -2;
+    z-index: 0;
     overflow: hidden;
     pointer-events: none;
     background:
         radial-gradient(
-            ellipse at 50% 50%,
-            rgba(110,115,130,.08),
-            transparent 65%
+            ellipse at 50% 45%,
+            rgba(120,120,130,.09),
+            transparent 70%
         ),
         var(--bg);
-    transition: background .6s ease;
+    transition: background .5s ease;
 }
 
-.wallpaper::before,
-.wallpaper::after {
-    content: "";
+.wallpaper svg {
     position: absolute;
-    width: 90vw;
-    height: 90vw;
-    max-width: 1100px;
-    max-height: 1100px;
-    border-radius: 50%;
-    filter: blur(100px);
+    width: 150%;
+    height: 145%;
+    left: -25%;
+    top: -22%;
+    overflow: visible;
     opacity: var(--wave-opacity);
     will-change: transform;
 }
 
-.wallpaper::before {
-    top: -55%;
-    left: -35%;
-    background:
-        radial-gradient(
-            ellipse at center,
-            rgba(190,195,210,.5),
-            rgba(100,110,130,.12) 38%,
-            transparent 70%
-        );
-    animation: waveOne 24s ease-in-out infinite alternate;
+.wave-one {
+    animation: waveDrift 25s ease-in-out infinite alternate;
 }
 
+.wave-two {
+    animation: waveDriftReverse 32s ease-in-out infinite alternate;
+    opacity: calc(var(--wave-opacity) * .7) !important;
+}
+
+@keyframes waveDrift {
+    0% {
+        transform: translate(-3%, -2%) rotate(-5deg) scale(1);
+    }
+    50% {
+        transform: translate(2%, 2%) rotate(1deg) scale(1.06);
+    }
+    100% {
+        transform: translate(4%, -1%) rotate(5deg) scale(1);
+    }
+}
+
+@keyframes waveDriftReverse {
+    0% {
+        transform: translate(3%, 2%) rotate(5deg) scale(1.04);
+    }
+    50% {
+        transform: translate(-2%, -2%) rotate(-2deg) scale(.98);
+    }
+    100% {
+        transform: translate(-4%, 1%) rotate(-5deg) scale(1.03);
+    }
+}
+
+/* Soft moving light */
+.ambient-light {
+    position: absolute;
+    width: 65vw;
+    height: 65vw;
+    max-width: 850px;
+    max-height: 850px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(180,180,190,.12),
+        rgba(100,100,110,.035) 40%,
+        transparent 70%
+    );
+    filter: blur(35px);
+    top: -35%;
+    left: 15%;
+    animation: lightTravel 28s ease-in-out infinite alternate;
+}
+
+@keyframes lightTravel {
+    from {
+        transform: translate(-10%, 0) scale(.9);
+    }
+    to {
+        transform: translate(45%, 65%) scale(1.15);
+    }
+}
+
+/* Grain texture */
 .wallpaper::after {
-    right: -40%;
-    bottom: -60%;
-    background:
-        radial-gradient(
-            ellipse at center,
-            rgba(160,165,180,.45),
-            rgba(100,105,120,.1) 40%,
-            transparent 70%
-        );
-    animation: waveTwo 30s ease-in-out infinite alternate;
-}
-
-@keyframes waveOne {
-    0% {
-        transform: translate(0,0) scale(.85) rotate(0deg);
-    }
-    50% {
-        transform: translate(30%,35%) scale(1.1) rotate(90deg);
-    }
-    100% {
-        transform: translate(65%,20%) scale(.95) rotate(180deg);
-    }
-}
-
-@keyframes waveTwo {
-    0% {
-        transform: translate(0,0) scale(1) rotate(0deg);
-    }
-    50% {
-        transform: translate(-25%,-25%) scale(1.2) rotate(-90deg);
-    }
-    100% {
-        transform: translate(-55%,-15%) scale(.9) rotate(-180deg);
-    }
-}
-
-/* Flowing light ribbons */
-.light-ribbon {
-    position: absolute;
-    width: 150%;
-    height: 35%;
-    left: -25%;
-    top: 32%;
-    border-radius: 50%;
-    border-top: 1px solid rgba(220,225,240,.12);
-    border-bottom: 1px solid rgba(220,225,240,.04);
-    filter: blur(2px);
-    transform: rotate(-15deg);
-    animation: ribbonMove 18s ease-in-out infinite alternate;
-}
-
-.light-ribbon.second {
-    top: 48%;
-    transform: rotate(12deg);
-    opacity: .55;
-    animation: ribbonMoveTwo 23s ease-in-out infinite alternate;
-}
-
-@keyframes ribbonMove {
-    from {
-        transform: translateX(-7%) rotate(-15deg) scaleY(.8);
-    }
-    to {
-        transform: translateX(7%) rotate(-7deg) scaleY(1.3);
-    }
-}
-
-@keyframes ribbonMoveTwo {
-    from {
-        transform: translateX(6%) rotate(12deg) scaleY(1.2);
-    }
-    to {
-        transform: translateX(-6%) rotate(19deg) scaleY(.8);
-    }
-}
-
-/* Small floating particles */
-.particles {
-    position: absolute;
-    inset: 0;
-}
-
-.particle {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    border-radius: 50%;
-    background: var(--particle);
-    box-shadow: 0 0 9px var(--particle);
-    opacity: 0;
-    animation: particleFloat 12s linear infinite;
-}
-
-.particle:nth-child(1) {
-    left: 12%;
-    top: 80%;
-    animation-delay: 0s;
-}
-
-.particle:nth-child(2) {
-    left: 28%;
-    top: 65%;
-    animation-delay: 3s;
-}
-
-.particle:nth-child(3) {
-    left: 48%;
-    top: 90%;
-    animation-delay: 6s;
-}
-
-.particle:nth-child(4) {
-    left: 70%;
-    top: 75%;
-    animation-delay: 2s;
-}
-
-.particle:nth-child(5) {
-    left: 88%;
-    top: 85%;
-    animation-delay: 8s;
-}
-
-.particle:nth-child(6) {
-    left: 60%;
-    top: 55%;
-    animation-delay: 5s;
-}
-
-@keyframes particleFloat {
-    0% {
-        transform: translateY(30px);
-        opacity: 0;
-    }
-    20% {
-        opacity: .5;
-    }
-    80% {
-        opacity: .3;
-    }
-    100% {
-        transform: translateY(-180px);
-        opacity: 0;
-    }
-}
-
-/* Subtle texture */
-.texture {
+    content: "";
     position: absolute;
     inset: 0;
     opacity: .035;
-    background-image:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
 }
 
-/* =================================
-   NAVIGATION
-================================= */
+/* Pause animation */
+body.motion-paused .wallpaper *,
+body.motion-paused .wallpaper::after {
+    animation-play-state: paused !important;
+}
+
+/* ==================================
+   PAGE LAYOUT
+================================== */
+
+nav,
+main,
+footer {
+    position: relative;
+    z-index: 1;
+}
 
 nav {
-    max-width: 1100px;
+    width: min(100% - 64px, 1200px);
     margin: auto;
-    padding: 25px 24px;
+    padding: 30px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -266,193 +183,280 @@ nav {
 
 .logo {
     color: var(--text);
-    text-decoration: none;
-    font-size: 17px;
+    font-size: 19px;
     font-weight: 700;
-    letter-spacing: .5px;
-    animation: logoPulse 4s ease-in-out infinite;
-}
-
-@keyframes logoPulse {
-    0%,100% { opacity: 1; }
-    50% { opacity: .65; }
+    letter-spacing: .4px;
+    text-decoration: none;
 }
 
 .actions {
     display: flex;
+    align-items: center;
     gap: 9px;
 }
 
 .nav-button {
-    padding: 9px 13px;
+    min-height: 38px;
+    padding: 9px 14px;
     border: 1px solid var(--border);
     border-radius: 6px;
     background: var(--panel);
     color: var(--text);
     font-size: 12px;
     cursor: pointer;
-    transition: .3s ease;
+    transition:
+        background .3s ease,
+        border-color .3s ease,
+        transform .3s ease;
 }
 
 .nav-button:hover {
-    transform: translateY(-2px);
+    background: var(--panel-hover);
     border-color: var(--muted);
+    transform: translateY(-2px);
 }
-
-/* =================================
-   MAIN CONTENT
-================================= */
 
 main {
-    max-width: 850px;
+    width: min(100% - 64px, 1120px);
     margin: auto;
-    padding: 115px 24px 85px;
+    padding: 145px 0 110px;
 }
 
+/* ==================================
+   HERO TYPOGRAPHY
+================================== */
+
 .eyebrow {
+    margin-bottom: 25px;
     color: var(--muted);
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 2.5px;
     text-transform: uppercase;
-    margin-bottom: 22px;
 }
 
 h1 {
-    font-size: clamp(40px, 8vw, 62px);
+    max-width: 900px;
+    margin-bottom: 27px;
+    font-size: clamp(48px, 7.2vw, 88px);
     font-weight: 600;
-    letter-spacing: -2px;
-    margin-bottom: 22px;
+    letter-spacing: -4px;
+    line-height: 1.04;
 }
 
 .description {
-    max-width: 540px;
+    max-width: 650px;
     color: var(--muted);
-    font-size: 15px;
-    line-height: 1.9;
+    font-size: 18px;
+    line-height: 1.85;
 }
 
+/* ==================================
+   DOCUMENT CARDS
+================================== */
+
 .section {
-    margin-top: 65px;
+    margin-top: 95px;
 }
 
 .section-label {
+    margin-bottom: 21px;
     color: var(--muted);
-    font-size: 11px;
-    letter-spacing: 1.7px;
-    margin-bottom: 18px;
+    font-size: 12px;
+    letter-spacing: 2px;
     text-transform: uppercase;
 }
 
 .documents {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 15px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
 }
 
 .document {
     position: relative;
     display: block;
-    min-height: 165px;
-    padding: 27px 24px;
+    min-height: 215px;
+    padding: 34px 32px;
     overflow: hidden;
     border: 1px solid var(--border);
-    border-radius: 8px;
+    border-radius: 9px;
     background: var(--panel);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(14px);
     color: var(--text);
     text-decoration: none;
-    transition: .4s ease;
+    transition:
+        background .35s ease,
+        border-color .35s ease,
+        transform .35s ease,
+        box-shadow .35s ease;
 }
 
 .document:hover {
     background: var(--panel-hover);
     border-color: var(--muted);
     transform: translateY(-5px);
+    box-shadow: 0 18px 45px rgba(0,0,0,.12);
 }
 
-.document::after {
+.document:active {
+    transform: scale(.99);
+}
+
+.document::before {
     content: "";
     position: absolute;
     top: 0;
-    left: -120%;
-    width: 70%;
+    left: -110%;
+    width: 75%;
     height: 100%;
     background: linear-gradient(
-        100deg,
+        105deg,
         transparent,
-        rgba(255,255,255,.08),
+        rgba(255,255,255,.065),
         transparent
     );
-    animation: cardShine 8s ease-in-out infinite;
+    animation: cardReflection 9s ease-in-out infinite;
+    pointer-events: none;
 }
 
-.document:nth-child(2)::after {
-    animation-delay: 4s;
+.document:nth-child(2)::before {
+    animation-delay: 4.5s;
 }
 
-@keyframes cardShine {
-    0%,70% { left: -120%; }
-    100% { left: 150%; }
+@keyframes cardReflection {
+    0%, 70% { left: -110%; }
+    100% { left: 140%; }
 }
 
 .document-number {
     display: block;
+    margin-bottom: 34px;
     color: var(--muted);
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    margin-bottom: 23px;
+    font-size: 11px;
+    letter-spacing: 1.7px;
 }
 
 .document h2 {
-    font-size: 19px;
-    margin-bottom: 10px;
+    margin-bottom: 13px;
+    font-size: 23px;
+    font-weight: 600;
+    letter-spacing: -.4px;
 }
 
 .document p {
+    max-width: 430px;
     color: var(--muted);
-    font-size: 13px;
-    line-height: 1.7;
+    font-size: 15px;
+    line-height: 1.8;
 }
 
 .arrow {
     position: absolute;
-    top: 24px;
-    right: 23px;
+    top: 31px;
+    right: 30px;
     color: var(--muted);
-    transition: transform .3s ease;
+    font-size: 21px;
+    transition: transform .3s ease, color .3s ease;
 }
 
 .document:hover .arrow {
-    transform: translate(4px,-4px);
+    color: var(--text);
+    transform: translate(4px, -4px);
 }
 
-/* =================================
+/* ==================================
    FOOTER
-================================= */
+================================== */
 
 footer {
-    max-width: 850px;
+    width: min(100% - 64px, 1120px);
     margin: auto;
-    padding: 23px 24px;
+    padding: 26px 0;
     border-top: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
-    gap: 15px;
+    gap: 20px;
     color: var(--muted);
-    font-size: 11px;
+    font-size: 12px;
+    line-height: 1.7;
 }
 
-/* =================================
-   RESPONSIVE
-================================= */
+/* ==================================
+   TABLET
+================================== */
 
-@media(max-width:600px) {
+@media (max-width: 850px) {
+    main {
+        padding-top: 115px;
+    }
+
+    h1 {
+        font-size: clamp(46px, 8vw, 68px);
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .section {
+        margin-top: 75px;
+    }
+
+    .document {
+        min-height: 195px;
+        padding: 28px 25px;
+    }
+
+    .document h2 {
+        font-size: 20px;
+    }
+}
+
+/* ==================================
+   MOBILE
+================================== */
+
+@media (max-width: 600px) {
     nav {
-        padding: 21px 19px;
+        width: calc(100% - 38px);
+        padding: 21px 0;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    .actions {
+        gap: 6px;
+    }
+
+    .nav-button {
+        padding: 8px 10px;
+        font-size: 11px;
     }
 
     main {
-        padding: 90px 20px 60px;
+        width: calc(100% - 40px);
+        padding: 95px 0 65px;
+    }
+
+    .eyebrow {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    h1 {
+        font-size: clamp(42px, 12vw, 57px);
+        letter-spacing: -2.5px;
+    }
+
+    .description {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .section {
+        margin-top: 58px;
     }
 
     .documents {
@@ -461,26 +465,63 @@ footer {
     }
 
     .document {
-        min-height: 150px;
+        min-height: 175px;
+        padding: 26px 23px;
+    }
+
+    .document-number {
+        margin-bottom: 25px;
+    }
+
+    .document h2 {
+        font-size: 19px;
+    }
+
+    .document p {
+        font-size: 13px;
+    }
+
+    .arrow {
+        top: 24px;
+        right: 22px;
     }
 
     footer {
+        width: calc(100% - 40px);
         flex-direction: column;
-        padding: 22px 20px;
+        gap: 7px;
+        padding: 22px 0;
     }
 
-    .wallpaper::before,
-    .wallpaper::after {
-        filter: blur(65px);
+    .wallpaper svg {
+        width: 220%;
+        left: -60%;
+    }
+
+    .ambient-light {
+        width: 100vw;
+        height: 100vw;
     }
 }
 
-/* Reduced motion accessibility */
-@media(prefers-reduced-motion:reduce) {
-    *,*::before,*::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
+/* ==================================
+   ACCESSIBILITY
+================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .wallpaper *,
+    .wallpaper::after,
+    .document::before {
+        animation: none !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .document,
+    .nav-button {
+        transition: none;
     }
 }
 </style>
@@ -488,25 +529,53 @@ footer {
 
 <body>
 
-<!-- WALLPAPER -->
-<div class="wallpaper">
-    <div class="light-ribbon"></div>
-    <div class="light-ribbon second"></div>
+<!-- ANIMATED BACKGROUND -->
+<div class="wallpaper" aria-hidden="true">
 
-    <div class="particles">
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-        <span class="particle"></span>
-    </div>
+    <div class="ambient-light"></div>
 
-    <div class="texture"></div>
-</div>
+    <svg class="wave-one" viewBox="0 0 1600 1000"
+         preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="silverOne" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#777780" stop-opacity=".05"/>
+                <stop offset="45%" stop-color="#ffffff" stop-opacity=".85"/>
+                <stop offset="100%" stop-color="#777780" stop-opacity=".05"/>
+            </linearGradient>
+        </defs>
 
-<div class="wallpaper">
-    <div class="orb"></div>
+        <path d="M-200 580 C180 120 420 950 800 480 S1320 100 1800 550"
+              fill="none" stroke="url(#silverOne)" stroke-width="105"
+              stroke-linecap="round"/>
+
+        <path d="M-200 680 C220 250 480 980 850 570 S1400 180 1800 650"
+              fill="none" stroke="url(#silverOne)" stroke-width="32"
+              stroke-linecap="round"/>
+
+        <path d="M-200 400 C180 50 500 700 900 370 S1400 80 1800 400"
+              fill="none" stroke="url(#silverOne)" stroke-width="15"
+              stroke-linecap="round"/>
+    </svg>
+
+    <svg class="wave-two" viewBox="0 0 1600 1000"
+         preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="silverTwo" x1="1" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity=".05"/>
+                <stop offset="50%" stop-color="#d5d5df" stop-opacity=".8"/>
+                <stop offset="100%" stop-color="#ffffff" stop-opacity=".03"/>
+            </linearGradient>
+        </defs>
+
+        <path d="M-150 300 C200 800 500 100 850 500 S1400 850 1800 250"
+              fill="none" stroke="url(#silverTwo)" stroke-width="65"
+              stroke-linecap="round"/>
+
+        <path d="M-150 420 C200 900 500 240 850 620 S1400 950 1800 380"
+              fill="none" stroke="url(#silverTwo)" stroke-width="20"
+              stroke-linecap="round"/>
+    </svg>
+
 </div>
 
 <nav>
@@ -515,12 +584,15 @@ footer {
     <div class="actions">
         <button class="nav-button" id="languageBtn">ID</button>
         <button class="nav-button" id="themeBtn">☀ Light</button>
+        <button class="nav-button" id="motionBtn">Ⅱ Pause</button>
     </div>
 </nav>
 
 <main>
     <section>
-        <div class="eyebrow" id="eyebrow">Official Documentation</div>
+        <div class="eyebrow" id="eyebrow">
+            Official Documentation
+        </div>
 
         <h1 id="heading">Legal Center</h1>
 
@@ -531,23 +603,33 @@ footer {
     </section>
 
     <section class="section">
-        <div class="section-label" id="sectionLabel">Legal Documents</div>
+        <div class="section-label" id="sectionLabel">
+            Legal Documents
+        </div>
 
         <div class="documents">
 
-            <a href="terms-of-service-en.html" class="document" id="tosLink">
+            <a href="terms-of-service-en.html"
+               class="document" id="tosLink">
+
                 <span class="arrow">↗</span>
                 <span class="document-number">01 / TERMS</span>
+
                 <h2 id="tosTitle">Terms of Service</h2>
+
                 <p id="tosDescription">
                     Rules and conditions for using RykenRealm.
                 </p>
             </a>
 
-            <a href="privacy-policy-en.html" class="document" id="ppLink">
+            <a href="privacy-policy-en.html"
+               class="document" id="ppLink">
+
                 <span class="arrow">↗</span>
                 <span class="document-number">02 / PRIVACY</span>
+
                 <h2 id="ppTitle">Privacy Policy</h2>
+
                 <p id="ppDescription">
                     How information is collected, used, and handled.
                 </p>
@@ -565,6 +647,7 @@ footer {
 <script>
 const languageBtn = document.getElementById("languageBtn");
 const themeBtn = document.getElementById("themeBtn");
+const motionBtn = document.getElementById("motionBtn");
 
 let currentLanguage = "en";
 
@@ -580,6 +663,7 @@ const translations = {
         ppDescription: "How information is collected, used, and handled.",
         footerText: "Official Legal Documentation"
     },
+
     id: {
         eyebrow: "Dokumentasi Resmi",
         heading: "Pusat Legal",
@@ -593,6 +677,7 @@ const translations = {
     }
 };
 
+/* LANGUAGE */
 function setLanguage() {
     currentLanguage = currentLanguage === "en" ? "id" : "en";
 
@@ -607,13 +692,13 @@ function setLanguage() {
 
     document.getElementById("tosLink").href =
         currentLanguage === "en"
-        ? "terms-of-service-en.html"
-        : "terms-of-service.html";
+            ? "terms-of-service-en.html"
+            : "terms-of-service.html";
 
     document.getElementById("ppLink").href =
         currentLanguage === "en"
-        ? "privacy-policy-en.html"
-        : "privacy-policy.html";
+            ? "privacy-policy-en.html"
+            : "privacy-policy.html";
 
     languageBtn.textContent =
         currentLanguage === "en" ? "ID" : "EN";
@@ -621,7 +706,7 @@ function setLanguage() {
 
 languageBtn.addEventListener("click", setLanguage);
 
-/* THEME */
+/* DARK / LIGHT MODE */
 function applyTheme(theme) {
     document.body.classList.toggle("light", theme === "light");
 
@@ -629,7 +714,7 @@ function applyTheme(theme) {
         theme === "light" ? "☾ Dark" : "☀ Light";
 
     document.querySelector('meta[name="theme-color"]').content =
-        theme === "light" ? "#eeeeef" : "#08090b";
+        theme === "light" ? "#ededed" : "#08090b";
 }
 
 let savedTheme = "dark";
@@ -651,7 +736,14 @@ themeBtn.addEventListener("click", () => {
         localStorage.setItem("rykenrealm-theme", nextTheme);
     } catch (error) {}
 });
+
+/* PAUSE / RESUME WALLPAPER */
+motionBtn.addEventListener("click", () => {
+    const paused = document.body.classList.toggle("motion-paused");
+
+    motionBtn.textContent = paused ? "▶ Play" : "Ⅱ Pause";
+});
 </script>
 
 </body>
-    </html>
+                </html>
