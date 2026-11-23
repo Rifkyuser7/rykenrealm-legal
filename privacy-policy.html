@@ -1,492 +1,362 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#090c12">
-  <meta name="description" content="Kebijakan Privasi resmi RykenRealm Discord Bot.">
-  <title>Privacy Policy — RykenRealm</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — RykenRealm</title>
+<style>
+:root {
+  --bg: #0b0b0b;
+  --panel: #111111;
+  --border: #262626;
+  --text: #e8e8e8;
+  --muted: #929292;
+  --accent: #ffffff;
+}
 
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #090c12;
-      --surface: #111722;
-      --surface-hover: #182131;
-      --border: rgba(255,255,255,.09);
-      --text: #edf2fa;
-      --muted: #929daf;
-      --accent: #8b9cff;
-      --accent-soft: rgba(139,156,255,.12);
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body.light {
-      color-scheme: light;
-      --bg: #f3f5fa;
-      --surface: #fff;
-      --surface-hover: #edf0f8;
-      --border: rgba(20,30,50,.10);
-      --text: #172033;
-      --muted: #657087;
-      --accent: #536ce0;
-      --accent-soft: rgba(83,108,224,.10);
-    }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               sans-serif;
+  line-height: 1.75;
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+a {
+  color: #d8d8d8;
+  text-decoration: none;
+}
 
-    body {
-      min-height: 100vh;
-      background:
-        radial-gradient(ellipse at 50% -15%, rgba(105,125,255,.12), transparent 55%),
-        var(--bg);
-      color: var(--text);
-      font-family: Inter, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", sans-serif;
-      line-height: 1.75;
-      transition: background .25s, color .25s;
-    }
+a:hover {
+  color: #ffffff;
+}
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
+.container {
+  width: min(100% - 40px, 920px);
+  margin: auto;
+}
 
-    a:hover {
-      text-decoration: underline;
-    }
+header {
+  border-bottom: 1px solid var(--border);
+  padding: 22px 0;
+}
 
-    button {
-      font: inherit;
-    }
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
 
-    .container {
-      width: min(100% - 36px, 850px);
-      margin: auto;
-    }
+.brand {
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: white;
+}
 
-    header {
-      padding: 19px 0;
-      border-bottom: 1px solid var(--border);
-    }
+.nav-links {
+  display: flex;
+  gap: 22px;
+  font-size: 14px;
+  color: var(--muted);
+}
 
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
+main {
+  padding: 70px 0 90px;
+}
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--text);
-      font-weight: 750;
-    }
+.label {
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  margin-bottom: 18px;
+}
 
-    .brand-mark {
-      width: 36px;
-      height: 36px;
-      display: grid;
-      place-items: center;
-      border-radius: 11px;
-      background: var(--accent-soft);
-      color: var(--accent);
-    }
+h1 {
+  font-size: clamp(34px, 6vw, 56px);
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+  margin-bottom: 18px;
+}
 
-    .brand small {
-      display: block;
-      color: var(--muted);
-      font-size: 10px;
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-    }
+.subtitle {
+  color: var(--muted);
+  max-width: 650px;
+  font-size: 16px;
+}
 
-    .controls {
-      display: flex;
-      gap: 7px;
-    }
+.updated {
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 13px;
+}
 
-    .control-btn {
-      padding: 8px 12px;
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      background: var(--surface);
-      color: var(--text);
-      cursor: pointer;
-    }
+.content {
+  margin-top: 55px;
+}
 
-    .control-btn:hover {
-      border-color: var(--accent);
-    }
+section {
+  border-top: 1px solid var(--border);
+  padding: 30px 0;
+}
 
-    main {
-      padding: 58px 0 75px;
-    }
+section h2 {
+  font-size: 20px;
+  margin-bottom: 14px;
+  letter-spacing: -0.3px;
+}
 
-    .page-label {
-      display: inline-block;
-      margin-bottom: 15px;
-      padding: 5px 11px;
-      border: 1px solid var(--border);
-      border-radius: 30px;
-      background: var(--surface);
-      color: var(--accent);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1.3px;
-      text-transform: uppercase;
-    }
+section p {
+  color: #bcbcbc;
+  margin-bottom: 12px;
+}
 
-    h1 {
-      margin-bottom: 10px;
-      font-size: clamp(30px, 6vw, 43px);
-      line-height: 1.2;
-      letter-spacing: -1.5px;
-    }
+section ul {
+  padding-left: 22px;
+  color: #bcbcbc;
+  margin: 12px 0;
+}
 
-    .subtitle {
-      margin-bottom: 12px;
-      color: var(--muted);
-      font-size: 14px;
-    }
+section li {
+  margin-bottom: 7px;
+}
 
-    .updated {
-      margin-bottom: 34px;
-      color: var(--muted);
-      font-size: 12px;
-    }
+footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
 
-    .content {
-      padding: 30px;
-      border: 1px solid var(--border);
-      border-radius: 17px;
-      background: var(--surface);
-    }
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
 
-    h2 {
-      margin: 30px 0 10px;
-      font-size: 19px;
-      line-height: 1.4;
-      letter-spacing: -.3px;
-    }
+@media (max-width: 600px) {
+  .container {
+    width: min(100% - 32px, 920px);
+  }
 
-    h2:first-child {
-      margin-top: 0;
-    }
+  header {
+    padding: 18px 0;
+  }
 
-    p {
-      margin-bottom: 13px;
-      color: var(--muted);
-      font-size: 14px;
-    }
+  .nav {
+    align-items: flex-start;
+  }
 
-    ul {
-      margin: 8px 0 17px 21px;
-      color: var(--muted);
-      font-size: 14px;
-    }
+  .nav-links {
+    gap: 14px;
+    font-size: 12px;
+  }
 
-    li {
-      margin-bottom: 7px;
-      padding-left: 3px;
-    }
+  main {
+    padding: 48px 0 65px;
+  }
 
-    strong {
-      color: var(--text);
-      font-weight: 650;
-    }
+  .content {
+    margin-top: 38px;
+  }
 
-    .note {
-      margin-top: 25px;
-      padding: 16px 18px;
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--accent);
-      border-radius: 10px;
-      background: var(--accent-soft);
-      color: var(--muted);
-      font-size: 13px;
-    }
+  section {
+    padding: 24px 0;
+  }
 
-    .back {
-      display: inline-flex;
-      margin-top: 25px;
-      font-size: 13px;
-      font-weight: 650;
-    }
+  section h2 {
+    font-size: 18px;
+  }
 
-    footer {
-      padding: 23px 0;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 12px;
-      text-align: center;
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        width: min(100% - 26px, 850px);
-      }
-
-      main {
-        padding: 42px 0 55px;
-      }
-
-      .content {
-        padding: 21px 18px;
-      }
-
-      h2 {
-        font-size: 17px;
-      }
-
-      p, ul {
-        font-size: 13px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        transition-duration: .01ms !important;
-      }
-    }
-  </style>
+  .subtitle {
+    font-size: 15px;
+  }
+}
+</style>
 </head>
 
 <body>
-  <header>
-    <div class="container navbar">
-      <a class="brand" href="index.html">
-        <span class="brand-mark">R</span>
-        <span>
-          RykenRealm
-          <small>Legal Center</small>
-        </span>
-      </a>
 
-      <div class="controls">
-        <button class="control-btn" id="languageBtn" type="button">EN</button>
-        <button class="control-btn" id="themeBtn"
-          type="button" aria-label="Toggle theme">☼</button>
-      </div>
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">RYKENREALM</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="terms-of-service.html">Terms</a>
+      <a href="privacy-policy-en.html">EN</a>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main class="container">
-    <span class="page-label">Legal Documentation</span>
+<main class="container">
+  <div class="label">Legal Documentation</div>
 
-    <h1>Kebijakan Privasi</h1>
-    <p class="subtitle">
-      Informasi mengenai data yang diproses oleh RykenRealm dan bagaimana data tersebut ditangani.
-    </p>
-    <p class="updated">
-      Terakhir diperbarui: 23 November 2026
-    </p>
+  <h1>Privacy Policy</h1>
 
-    <article class="content">
-      <h2>1. Pendahuluan</h2>
+  <p class="subtitle">
+    Kebijakan privasi yang menjelaskan bagaimana RykenRealm
+    mengelola informasi dan data saat bot digunakan.
+  </p>
+
+  <div class="updated">
+    Terakhir diperbarui: 23 November 2026
+  </div>
+
+  <div class="content">
+
+    <section>
+      <h2>01. Pendahuluan</h2>
       <p>
-        Selamat datang di RykenRealm. Kebijakan Privasi ini menjelaskan
-        bagaimana bot Discord RykenRealm mengumpulkan, memproses,
-        menggunakan, dan menyimpan informasi ketika pengguna
-        berinteraksi dengan layanan kami.
+        RykenRealm menghargai privasi pengguna. Kebijakan ini menjelaskan
+        jenis informasi yang dapat diproses, bagaimana informasi digunakan,
+        serta hal-hal yang berkaitan dengan penyimpanan dan perlindungan data
+        saat menggunakan layanan bot Discord RykenRealm.
       </p>
-      <p>
-        Dengan menggunakan RykenRealm, Anda memahami bahwa informasi
-        tertentu diperlukan agar fitur bot dapat berfungsi.
-      </p>
+    </section>
 
-      <h2>2. Informasi yang Diproses</h2>
+    <section>
+      <h2>02. Informasi yang Diproses</h2>
       <p>
-        Bergantung pada fitur yang digunakan, RykenRealm dapat
-        memproses informasi berikut:
+        RykenRealm dapat memproses informasi yang diperlukan agar fitur
+        bot dapat berjalan, termasuk:
       </p>
       <ul>
-        <li><strong>Informasi Discord:</strong> User ID, nama pengguna atau nama tampilan, serta informasi server yang diperlukan untuk menjalankan fitur bot.</li>
-        <li><strong>Data ekonomi:</strong> Saldo virtual, transaksi, pekerjaan, aset, saham, dan aktivitas ekonomi dalam bot.</li>
-        <li><strong>Data permainan:</strong> XP, level, statistik RPG, inventaris, misi, progres permainan, dan informasi terkait.</li>
-        <li><strong>Data sosial:</strong> Informasi pasangan virtual, keluarga, anak virtual, serta pengaturan terkait.</li>
-        <li><strong>Data preferensi:</strong> Pengaturan bahasa, notifikasi, kustomisasi, dan preferensi fitur yang tersedia.</li>
-        <li><strong>Data donasi dan dukungan:</strong> Informasi pencatatan donasi atau status dukungan yang diperlukan untuk pengelolaan reward.</li>
-        <li><strong>Data aktivitas tertentu:</strong> Waktu cooldown, riwayat aktivitas fitur, dan informasi lain yang diperlukan untuk mencegah penyalahgunaan.</li>
+        <li>ID pengguna Discord.</li>
+        <li>Data permainan dan progres pengguna.</li>
+        <li>Data ekonomi virtual dan inventaris.</li>
+        <li>Data pasangan, keluarga virtual, dan interaksi fitur terkait.</li>
+        <li>Pengaturan serta data internal yang diperlukan untuk operasional bot.</li>
       </ul>
+    </section>
 
-      <h2>3. Pemrosesan Pesan Discord</h2>
+    <section>
+      <h2>03. Penggunaan Informasi</h2>
       <p>
-        RykenRealm dapat memproses isi pesan Discord dalam kondisi
-        tertentu untuk mendukung fungsi bot.
+        Informasi yang diproses digunakan untuk menjalankan fitur,
+        menyimpan progres, menjaga konsistensi data, menangani penyalahgunaan,
+        serta meningkatkan stabilitas dan fungsionalitas RykenRealm.
+      </p>
+      <p>
+        Data tidak dimaksudkan untuk digunakan sebagai sistem pelacakan
+        aktivitas pribadi di luar kebutuhan operasional bot.
+      </p>
+    </section>
+
+    <section>
+      <h2>04. Pesan dan Interaksi Discord</h2>
+      <p>
+        RykenRealm dapat membaca konten pesan tertentu yang diperlukan
+        untuk fitur yang aktif, seperti sistem XP, perayaan ulang tahun,
+        atau interaksi permainan.
+      </p>
+      <p>
+        RykenRealm tidak dirancang untuk menyimpan seluruh riwayat
+        percakapan pengguna sebagai arsip chat.
+      </p>
+    </section>
+
+    <section>
+      <h2>05. Penyimpanan Data</h2>
+      <p>
+        Data bot disimpan menggunakan sistem database dan mekanisme
+        penyimpanan yang digunakan untuk menjaga data pengguna serta
+        keadaan fitur bot.
+      </p>
+      <p>
+        Penyimpanan dapat melibatkan layanan pihak ketiga yang diperlukan
+        untuk menjalankan infrastruktur RykenRealm.
+      </p>
+    </section>
+
+    <section>
+      <h2>06. Layanan Pihak Ketiga</h2>
+      <p>
+        Beberapa fitur RykenRealm dapat menggunakan layanan eksternal
+        untuk memproses permintaan tertentu.
       </p>
       <ul>
-        <li>Pesan server dapat diproses untuk sistem XP dan aktivitas tertentu.</li>
-        <li>Pesan dapat diperiksa untuk menjalankan fitur perayaan ulang tahun yang terdaftar.</li>
-        <li>Pesan langsung (DM) dapat diproses sebagai input permainan tertentu, seperti Third Seven Eleven.</li>
+        <li>Discord — platform bot dan interaksi pengguna.</li>
+        <li>MongoDB — penyimpanan data.</li>
+        <li>Jikan — pengambilan informasi anime tertentu.</li>
+        <li>Frankfurter — data nilai tukar.</li>
+        <li>CoinGecko — informasi cryptocurrency.</li>
+        <li>Vyro — layanan pemrosesan gambar untuk fitur tertentu.</li>
       </ul>
       <p>
-        RykenRealm tidak dirancang untuk menyimpan seluruh percakapan
-        pengguna sebagai riwayat obrolan. Namun, pemrosesan pesan
-        sementara tetap dapat terjadi ketika fitur terkait digunakan.
+        Layanan eksternal memiliki kebijakan privasi dan praktik pengelolaan
+        data masing-masing yang berada di luar kendali langsung RykenRealm.
       </p>
+    </section>
 
-      <h2>4. Penggunaan Informasi</h2>
-      <p>Informasi yang diproses digunakan untuk:</p>
-      <ul>
-        <li>Menyediakan dan menjalankan fitur RykenRealm.</li>
-        <li>Menyimpan progres akun, ekonomi virtual, dan permainan.</li>
-        <li>Mengelola sistem XP, level, cooldown, dan reward.</li>
-        <li>Menjalankan fitur sosial dan personalisasi.</li>
-        <li>Mencegah penyalahgunaan, manipulasi, dan aktivitas yang melanggar aturan.</li>
-        <li>Memelihara stabilitas serta meningkatkan kualitas layanan.</li>
-        <li>Menangani dukungan pengguna dan pencatatan donasi.</li>
-      </ul>
+    <section>
+      <h2>07. Perlindungan Data</h2>
+      <p>
+        Upaya yang wajar dilakukan untuk menjaga data dari akses tidak sah,
+        kehilangan, perubahan, atau penyalahgunaan. Namun, tidak ada sistem
+        penyimpanan maupun transmisi digital yang dapat dijamin sepenuhnya
+        aman.
+      </p>
+    </section>
 
-      <h2>5. Penyimpanan Data</h2>
+    <section>
+      <h2>08. Retensi Data</h2>
       <p>
-        Data layanan disimpan menggunakan infrastruktur database,
-        termasuk MongoDB. Sistem juga memiliki mekanisme penyimpanan
-        lokal sebagai fallback pada konfigurasi tertentu.
+        Data dapat disimpan selama diperlukan untuk mendukung fitur,
+        menjaga integritas sistem, serta memenuhi kebutuhan operasional.
+        Durasi penyimpanan dapat berbeda tergantung jenis data dan
+        kondisi sistem.
       </p>
-      <p>
-        Data disimpan selama diperlukan untuk menyediakan fitur,
-        menjaga integritas sistem, memenuhi kebutuhan operasional,
-        atau menangani masalah penyalahgunaan.
-      </p>
-      <p>
-        Akses ke data dibatasi untuk kebutuhan operasional dan
-        pengelolaan layanan oleh pihak yang berwenang.
-      </p>
+    </section>
 
-      <h2>6. Layanan Pihak Ketiga</h2>
+    <section>
+      <h2>09. Penghapusan Data</h2>
       <p>
-        Beberapa fitur RykenRealm menggunakan layanan eksternal
-        untuk menyediakan fungsi tertentu. Informasi yang relevan
-        dapat dikirim ke layanan tersebut ketika fitur digunakan.
-      </p>
-      <ul>
-        <li><strong>Discord:</strong> Platform tempat bot beroperasi dan berinteraksi dengan pengguna.</li>
-        <li><strong>MongoDB:</strong> Infrastruktur database untuk penyimpanan data layanan.</li>
-        <li><strong>Jikan API:</strong> Digunakan untuk mengambil informasi karakter anime.</li>
-        <li><strong>Frankfurter API:</strong> Digunakan untuk memperoleh informasi nilai tukar mata uang.</li>
-        <li><strong>CoinGecko API:</strong> Digunakan untuk mengambil informasi harga aset kripto.</li>
-        <li><strong>Vyro Inference Engine:</strong> Digunakan oleh fitur upscale. Gambar yang dipilih pengguna dikirim ke layanan eksternal tersebut untuk diproses.</li>
-      </ul>
-      <p>
-        Setiap layanan pihak ketiga memiliki kebijakan privasi
-        dan ketentuan masing-masing. RykenRealm tidak mengendalikan
-        seluruh praktik pengelolaan data oleh penyedia eksternal.
+        Pengguna yang ingin meminta penghapusan data terkait akun mereka
+        dapat menghubungi pengelola RykenRealm melalui kanal kontak
+        resmi yang tersedia.
       </p>
       <p>
-        Untuk fitur upscale, kebijakan penyimpanan dan penghapusan
-        gambar oleh penyedia eksternal tidak dapat kami pastikan.
-        Hindari mengunggah gambar sensitif atau rahasia.
+        Permintaan akan ditinjau sesuai kemampuan pengelola dan kondisi
+        data yang tersimpan.
       </p>
+    </section>
 
-      <h2>7. File dan Media</h2>
+    <section>
+      <h2>10. Perubahan Kebijakan</h2>
       <p>
-        Beberapa fitur memungkinkan pengguna mengunggah lampiran
-        untuk diproses, termasuk konversi media dan pengolahan gambar.
+        Kebijakan ini dapat diperbarui sewaktu-waktu untuk menyesuaikan
+        perubahan fitur, sistem, layanan, atau kebutuhan operasional.
+        Perubahan akan ditampilkan pada halaman ini.
       </p>
+    </section>
+
+    <section>
+      <h2>11. Kontak</h2>
       <p>
-        Pemrosesan konversi media dilakukan melalui mekanisme
-        yang tersedia pada bot. Fitur upscale menggunakan layanan
-        eksternal sebagaimana dijelaskan pada bagian sebelumnya.
+        Jika terdapat pertanyaan, kekhawatiran, atau permintaan terkait
+        privasi dan data, silakan hubungi pengelola RykenRealm melalui
+        kanal resmi komunitas atau Discord.
       </p>
-      <p>
-        Jangan mengirimkan file yang berisi informasi pribadi,
-        rahasia, atau materi yang tidak memiliki izin untuk diproses.
-      </p>
+    </section>
 
-      <h2>8. Keamanan Informasi</h2>
-      <p>
-        Kami berupaya menerapkan langkah-langkah yang wajar untuk
-        melindungi data dari akses, perubahan, atau penyalahgunaan
-        yang tidak sah.
-      </p>
-      <p>
-        Namun, tidak ada sistem penyimpanan atau transmisi data
-        yang dapat dijamin sepenuhnya aman.
-      </p>
+  </div>
+</main>
 
-      <h2>9. Penghapusan Data</h2>
-      <p>
-        Jika Anda ingin meminta penghapusan data yang berkaitan
-        dengan akun Discord Anda, silakan hubungi pengelola
-        RykenRealm melalui saluran kontak resmi yang disediakan.
-      </p>
-      <p>
-        Permintaan dapat memerlukan verifikasi kepemilikan akun
-        untuk mencegah penghapusan yang tidak sah. Beberapa
-        informasi mungkin tetap disimpan apabila diperlukan
-        untuk keamanan, integritas sistem, atau kewajiban yang berlaku.
-      </p>
+<footer>
+  <div class="container footer-inner">
+    <span>© RykenRealm</span>
+    <span>Privacy Policy · ID</span>
+  </div>
+</footer>
 
-      <h2>10. Privasi Anak</h2>
-      <p>
-        RykenRealm merupakan bot Discord dan penggunaannya tunduk
-        pada persyaratan usia Discord serta ketentuan hukum yang
-        berlaku di wilayah masing-masing.
-      </p>
-      <p>
-        Kami tidak bermaksud mengumpulkan informasi pribadi anak
-        secara sengaja di luar kebutuhan operasional layanan.
-      </p>
-
-      <h2>11. Perubahan Kebijakan</h2>
-      <p>
-        Kebijakan Privasi ini dapat diperbarui sewaktu-waktu
-        untuk menyesuaikan perubahan fitur, sistem, layanan,
-        atau ketentuan yang berlaku.
-      </p>
-      <p>
-        Versi terbaru akan dipublikasikan melalui halaman
-        Legal Center RykenRealm.
-      </p>
-
-      <h2>12. Kontak</h2>
-      <p>
-        Jika Anda memiliki pertanyaan, permintaan, atau kekhawatiran
-        mengenai Kebijakan Privasi ini, silakan hubungi pengelola
-        RykenRealm melalui server Discord atau saluran resmi
-        yang disediakan oleh proyek.
-      </p>
-
-      <div class="note">
-        Dengan menggunakan RykenRealm, Anda mengakui bahwa
-        Anda telah membaca dan memahami Kebijakan Privasi ini.
-      </div>
-    </article>
-
-    <a class="back" href="index.html">← Kembali ke Legal Center</a>
-  </main>
-
-  <footer>
-    <div class="container">
-      <strong>RykenRealm</strong> · Legal Center
-      <br>
-      © 2026 RykenRealm. All rights reserved.
-    </div>
-  </footer>
-
-  <script>
-    const languageBtn = document.getElementById("languageBtn");
-    const themeBtn = document.getElementById("themeBtn");
-
-    languageBtn.addEventListener("click", () => {
-      window.location.href = "privacy-policy-en.html";
-    });
-
-    themeBtn.addEventListener("click", () => {
-      document.body.classList.toggle("light");
-
-      const isLight = document.body.classList.contains("light");
-      themeBtn.textContent = isLight ? "☾" : "☼";
-
-      document.querySelector('meta[name="theme-color"]')
-        .setAttribute("content", isLight ? "#f3f5fa" : "#090c12");
-    });
-  </script>
 </body>
-        </html>
+  </html>
