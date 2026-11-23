@@ -1,105 +1,480 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terms of Service — RykenRealm</title>
-<style>
-  :root {
-    --bg: #0b0e14; --panel: #131826; --text: #dbe2f0; --muted: #8a93a8;
-    --accent: #7c5cff; --accent2: #22d3ee; --border: #232a3d;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; background: var(--bg); color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.6; padding: 40px 20px;
-  }
-  .container { max-width: 800px; margin: 0 auto; background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 40px; }
-  h1 { font-size: 28px; margin-top: 0; background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  h2 { font-size: 20px; margin-top: 30px; color: var(--accent2); border-bottom: 1px solid var(--border); padding-bottom: 8px; }
-  p, li { color: var(--text); font-size: 15px; }
-  ul { padding-left: 20px; }
-  .update-date { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
-  a { color: var(--accent2); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  hr { border: 0; border-top: 1px solid var(--border); margin: 30px 0; }
-  .back { display: inline-block; margin-bottom: 20px; font-weight: 600; font-size: 14px; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101010">
+  <meta name="description" content="Ketentuan Layanan resmi RykenRealm Discord Bot.">
+  <title>Terms of Service — RykenRealm</title>
+
+  <style>
+    :root {
+      --bg: #101010;
+      --surface: #171717;
+      --border: #303030;
+      --text: #ededed;
+      --muted: #a1a1a1;
+      --accent: #ffffff;
+      --link: #b9c5ff;
+    }
+
+    body.light {
+      --bg: #f7f7f7;
+      --surface: #ffffff;
+      --border: #dedede;
+      --text: #202020;
+      --muted: #666666;
+      --accent: #202020;
+      --link: #4056a1;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.75;
+      transition: background .2s, color .2s;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(100% - 40px, 900px);
+      margin: auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+
+    .navbar {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+
+    .brand span {
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .controls {
+      display: flex;
+      gap: 8px;
+    }
+
+    .control-btn {
+      padding: 7px 11px;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      background: transparent;
+      color: var(--text);
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    .control-btn:hover {
+      background: var(--surface);
+    }
+
+    main {
+      padding: 65px 0 90px;
+    }
+
+    .breadcrumb {
+      margin-bottom: 30px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .breadcrumb a {
+      color: var(--muted);
+    }
+
+    .heading {
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h1 {
+      margin-bottom: 12px;
+      font-size: clamp(30px, 5vw, 42px);
+      font-weight: 700;
+      letter-spacing: -1.2px;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .updated {
+      margin-top: 17px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .document {
+      max-width: 760px;
+      padding-top: 30px;
+    }
+
+    .document section {
+      margin-bottom: 34px;
+    }
+
+    h2 {
+      margin-bottom: 11px;
+      font-size: 19px;
+      font-weight: 650;
+      letter-spacing: -.2px;
+    }
+
+    p {
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    ul {
+      margin: 10px 0 15px 23px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    li {
+      margin-bottom: 8px;
+      padding-left: 3px;
+    }
+
+    strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .contact {
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 13px;
+    }
+
+    footer {
+      padding: 24px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 30px, 900px);
+      }
+
+      .navbar {
+        min-height: 60px;
+      }
+
+      main {
+        padding: 42px 0 65px;
+      }
+
+      .document {
+        padding-top: 25px;
+      }
+
+      .document section {
+        margin-bottom: 29px;
+      }
+
+      h2 {
+        font-size: 17px;
+      }
+
+      p, ul {
+        font-size: 13px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <div class="container">
-    <a class="back" href="./index.html">&larr; Kembali ke Beranda</a>
-    <h1>Terms of Service — RykenRealm</h1>
-    <div class="update-date"><strong>Terakhir diperbarui:</strong> 23 November 2026</div>
+  <header>
+    <div class="container navbar">
+      <a class="brand" href="index.html">
+        RykenRealm <span>/ Legal Center</span>
+      </a>
 
-    <p>Selamat datang! Dokumen ini berlaku untuk penggunaan bot Discord <strong>RykenRealm</strong> (selanjutnya disebut <strong>"RykenRealm"</strong> atau <strong>"Bot"</strong>), yang dikembangkan dan dikelola oleh <strong>Rizuki (@ryin.r)</strong>. Dengan mengundang, menjalankan, atau menggunakan perintah Bot di server Discord mana pun, kamu dianggap menyetujui ketentuan di bawah ini.</p>
-    <p>Server komunitas resmi: <a href="https://discord.gg/kME469thr6">https://discord.gg/kME469thr6</a></p>
+      <div class="controls">
+        <button class="control-btn" id="languageBtn" type="button">
+          EN
+        </button>
+        <button class="control-btn" id="themeBtn" type="button">
+          Light mode
+        </button>
+      </div>
+    </div>
+  </header>
 
-    <hr>
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Legal Center</a> / Terms of Service
+    </div>
 
-    <h2>1. Kelayakan Pengguna</h2>
-    <ul>
-      <li>Bot ini hanya boleh digunakan oleh pengguna yang memenuhi persyaratan usia minimum Discord (13 tahun ke atas, atau batas usia minimum yang berlaku di negaramu jika lebih tinggi), sesuai dengan <a href="https://discord.com/terms" target="_blank" rel="noopener noreferrer">Ketentuan Layanan Discord</a>.</li>
-      <li>Kamu bertanggung jawab atas akun Discord yang digunakan untuk berinteraksi dengan Bot.</li>
-    </ul>
+    <div class="heading">
+      <h1>Ketentuan Layanan</h1>
+      <p class="subtitle">
+        Ketentuan dan aturan yang mengatur penggunaan layanan
+        Discord Bot RykenRealm.
+      </p>
+      <p class="updated">
+        Terakhir diperbarui: 23 November 2026
+      </p>
+    </div>
 
-    <h2>2. Deskripsi Layanan</h2>
-    <p>Bot menyediakan berbagai fitur hiburan dan alat bantu melalui slash command (<code>/</code>), termasuk namun tidak terbatas pada:</p>
-    <ul>
-      <li>Sistem ekonomi virtual multi-mata uang, termasuk clean cash dan dirty cash fiktif.</li>
-      <li>Sistem RPG ("Chronos Override"), termasuk inventaris, dungeon, dan crafting.</li>
-      <li>Fitur permainan bergaya kasino, seperti blackjack, roulette, slot, balapan, dan heist, yang hanya menggunakan mata uang virtual.</li>
-      <li>Fitur pasangan dan keluarga fiksi berbasis karakter anime dengan memanfaatkan data anime publik melalui Jikan.</li>
-      <li>Minigame, trivia, dan berbagai alat bantu.</li>
-      <li>Fitur konversi file dan pemrosesan media yang menggunakan file yang diunggah oleh pengguna, serta alat seperti pembuat QR.</li>
-      <li>Fitur AI chat yang menggunakan layanan AI pihak ketiga.</li>
-    </ul>
-    <p>Fitur Bot dapat diperbarui, diubah, dibatasi, dihapus, atau dihentikan sewaktu-waktu. Pemilik Bot akan berupaya memberikan informasi mengenai perubahan penting melalui server komunitas resmi.</p>
+    <article class="document">
+      <section>
+        <h2>1. Penerimaan Ketentuan</h2>
+        <p>
+          Dengan mengundang, mengakses, atau menggunakan RykenRealm,
+          Anda dianggap telah membaca dan memahami Ketentuan Layanan ini.
+        </p>
+        <p>
+          Jika Anda tidak menyetujui ketentuan yang berlaku,
+          Anda dapat berhenti menggunakan layanan RykenRealm.
+        </p>
+      </section>
 
-    <h2>3. Mata Uang & Item Virtual — Tidak Bernilai Nyata</h2>
-    <p><strong>Penting:</strong> Seluruh mata uang, saldo, aset, item RPG, kemenangan permainan, dan bentuk kekayaan lainnya di dalam Bot bersifat <strong>virtual dan fiktif</strong>, serta dibuat semata-mata untuk tujuan hiburan.</p>
-    <ul>
-      <li>Mata uang dan item virtual tidak dapat ditukar, dijual, atau ditebus menjadi uang sungguhan, barang fisik, maupun layanan yang memiliki nilai nyata.</li>
-      <li>Fitur bergaya kasino tidak melibatkan taruhan atau pembayaran menggunakan uang sungguhan. Seluruh hasil dan hadiah hanya berlaku dalam sistem ekonomi virtual Bot.</li>
-      <li>Pemilik Bot tidak bertanggung jawab atas kehilangan saldo virtual, item, atau progress akibat bug, kehilangan data, pemeliharaan, penghentian layanan, maupun masalah teknis lainnya.</li>
-    </ul>
+      <section>
+        <h2>2. Tentang RykenRealm</h2>
+        <p>
+          RykenRealm merupakan bot Discord yang menyediakan berbagai
+          fitur interaktif dan hiburan, termasuk:
+        </p>
+        <ul>
+          <li>Sistem ekonomi virtual dan perdagangan dalam bot.</li>
+          <li>RPG, petualangan, inventaris, dan sistem perkembangan karakter.</li>
+          <li>Fitur sosial, pasangan virtual, dan keluarga virtual.</li>
+          <li>Permainan multiplayer dan minigame.</li>
+          <li>Fitur hiburan dan informasi terkait anime.</li>
+          <li>Utilitas seperti konversi media berbasis lampiran, GIF, QR, dan pengolahan gambar.</li>
+        </ul>
+        <p>
+          Fitur dapat berubah, diperbarui, dibatasi, atau dihentikan
+          sesuai kebutuhan pengembangan dan operasional.
+        </p>
+      </section>
 
-    <h2>4. Aturan Penggunaan</h2>
-    <p>Dengan menggunakan Bot, kamu setuju untuk tidak:</p>
-    <ul>
-      <li>Mengeksploitasi bug, celah, atau kesalahan sistem untuk memperoleh keuntungan yang tidak wajar, termasuk duplikasi item atau saldo. Bug yang ditemukan sebaiknya dilaporkan kepada pemilik Bot.</li>
-      <li>Menggunakan banyak akun untuk memanipulasi ekonomi, leaderboard, hadiah, atau sistem Bot lainnya.</li>
-      <li>Menggunakan Bot untuk melanggar <a href="https://discord.com/terms" target="_blank" rel="noopener noreferrer">Ketentuan Layanan Discord</a> atau <a href="https://discord.com/guidelines" target="_blank" rel="noopener noreferrer">Pedoman Komunitas Discord</a>, termasuk melakukan spam, pelecehan, atau menyebarkan konten ilegal.</li>
-      <li>Menyalahgunakan fitur AI atau fitur Bot lainnya untuk menghasilkan, menyebarkan, atau memfasilitasi konten ilegal, berbahaya, atau melanggar hak cipta.</li>
-      <li>Mencoba melakukan reverse-engineering terhadap Bot, mengakses data pengguna lain tanpa izin, atau sengaja mengganggu operasional Bot.</li>
-      <li>Menggunakan Bot dengan cara yang mengganggu ketersediaan, keamanan, atau operasional normal bagi pengguna lain.</li>
-    </ul>
+      <section>
+        <h2>3. Persyaratan Penggunaan</h2>
+        <p>
+          Pengguna wajib menggunakan RykenRealm sesuai dengan
+          Ketentuan Layanan ini, aturan Discord, serta hukum
+          dan peraturan yang berlaku.
+        </p>
+        <p>
+          Pengguna bertanggung jawab atas aktivitas yang dilakukan
+          melalui akun Discord masing-masing.
+        </p>
+      </section>
 
-    <h2>5. Moderasi & Penghentian Akses</h2>
-    <p>Pemilik Bot dapat mengambil tindakan yang wajar apabila pengguna atau server melanggar ketentuan ini atau mengancam operasional Bot. Tindakan tersebut dapat mencakup:</p>
-    <ul>
-      <li>Membatasi atau menangguhkan akses terhadap fitur Bot.</li>
-      <li>Mereset atau memperbaiki data ekonomi maupun progress yang terdampak penyalahgunaan atau eksploitasi yang telah dikonfirmasi.</li>
-      <li>Membatasi akses dari server tertentu, termasuk melalui sistem whitelist server.</li>
-      <li>Menghentikan akses pengguna yang berulang kali atau secara serius melanggar ketentuan ini.</li>
-    </ul>
+      <section>
+        <h2>4. Aturan dan Larangan</h2>
+        <p>
+          Pengguna dilarang melakukan tindakan berikut:
+        </p>
+        <ul>
+          <li>Mengeksploitasi bug, celah sistem, atau kesalahan perhitungan untuk memperoleh keuntungan tidak sah.</li>
+          <li>Menggunakan banyak akun untuk memanipulasi reward, ekonomi, atau sistem permainan.</li>
+          <li>Mengganggu, merusak, atau membebani layanan secara sengaja.</li>
+          <li>Menggunakan fitur bot untuk aktivitas ilegal atau penyalahgunaan.</li>
+          <li>Melakukan spam, manipulasi, atau tindakan yang mengganggu pengguna lain.</li>
+          <li>Mencoba mengakses sistem, data, atau fungsi internal tanpa izin.</li>
+          <li>Menggunakan layanan dengan cara yang melanggar aturan Discord.</li>
+        </ul>
+      </section>
 
-    <h2>6. Tidak Ada Jaminan Layanan</h2>
-    <p>Bot disediakan dalam kondisi <strong>"apa adanya" (as-is)</strong>, tanpa jaminan ketersediaan tanpa gangguan, uptime, maupun bebas dari kesalahan. Fitur dapat tidak tersedia untuk sementara waktu, dan data atau progress dapat hilang akibat pemeliharaan, masalah teknis, migrasi, atau keadaan lainnya. Pemilik Bot akan berupaya menjaga layanan, tetapi tidak dapat menjamin bahwa data akan selalu tersimpan.</p>
+      <section>
+        <h2>5. Mata Uang dan Aset Virtual</h2>
+        <p>
+          Saldo, item, properti, saham, reward, dan aset lain
+          yang tersedia di RykenRealm merupakan bagian dari
+          sistem virtual dalam bot.
+        </p>
+        <ul>
+          <li>Aset virtual tidak memiliki nilai uang nyata.</li>
+          <li>Aset virtual tidak dapat dianggap sebagai simpanan, investasi, atau alat pembayaran resmi.</li>
+          <li>Pengelola dapat melakukan penyesuaian apabila ditemukan bug, eksploitasi, atau kesalahan sistem.</li>
+          <li>Progres atau aset virtual dapat berubah akibat pembaruan, pemeliharaan, atau gangguan teknis.</li>
+        </ul>
+      </section>
 
-    <h2>7. Batasan Tanggung Jawab</h2>
-    <p>Sepanjang diizinkan oleh hukum yang berlaku, pemilik Bot tidak bertanggung jawab atas kerugian tidak langsung, insidental, atau konsekuensial yang timbul akibat penggunaan atau ketidakmampuan menggunakan Bot. Ketentuan ini tidak mengecualikan tanggung jawab yang secara hukum tidak dapat dikecualikan berdasarkan hukum yang berlaku.</p>
+      <section>
+        <h2>6. Donasi dan Dukungan</h2>
+        <p>
+          Donasi atau dukungan kepada RykenRealm bersifat sukarela.
+          Reward yang berkaitan dengan dukungan dapat diberikan
+          berdasarkan ketentuan yang diumumkan melalui saluran resmi.
+        </p>
+        <p>
+          Donasi tidak memberikan kepemilikan atas bot, akses
+          administratif, atau hak untuk mengendalikan layanan.
+        </p>
+        <p>
+          Ketentuan reward, verifikasi, dan periode dukungan dapat
+          mengikuti kebijakan platform pembayaran terkait.
+        </p>
+      </section>
 
-    <h2>8. Perubahan Ketentuan</h2>
-    <p>Ketentuan ini dapat diperbarui dari waktu ke waktu. Perubahan penting dapat diumumkan melalui server komunitas resmi Bot. Tanggal di bagian atas halaman menunjukkan kapan ketentuan terakhir diperbarui. Penggunaan Bot secara berkelanjutan setelah ketentuan yang diperbarui berlaku dianggap sebagai persetujuan terhadap ketentuan tersebut, sejauh diizinkan oleh hukum yang berlaku.</p>
+      <section>
+        <h2>7. Ketersediaan Layanan</h2>
+        <p>
+          RykenRealm disediakan sebagaimana tersedia. Kami tidak
+          menjamin bahwa bot akan selalu aktif, bebas gangguan,
+          atau dapat digunakan tanpa kesalahan.
+        </p>
+        <p>
+          Pemeliharaan, pembaruan, gangguan jaringan, masalah
+          penyedia layanan, atau keadaan lain dapat menyebabkan
+          fitur tidak tersedia untuk sementara waktu.
+        </p>
+      </section>
 
-    <h2>9. Kontak</h2>
-    <p>Pertanyaan, laporan bug, atau permintaan terkait ketentuan ini dapat disampaikan melalui:</p>
-    <ul>
-      <li>Server Discord: <a href="https://discord.gg/kME469thr6">https://discord.gg/kME469thr6</a></li>
-      <li>Owner & Developer: <strong>Rizuki</strong> (@ryin.r)</li>
-    </ul>
-  </div>
+      <section>
+        <h2>8. Moderasi dan Penegakan Aturan</h2>
+        <p>
+          Pengelola RykenRealm dapat mengambil tindakan yang wajar
+          terhadap penggunaan yang melanggar ketentuan, termasuk
+          pembatasan akses fitur atau tindakan administratif lainnya.
+        </p>
+        <p>
+          Tindakan dapat disesuaikan dengan tingkat pelanggaran,
+          dampak terhadap layanan, dan kebutuhan keamanan.
+        </p>
+      </section>
+
+      <section>
+        <h2>9. Layanan Pihak Ketiga</h2>
+        <p>
+          Beberapa fitur menggunakan layanan eksternal untuk
+          mengambil informasi atau memproses data, termasuk
+          Discord, Jikan API, Frankfurter API, CoinGecko API,
+          MongoDB, dan Vyro Inference Engine.
+        </p>
+        <p>
+          Layanan pihak ketiga memiliki ketentuan dan kebijakan
+          masing-masing. RykenRealm tidak bertanggung jawab atas
+          perubahan, gangguan, atau kebijakan yang berada di luar
+          kendali pengelola.
+        </p>
+      </section>
+
+      <section>
+        <h2>10. Batasan Tanggung Jawab</h2>
+        <p>
+          Sejauh diizinkan oleh hukum yang berlaku, RykenRealm
+          disediakan tanpa jaminan bahwa seluruh fitur akan selalu
+          berjalan tanpa gangguan atau kesalahan.
+        </p>
+        <p>
+          Pengelola tidak menjamin bahwa kehilangan progres,
+          perubahan data, atau gangguan layanan dapat selalu
+          dipulihkan.
+        </p>
+      </section>
+
+      <section>
+        <h2>11. Perubahan Ketentuan</h2>
+        <p>
+          Ketentuan Layanan dapat diperbarui sewaktu-waktu
+          mengikuti perkembangan fitur, sistem, atau kebutuhan
+          operasional RykenRealm.
+        </p>
+        <p>
+          Versi terbaru akan tersedia melalui Legal Center resmi.
+          Penggunaan layanan setelah perubahan dipublikasikan
+          tunduk pada ketentuan yang telah diperbarui.
+        </p>
+      </section>
+
+      <section class="contact">
+        <h2>12. Kontak</h2>
+        <p>
+          Untuk pertanyaan atau laporan terkait Ketentuan Layanan,
+          silakan hubungi pengelola melalui server Discord
+          atau saluran resmi RykenRealm.
+        </p>
+      </section>
+    </article>
+
+    <a class="back" href="index.html">← Kembali ke Legal Center</a>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <span>RykenRealm · Legal Center</span>
+      <span>© 2026 RykenRealm. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script>
+    const languageBtn = document.getElementById("languageBtn");
+    const themeBtn = document.getElementById("themeBtn");
+
+    languageBtn.addEventListener("click", () => {
+      window.location.href = "terms-of-service-en.html";
+    });
+
+    themeBtn.addEventListener("click", () => {
+      document.body.classList.toggle("light");
+
+      const isLight = document.body.classList.contains("light");
+      themeBtn.textContent = isLight ? "Dark mode" : "Light mode";
+
+      document.querySelector('meta[name="theme-color"]')
+        .setAttribute("content", isLight ? "#f7f7f7" : "#101010");
+    });
+  </script>
 </body>
-</html>
+                             </html>
