@@ -16,8 +16,7 @@
     --text: #f3f3f3;
     --muted: #a0a0a5;
     --border: rgba(255,255,255,.14);
-    --wave: #dedee4;
-    --wave-opacity: .19;
+    --wave-opacity: .38;
     --line: rgba(255,255,255,.16);
 }
 
@@ -29,8 +28,7 @@ body.light {
     --text: #171719;
     --muted: #66666d;
     --border: rgba(0,0,0,.15);
-    --wave: #55555d;
-    --wave-opacity: .13;
+    --wave-opacity: .22;
     --line: rgba(0,0,0,.13);
 }
 
@@ -66,7 +64,7 @@ body {
     background:
         radial-gradient(
             ellipse at 50% 45%,
-            rgba(120,120,130,.09),
+            rgba(150,150,160,.13),
             transparent 70%
         ),
         var(--bg);
@@ -75,90 +73,86 @@ body {
 
 .wallpaper svg {
     position: absolute;
-    width: 150%;
-    height: 145%;
-    left: -25%;
-    top: -22%;
+    width: 165%;
+    height: 155%;
+    left: -32%;
+    top: -27%;
     overflow: visible;
     opacity: var(--wave-opacity);
     will-change: transform;
 }
 
 .wave-one {
-    animation: waveDrift 25s ease-in-out infinite alternate;
+    animation: waveDrift 13s ease-in-out infinite alternate;
 }
 
 .wave-two {
-    animation: waveDriftReverse 32s ease-in-out infinite alternate;
-    opacity: calc(var(--wave-opacity) * .7) !important;
+    animation: waveDriftReverse 17s ease-in-out infinite alternate;
+    opacity: calc(var(--wave-opacity) * .85) !important;
 }
 
 @keyframes waveDrift {
     0% {
-        transform: translate(-3%, -2%) rotate(-5deg) scale(1);
+        transform: translate(-9%, -5%) rotate(-9deg) scale(.94);
     }
     50% {
-        transform: translate(2%, 2%) rotate(1deg) scale(1.06);
+        transform: translate(5%, 5%) rotate(3deg) scale(1.08);
     }
     100% {
-        transform: translate(4%, -1%) rotate(5deg) scale(1);
+        transform: translate(11%, -4%) rotate(10deg) scale(.97);
     }
 }
 
 @keyframes waveDriftReverse {
     0% {
-        transform: translate(3%, 2%) rotate(5deg) scale(1.04);
+        transform: translate(10%, 6%) rotate(9deg) scale(1.08);
     }
     50% {
-        transform: translate(-2%, -2%) rotate(-2deg) scale(.98);
+        transform: translate(-6%, -5%) rotate(-4deg) scale(.94);
     }
     100% {
-        transform: translate(-4%, 1%) rotate(-5deg) scale(1.03);
+        transform: translate(-12%, 4%) rotate(-10deg) scale(1.06);
     }
 }
 
-/* Soft moving light */
+/* Moving ambient light */
+
 .ambient-light {
     position: absolute;
-    width: 65vw;
-    height: 65vw;
-    max-width: 850px;
-    max-height: 850px;
+    width: 75vw;
+    height: 75vw;
+    max-width: 1000px;
+    max-height: 1000px;
     border-radius: 50%;
     background: radial-gradient(
         circle,
-        rgba(180,180,190,.12),
-        rgba(100,100,110,.035) 40%,
-        transparent 70%
+        rgba(200,200,210,.17),
+        rgba(120,120,130,.055) 42%,
+        transparent 72%
     );
-    filter: blur(35px);
+    filter: blur(40px);
     top: -35%;
-    left: 15%;
-    animation: lightTravel 28s ease-in-out infinite alternate;
+    left: 5%;
+    animation: lightTravel 16s ease-in-out infinite alternate;
 }
 
 @keyframes lightTravel {
     from {
-        transform: translate(-10%, 0) scale(.9);
+        transform: translate(-12%, -5%) scale(.85);
     }
     to {
-        transform: translate(45%, 65%) scale(1.15);
+        transform: translate(48%, 75%) scale(1.2);
     }
 }
 
 /* Grain texture */
+
 .wallpaper::after {
     content: "";
     position: absolute;
     inset: 0;
     opacity: .035;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
-}
-
-/* Pause animation */
-body.motion-paused .wallpaper *,
-body.motion-paused .wallpaper::after {
-    animation-play-state: paused !important;
 }
 
 /* ==================================
@@ -495,6 +489,7 @@ footer {
 
     .wallpaper svg {
         width: 220%;
+        height: 155%;
         left: -60%;
     }
 
@@ -539,21 +534,21 @@ footer {
         <defs>
             <linearGradient id="silverOne" x1="0" y1="0" x2="1" y2="1">
                 <stop offset="0%" stop-color="#777780" stop-opacity=".05"/>
-                <stop offset="45%" stop-color="#ffffff" stop-opacity=".85"/>
+                <stop offset="45%" stop-color="#ffffff" stop-opacity=".95"/>
                 <stop offset="100%" stop-color="#777780" stop-opacity=".05"/>
             </linearGradient>
         </defs>
 
         <path d="M-200 580 C180 120 420 950 800 480 S1320 100 1800 550"
-              fill="none" stroke="url(#silverOne)" stroke-width="105"
+              fill="none" stroke="url(#silverOne)" stroke-width="135"
               stroke-linecap="round"/>
 
         <path d="M-200 680 C220 250 480 980 850 570 S1400 180 1800 650"
-              fill="none" stroke="url(#silverOne)" stroke-width="32"
+              fill="none" stroke="url(#silverOne)" stroke-width="48"
               stroke-linecap="round"/>
 
         <path d="M-200 400 C180 50 500 700 900 370 S1400 80 1800 400"
-              fill="none" stroke="url(#silverOne)" stroke-width="15"
+              fill="none" stroke="url(#silverOne)" stroke-width="23"
               stroke-linecap="round"/>
     </svg>
 
@@ -562,17 +557,17 @@ footer {
         <defs>
             <linearGradient id="silverTwo" x1="1" y1="0" x2="0" y2="1">
                 <stop offset="0%" stop-color="#ffffff" stop-opacity=".05"/>
-                <stop offset="50%" stop-color="#d5d5df" stop-opacity=".8"/>
+                <stop offset="50%" stop-color="#e4e4ec" stop-opacity=".95"/>
                 <stop offset="100%" stop-color="#ffffff" stop-opacity=".03"/>
             </linearGradient>
         </defs>
 
         <path d="M-150 300 C200 800 500 100 850 500 S1400 850 1800 250"
-              fill="none" stroke="url(#silverTwo)" stroke-width="65"
+              fill="none" stroke="url(#silverTwo)" stroke-width="95"
               stroke-linecap="round"/>
 
         <path d="M-150 420 C200 900 500 240 850 620 S1400 950 1800 380"
-              fill="none" stroke="url(#silverTwo)" stroke-width="20"
+              fill="none" stroke="url(#silverTwo)" stroke-width="35"
               stroke-linecap="round"/>
     </svg>
 
@@ -584,7 +579,6 @@ footer {
     <div class="actions">
         <button class="nav-button" id="languageBtn">ID</button>
         <button class="nav-button" id="themeBtn">☀ Light</button>
-        <button class="nav-button" id="motionBtn">Ⅱ Pause</button>
     </div>
 </nav>
 
@@ -647,7 +641,6 @@ footer {
 <script>
 const languageBtn = document.getElementById("languageBtn");
 const themeBtn = document.getElementById("themeBtn");
-const motionBtn = document.getElementById("motionBtn");
 
 let currentLanguage = "en";
 
@@ -735,13 +728,6 @@ themeBtn.addEventListener("click", () => {
     try {
         localStorage.setItem("rykenrealm-theme", nextTheme);
     } catch (error) {}
-});
-
-/* PAUSE / RESUME WALLPAPER */
-motionBtn.addEventListener("click", () => {
-    const paused = document.body.classList.toggle("motion-paused");
-
-    motionBtn.textContent = paused ? "▶ Play" : "Ⅱ Pause";
 });
 </script>
 
