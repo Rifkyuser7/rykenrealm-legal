@@ -13,179 +13,47 @@
   --muted: #929292;
   --accent: #ffffff;
 }
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-               sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.75;
 }
-
-a {
-  color: #d8d8d8;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #ffffff;
-}
-
-.container {
-  width: min(100% - 40px, 920px);
-  margin: auto;
-}
-
-header {
-  border-bottom: 1px solid var(--border);
-  padding: 22px 0;
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.brand {
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: white;
-}
-
-.nav-links {
-  display: flex;
-  gap: 22px;
-  font-size: 14px;
-  color: var(--muted);
-}
-
-main {
-  padding: 70px 0 90px;
-}
-
-.label {
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 12px;
-  margin-bottom: 18px;
-}
-
-h1 {
-  font-size: clamp(34px, 6vw, 56px);
-  line-height: 1.15;
-  letter-spacing: -1.5px;
-  margin-bottom: 18px;
-}
-
-.subtitle {
-  color: var(--muted);
-  max-width: 650px;
-  font-size: 16px;
-}
-
-.updated {
-  margin-top: 24px;
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.content {
-  margin-top: 55px;
-}
-
-section {
-  border-top: 1px solid var(--border);
-  padding: 30px 0;
-}
-
-section h2 {
-  font-size: 20px;
-  margin-bottom: 14px;
-  letter-spacing: -0.3px;
-}
-
-section p {
-  color: #bcbcbc;
-  margin-bottom: 12px;
-}
-
-section ul {
-  padding-left: 22px;
-  color: #bcbcbc;
-  margin: 12px 0;
-}
-
-section li {
-  margin-bottom: 7px;
-}
-
-footer {
-  border-top: 1px solid var(--border);
-  padding: 28px 0;
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
+a { color: #d8d8d8; text-decoration: none; }
+a:hover { color: #ffffff; }
+.container { width: min(100% - 40px, 920px); margin: auto; }
+header { border-bottom: 1px solid var(--border); padding: 22px 0; }
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.brand { font-weight: 700; letter-spacing: 1px; color: white; }
+.nav-links { display: flex; gap: 22px; font-size: 14px; color: var(--muted); }
+main { padding: 70px 0 90px; }
+.label { color: var(--muted); text-transform: uppercase; letter-spacing: 2px; font-size: 12px; margin-bottom: 18px; }
+h1 { font-size: clamp(34px, 6vw, 56px); line-height: 1.15; letter-spacing: -1.5px; margin-bottom: 18px; }
+.subtitle { color: var(--muted); max-width: 650px; font-size: 16px; }
+.updated { margin-top: 24px; color: var(--muted); font-size: 13px; }
+.content { margin-top: 55px; }
+section { border-top: 1px solid var(--border); padding: 30px 0; }
+section h2 { font-size: 20px; margin-bottom: 14px; letter-spacing: -0.3px; }
+section p { color: #bcbcbc; margin-bottom: 12px; }
+section ul { padding-left: 22px; color: #bcbcbc; margin: 12px 0; }
+section li { margin-bottom: 7px; }
+footer { border-top: 1px solid var(--border); padding: 28px 0; color: var(--muted); font-size: 13px; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
 @media (max-width: 600px) {
-  .container {
-    width: min(100% - 32px, 920px);
-  }
-
-  header {
-    padding: 18px 0;
-  }
-
-  .nav {
-    align-items: flex-start;
-  }
-
-  .nav-links {
-    gap: 14px;
-    font-size: 12px;
-  }
-
-  main {
-    padding: 48px 0 65px;
-  }
-
-  .content {
-    margin-top: 38px;
-  }
-
-  section {
-    padding: 24px 0;
-  }
-
-  section h2 {
-    font-size: 18px;
-  }
-
-  .subtitle {
-    font-size: 15px;
-  }
+  .container { width: min(100% - 32px, 920px); }
+  header { padding: 18px 0; }
+  .nav { align-items: flex-start; }
+  .nav-links { gap: 14px; font-size: 12px; }
+  main { padding: 48px 0 65px; }
+  .content { margin-top: 38px; }
+  section { padding: 24px 0; }
+  section h2 { font-size: 18px; }
+  .subtitle { font-size: 15px; }
 }
 </style>
 </head>
-
 <body>
-
 <header>
   <div class="container nav">
     <a class="brand" href="index.html">RYKENREALM</a>
@@ -199,27 +67,21 @@ footer {
 
 <main class="container">
   <div class="label">Legal Documentation</div>
-
   <h1>Privacy Policy</h1>
-
   <p class="subtitle">
-    This policy explains how RykenRealm handles information and data
-    when users interact with the Discord bot.
+    This Privacy Policy explains how RykenRealm processes and handles
+    information when users interact with the Discord bot.
   </p>
-
-  <div class="updated">
-    Last updated: November 23, 2026
-  </div>
+  <div class="updated">Last updated: November 23, 2026</div>
 
   <div class="content">
-
     <section>
       <h2>01. Introduction</h2>
       <p>
         RykenRealm respects user privacy. This policy explains the types
-        of information that may be processed, how information is used,
-        and matters related to data storage and protection when using
-        the RykenRealm Discord bot.
+        of information that may be processed, how that information is used,
+        and how data is stored and protected when using the RykenRealm
+        Discord bot.
       </p>
     </section>
 
@@ -234,28 +96,28 @@ footer {
         <li>Game data and user progression.</li>
         <li>Virtual economy and inventory data.</li>
         <li>Virtual partner, family, and related interaction data.</li>
-        <li>Settings and internal data required for bot operation.</li>
+        <li>Settings and internal data required for bot operations.</li>
       </ul>
     </section>
 
     <section>
       <h2>03. How Information Is Used</h2>
       <p>
-        Information is used to operate features, maintain progression,
-        preserve data consistency, address misuse, and improve the
-        stability and functionality of RykenRealm.
+        Processed information is used to operate bot features, preserve
+        user progress, maintain data consistency, address misuse, and
+        improve RykenRealm's stability and functionality.
       </p>
       <p>
-        Information is not intended to be used for personal activity
-        tracking outside the operational needs of the bot.
+        The data is not intended to be used to track users' personal
+        activities outside the operational needs of the bot.
       </p>
     </section>
 
     <section>
       <h2>04. Discord Messages and Interactions</h2>
       <p>
-        RykenRealm may read certain message content required by active
-        features, such as XP systems, birthday celebrations,
+        RykenRealm may read specific message content when required by
+        enabled features, such as the XP system, birthday celebrations,
         or game interactions.
       </p>
       <p>
@@ -268,7 +130,7 @@ footer {
       <h2>05. Data Storage</h2>
       <p>
         Bot data is stored using database systems and storage mechanisms
-        intended to maintain user data and the state of bot features.
+        intended to maintain user information and the bot's feature state.
       </p>
       <p>
         Storage may involve third-party services required to operate
@@ -285,14 +147,14 @@ footer {
       <ul>
         <li>Discord — bot platform and user interactions.</li>
         <li>MongoDB — data storage.</li>
-        <li>Jikan — retrieval of certain anime information.</li>
+        <li>Jikan — anime information retrieval.</li>
         <li>Frankfurter — exchange rate data.</li>
         <li>CoinGecko — cryptocurrency information.</li>
         <li>Vyro — image processing for certain features.</li>
       </ul>
       <p>
-        External services have their own privacy policies and data handling
-        practices, which are outside RykenRealm's direct control.
+        External services have their own privacy policies and data
+        handling practices, which are outside RykenRealm's direct control.
       </p>
     </section>
 
@@ -310,16 +172,16 @@ footer {
       <p>
         Data may be retained for as long as necessary to support features,
         maintain system integrity, and meet operational requirements.
-        Retention periods may vary depending on the type of data
-        and system conditions.
+        Retention periods may vary depending on the type of data and
+        system conditions.
       </p>
     </section>
 
     <section>
-      <h2>09. Data Deletion</h2>
+      <h2>09. Data Deletion Requests</h2>
       <p>
         Users who wish to request the deletion of data associated with
-        their account may contact the RykenRealm administrator through
+        their accounts may contact the RykenRealm administrator through
         the available official contact channels.
       </p>
       <p>
@@ -332,7 +194,7 @@ footer {
       <h2>10. Policy Changes</h2>
       <p>
         This policy may be updated from time to time to reflect changes
-        in features, systems, services, or operational requirements.
+        to features, systems, services, or operational requirements.
         Updates will be published on this page.
       </p>
     </section>
@@ -340,12 +202,11 @@ footer {
     <section>
       <h2>11. Contact</h2>
       <p>
-        For questions, concerns, or requests regarding privacy and data,
-        please contact the RykenRealm administrator through the official
-        community channels or Discord.
+        If you have questions, concerns, or requests regarding privacy
+        and data, please contact the RykenRealm administrator through
+        the official community channels or Discord.
       </p>
     </section>
-
   </div>
 </main>
 
@@ -355,6 +216,5 @@ footer {
     <span>Privacy Policy · EN</span>
   </div>
 </footer>
-
 </body>
   </html>
