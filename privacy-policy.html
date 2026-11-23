@@ -1,375 +1,495 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Kebijakan Privasi resmi bot Discord RykenRealm.">
-<meta name="theme-color" content="#0b0e14">
-<title>Privacy Policy — RykenRealm</title>
-<style>
-  :root {
-    --bg: #0b0e14;
-    --panel: #131826;
-    --text: #dbe2f0;
-    --muted: #8a93a8;
-    --accent: #7c5cff;
-    --accent2: #22d3ee;
-    --border: #232a3d;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090c12">
+  <meta name="description" content="Kebijakan Privasi resmi RykenRealm Discord Bot.">
+  <title>Privacy Policy — RykenRealm</title>
 
-  * { box-sizing: border-box; }
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #090c12;
+      --surface: #111722;
+      --surface-hover: #182131;
+      --border: rgba(255,255,255,.09);
+      --text: #edf2fa;
+      --muted: #929daf;
+      --accent: #8b9cff;
+      --accent-soft: rgba(139,156,255,.12);
+    }
 
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.65;
-    padding: 40px 20px;
-  }
+    body.light {
+      color-scheme: light;
+      --bg: #f3f5fa;
+      --surface: #fff;
+      --surface-hover: #edf0f8;
+      --border: rgba(20,30,50,.10);
+      --text: #172033;
+      --muted: #657087;
+      --accent: #536ce0;
+      --accent-soft: rgba(83,108,224,.10);
+    }
 
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    background: var(--panel);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 40px;
-  }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  h1 {
-    font-size: 28px;
-    margin-top: 0;
-    background: linear-gradient(90deg, var(--accent), var(--accent2));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse at 50% -15%, rgba(105,125,255,.12), transparent 55%),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      line-height: 1.75;
+      transition: background .25s, color .25s;
+    }
 
-  h2 {
-    font-size: 20px;
-    margin-top: 30px;
-    color: var(--accent2);
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 8px;
-  }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
 
-  p, li { color: var(--text); font-size: 15px; }
-  ul { padding-left: 20px; }
+    a:hover {
+      text-decoration: underline;
+    }
 
-  .update-date {
-    color: var(--muted);
-    font-size: 14px;
-    margin-bottom: 24px;
-  }
+    button {
+      font: inherit;
+    }
 
-  a {
-    color: var(--accent2);
-    text-decoration: none;
-  }
+    .container {
+      width: min(100% - 36px, 850px);
+      margin: auto;
+    }
 
-  a:hover { text-decoration: underline; }
+    header {
+      padding: 19px 0;
+      border-bottom: 1px solid var(--border);
+    }
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-  }
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
 
-  th, td {
-    border: 1px solid var(--border);
-    padding: 10px 14px;
-    text-align: left;
-    font-size: 14px;
-  }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      font-weight: 750;
+    }
 
-  th { background: rgba(124, 92, 255, 0.1); }
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
 
-  hr {
-    border: 0;
-    border-top: 1px solid var(--border);
-    margin: 30px 0;
-  }
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
 
-  .back {
-    display: inline-block;
-    margin-bottom: 20px;
-    font-weight: 600;
-    font-size: 14px;
-  }
+    .controls {
+      display: flex;
+      gap: 7px;
+    }
 
-  @media (max-width: 600px) {
-    body { padding: 16px 10px; }
-    .container { padding: 24px 18px; }
-    h1 { font-size: 24px; }
-    table { display: block; overflow-x: auto; }
-  }
-</style>
+    .control-btn {
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .control-btn:hover {
+      border-color: var(--accent);
+    }
+
+    main {
+      padding: 58px 0 75px;
+    }
+
+    .page-label {
+      display: inline-block;
+      margin-bottom: 15px;
+      padding: 5px 11px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      background: var(--surface);
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: clamp(30px, 6vw, 43px);
+      line-height: 1.2;
+      letter-spacing: -1.5px;
+    }
+
+    .subtitle {
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .updated {
+      margin-bottom: 34px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .content {
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      background: var(--surface);
+    }
+
+    h2 {
+      margin: 30px 0 10px;
+      font-size: 19px;
+      line-height: 1.4;
+      letter-spacing: -.3px;
+    }
+
+    h2:first-child {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 13px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    ul {
+      margin: 8px 0 17px 21px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    li {
+      margin-bottom: 7px;
+      padding-left: 3px;
+    }
+
+    strong {
+      color: var(--text);
+      font-weight: 650;
+    }
+
+    .note {
+      margin-top: 25px;
+      padding: 16px 18px;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 10px;
+      background: var(--accent-soft);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .back {
+      display: inline-flex;
+      margin-top: 25px;
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    footer {
+      padding: 23px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 26px, 850px);
+      }
+
+      main {
+        padding: 42px 0 55px;
+      }
+
+      .content {
+        padding: 21px 18px;
+      }
+
+      h2 {
+        font-size: 17px;
+      }
+
+      p, ul {
+        font-size: 13px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
-<div class="container">
+  <header>
+    <div class="container navbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">R</span>
+        <span>
+          RykenRealm
+          <small>Legal Center</small>
+        </span>
+      </a>
 
-  <a class="back" href="./index.html">&larr; Kembali ke Beranda</a>
+      <div class="controls">
+        <button class="control-btn" id="languageBtn" type="button">EN</button>
+        <button class="control-btn" id="themeBtn"
+          type="button" aria-label="Toggle theme">☼</button>
+      </div>
+    </div>
+  </header>
 
-  <h1>Privacy Policy — RykenRealm</h1>
+  <main class="container">
+    <span class="page-label">Legal Documentation</span>
 
-  <div class="update-date">
-    <strong>Terakhir diperbarui:</strong> 23 November 2026
-  </div>
+    <h1>Kebijakan Privasi</h1>
+    <p class="subtitle">
+      Informasi mengenai data yang diproses oleh RykenRealm dan bagaimana data tersebut ditangani.
+    </p>
+    <p class="updated">
+      Terakhir diperbarui: 23 November 2026
+    </p>
 
-  <p>
-    Kebijakan Privasi ini menjelaskan data apa saja yang dikumpulkan,
-    disimpan, dan diproses oleh bot Discord <strong>RykenRealm</strong>
-    (selanjutnya disebut <strong>"RykenRealm"</strong> atau
-    <strong>"Bot"</strong>), yang dikembangkan dan dikelola oleh
-    <strong>Rizuki (@ryin.r)</strong>.
-    Dengan menggunakan Bot, kamu mengetahui dan menyetujui praktik
-    yang dijelaskan di bawah ini.
-  </p>
+    <article class="content">
+      <h2>1. Pendahuluan</h2>
+      <p>
+        Selamat datang di RykenRealm. Kebijakan Privasi ini menjelaskan
+        bagaimana bot Discord RykenRealm mengumpulkan, memproses,
+        menggunakan, dan menyimpan informasi ketika pengguna
+        berinteraksi dengan layanan kami.
+      </p>
+      <p>
+        Dengan menggunakan RykenRealm, Anda memahami bahwa informasi
+        tertentu diperlukan agar fitur bot dapat berfungsi.
+      </p>
 
-  <p>
-    Server komunitas resmi:
-    <a href="https://discord.gg/kME469thr6">
-      https://discord.gg/kME469thr6
-    </a>
-  </p>
+      <h2>2. Informasi yang Diproses</h2>
+      <p>
+        Bergantung pada fitur yang digunakan, RykenRealm dapat
+        memproses informasi berikut:
+      </p>
+      <ul>
+        <li><strong>Informasi Discord:</strong> User ID, nama pengguna atau nama tampilan, serta informasi server yang diperlukan untuk menjalankan fitur bot.</li>
+        <li><strong>Data ekonomi:</strong> Saldo virtual, transaksi, pekerjaan, aset, saham, dan aktivitas ekonomi dalam bot.</li>
+        <li><strong>Data permainan:</strong> XP, level, statistik RPG, inventaris, misi, progres permainan, dan informasi terkait.</li>
+        <li><strong>Data sosial:</strong> Informasi pasangan virtual, keluarga, anak virtual, serta pengaturan terkait.</li>
+        <li><strong>Data preferensi:</strong> Pengaturan bahasa, notifikasi, kustomisasi, dan preferensi fitur yang tersedia.</li>
+        <li><strong>Data donasi dan dukungan:</strong> Informasi pencatatan donasi atau status dukungan yang diperlukan untuk pengelolaan reward.</li>
+        <li><strong>Data aktivitas tertentu:</strong> Waktu cooldown, riwayat aktivitas fitur, dan informasi lain yang diperlukan untuk mencegah penyalahgunaan.</li>
+      </ul>
 
-  <hr>
+      <h2>3. Pemrosesan Pesan Discord</h2>
+      <p>
+        RykenRealm dapat memproses isi pesan Discord dalam kondisi
+        tertentu untuk mendukung fungsi bot.
+      </p>
+      <ul>
+        <li>Pesan server dapat diproses untuk sistem XP dan aktivitas tertentu.</li>
+        <li>Pesan dapat diperiksa untuk menjalankan fitur perayaan ulang tahun yang terdaftar.</li>
+        <li>Pesan langsung (DM) dapat diproses sebagai input permainan tertentu, seperti Third Seven Eleven.</li>
+      </ul>
+      <p>
+        RykenRealm tidak dirancang untuk menyimpan seluruh percakapan
+        pengguna sebagai riwayat obrolan. Namun, pemrosesan pesan
+        sementara tetap dapat terjadi ketika fitur terkait digunakan.
+      </p>
 
-  <h2>1. Data yang Dikumpulkan dan Disimpan</h2>
+      <h2>4. Penggunaan Informasi</h2>
+      <p>Informasi yang diproses digunakan untuk:</p>
+      <ul>
+        <li>Menyediakan dan menjalankan fitur RykenRealm.</li>
+        <li>Menyimpan progres akun, ekonomi virtual, dan permainan.</li>
+        <li>Mengelola sistem XP, level, cooldown, dan reward.</li>
+        <li>Menjalankan fitur sosial dan personalisasi.</li>
+        <li>Mencegah penyalahgunaan, manipulasi, dan aktivitas yang melanggar aturan.</li>
+        <li>Memelihara stabilitas serta meningkatkan kualitas layanan.</li>
+        <li>Menangani dukungan pengguna dan pencatatan donasi.</li>
+      </ul>
 
-  <p>
-    Bot dapat mengumpulkan dan menyimpan informasi berikut untuk
-    menjalankan fitur serta mempertahankan progres pengguna:
-  </p>
+      <h2>5. Penyimpanan Data</h2>
+      <p>
+        Data layanan disimpan menggunakan infrastruktur database,
+        termasuk MongoDB. Sistem juga memiliki mekanisme penyimpanan
+        lokal sebagai fallback pada konfigurasi tertentu.
+      </p>
+      <p>
+        Data disimpan selama diperlukan untuk menyediakan fitur,
+        menjaga integritas sistem, memenuhi kebutuhan operasional,
+        atau menangani masalah penyalahgunaan.
+      </p>
+      <p>
+        Akses ke data dibatasi untuk kebutuhan operasional dan
+        pengelolaan layanan oleh pihak yang berwenang.
+      </p>
 
-  <ul>
-    <li>
-      <strong>Informasi Akun Discord</strong> —
-      Discord User ID dan nama tampilan (display name) yang digunakan
-      untuk mengenali pengguna serta menghubungkan data dengan akun mereka.
-    </li>
+      <h2>6. Layanan Pihak Ketiga</h2>
+      <p>
+        Beberapa fitur RykenRealm menggunakan layanan eksternal
+        untuk menyediakan fungsi tertentu. Informasi yang relevan
+        dapat dikirim ke layanan tersebut ketika fitur digunakan.
+      </p>
+      <ul>
+        <li><strong>Discord:</strong> Platform tempat bot beroperasi dan berinteraksi dengan pengguna.</li>
+        <li><strong>MongoDB:</strong> Infrastruktur database untuk penyimpanan data layanan.</li>
+        <li><strong>Jikan API:</strong> Digunakan untuk mengambil informasi karakter anime.</li>
+        <li><strong>Frankfurter API:</strong> Digunakan untuk memperoleh informasi nilai tukar mata uang.</li>
+        <li><strong>CoinGecko API:</strong> Digunakan untuk mengambil informasi harga aset kripto.</li>
+        <li><strong>Vyro Inference Engine:</strong> Digunakan oleh fitur upscale. Gambar yang dipilih pengguna dikirim ke layanan eksternal tersebut untuk diproses.</li>
+      </ul>
+      <p>
+        Setiap layanan pihak ketiga memiliki kebijakan privasi
+        dan ketentuan masing-masing. RykenRealm tidak mengendalikan
+        seluruh praktik pengelolaan data oleh penyedia eksternal.
+      </p>
+      <p>
+        Untuk fitur upscale, kebijakan penyimpanan dan penghapusan
+        gambar oleh penyedia eksternal tidak dapat kami pastikan.
+        Hindari mengunggah gambar sensitif atau rahasia.
+      </p>
 
-    <li>
-      <strong>Informasi Server</strong> —
-      Discord Guild ID yang digunakan untuk aktivasi server,
-      pengelolaan whitelist, dan fitur khusus server seperti leaderboard.
-    </li>
+      <h2>7. File dan Media</h2>
+      <p>
+        Beberapa fitur memungkinkan pengguna mengunggah lampiran
+        untuk diproses, termasuk konversi media dan pengolahan gambar.
+      </p>
+      <p>
+        Pemrosesan konversi media dilakukan melalui mekanisme
+        yang tersedia pada bot. Fitur upscale menggunakan layanan
+        eksternal sebagaimana dijelaskan pada bagian sebelumnya.
+      </p>
+      <p>
+        Jangan mengirimkan file yang berisi informasi pribadi,
+        rahasia, atau materi yang tidak memiliki izin untuk diproses.
+      </p>
 
-    <li>
-      <strong>Data Ekonomi Virtual</strong> —
-      Saldo mata uang virtual, progres pekerjaan, kepemilikan properti
-      virtual, catatan saham dan kripto virtual, serta progres lain
-      yang berkaitan dengan sistem ekonomi Bot.
-    </li>
+      <h2>8. Keamanan Informasi</h2>
+      <p>
+        Kami berupaya menerapkan langkah-langkah yang wajar untuk
+        melindungi data dari akses, perubahan, atau penyalahgunaan
+        yang tidak sah.
+      </p>
+      <p>
+        Namun, tidak ada sistem penyimpanan atau transmisi data
+        yang dapat dijamin sepenuhnya aman.
+      </p>
 
-    <li>
-      <strong>Data RPG</strong> —
-      Level karakter, inventaris, progres dungeon dan tower,
-      informasi crafting, serta data lain yang berkaitan dengan RPG.
-    </li>
+      <h2>9. Penghapusan Data</h2>
+      <p>
+        Jika Anda ingin meminta penghapusan data yang berkaitan
+        dengan akun Discord Anda, silakan hubungi pengelola
+        RykenRealm melalui saluran kontak resmi yang disediakan.
+      </p>
+      <p>
+        Permintaan dapat memerlukan verifikasi kepemilikan akun
+        untuk mencegah penghapusan yang tidak sah. Beberapa
+        informasi mungkin tetap disimpan apabila diperlukan
+        untuk keamanan, integritas sistem, atau kewajiban yang berlaku.
+      </p>
 
-    <li>
-      <strong>Data Pasangan dan Keluarga Fiksi</strong> —
-      Pilihan karakter anime, informasi hubungan fiksi, dan data
-      anak fiksi yang berkaitan dengan fitur pasangan dan keluarga Bot.
-    </li>
+      <h2>10. Privasi Anak</h2>
+      <p>
+        RykenRealm merupakan bot Discord dan penggunaannya tunduk
+        pada persyaratan usia Discord serta ketentuan hukum yang
+        berlaku di wilayah masing-masing.
+      </p>
+      <p>
+        Kami tidak bermaksud mengumpulkan informasi pribadi anak
+        secara sengaja di luar kebutuhan operasional layanan.
+      </p>
 
-    <li>
-      <strong>Preferensi Pengguna</strong> —
-      Pengaturan bahasa dan preferensi lain yang diberikan atau
-      dipilih ketika menggunakan fitur Bot yang didukung.
-    </li>
+      <h2>11. Perubahan Kebijakan</h2>
+      <p>
+        Kebijakan Privasi ini dapat diperbarui sewaktu-waktu
+        untuk menyesuaikan perubahan fitur, sistem, layanan,
+        atau ketentuan yang berlaku.
+      </p>
+      <p>
+        Versi terbaru akan dipublikasikan melalui halaman
+        Legal Center RykenRealm.
+      </p>
 
-    <li>
-      <strong>Informasi Penggunaan dan Cooldown</strong> —
-      Catatan penggunaan fitur, waktu cooldown, dan statistik aktivitas
-      terkait yang digunakan untuk menjaga fungsi Bot serta membantu
-      mencegah penyalahgunaan.
-    </li>
-  </ul>
+      <h2>12. Kontak</h2>
+      <p>
+        Jika Anda memiliki pertanyaan, permintaan, atau kekhawatiran
+        mengenai Kebijakan Privasi ini, silakan hubungi pengelola
+        RykenRealm melalui server Discord atau saluran resmi
+        yang disediakan oleh proyek.
+      </p>
 
-  <p>
-    Bot tidak bermaksud menyimpan isi percakapan biasa yang bukan
-    merupakan command sebagai bagian dari database pengguna.
-    Namun, fitur tertentu dapat memproses aktivitas pesan sementara
-    apabila diperlukan untuk menjalankan fungsinya, seperti sistem
-    aktivitas chat atau pengalaman (XP).
-  </p>
+      <div class="note">
+        Dengan menggunakan RykenRealm, Anda mengakui bahwa
+        Anda telah membaca dan memahami Kebijakan Privasi ini.
+      </div>
+    </article>
 
-  <h2>2. Data yang Diproses oleh Layanan Pihak Ketiga</h2>
+    <a class="back" href="index.html">← Kembali ke Legal Center</a>
+  </main>
 
-  <ul>
-    <li>
-      <strong>AI Chat dan Analisis Gambar</strong> —
-      Pesan, prompt, atau gambar yang dikirim melalui fitur AI yang
-      didukung dapat diteruskan ke Google Gemini API untuk diproses
-      dan menghasilkan respons.
-      Pengelolaan data oleh Google tunduk pada
-      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
-        Kebijakan Privasi Google
-      </a>.
-      Bot tidak bermaksud menyimpan histori percakapan AI secara
-      permanen di database penggunanya.
-    </li>
+  <footer>
+    <div class="container">
+      <strong>RykenRealm</strong> · Legal Center
+      <br>
+      © 2026 RykenRealm. All rights reserved.
+    </div>
+  </footer>
 
-    <li>
-      <strong>Konversi Media</strong> —
-      File yang dikirim melalui fitur konversi media berbasis lampiran
-      dapat diproses sementara untuk menghasilkan file keluaran yang
-      diminta. Prosesnya bergantung pada fitur dan jenis file yang
-      digunakan. File yang diunggah tidak dimaksudkan untuk disimpan
-      secara permanen oleh Bot setelah proses selesai.
-    </li>
+  <script>
+    const languageBtn = document.getElementById("languageBtn");
+    const themeBtn = document.getElementById("themeBtn");
 
-    <li>
-      <strong>Pencarian Karakter Anime</strong> —
-      Nama karakter yang dikirim melalui fitur pasangan dapat diteruskan
-      ke Jikan API untuk mengambil informasi karakter anime yang
-      tersedia secara publik dari MyAnimeList.
-    </li>
-  </ul>
+    languageBtn.addEventListener("click", () => {
+      window.location.href = "privacy-policy-en.html";
+    });
 
-  <h2>3. Bagaimana Data Digunakan</h2>
+    themeBtn.addEventListener("click", () => {
+      document.body.classList.toggle("light");
 
-  <p>
-    Informasi yang dikumpulkan oleh Bot digunakan untuk tujuan seperti:
-  </p>
+      const isLight = document.body.classList.contains("light");
+      themeBtn.textContent = isLight ? "☾" : "☼";
 
-  <ul>
-    <li>
-      Menjalankan fitur Bot dan mempertahankan progres pengguna
-      antar sesi.
-    </li>
-
-    <li>
-      Menampilkan leaderboard, peringkat, dan statistik di dalam
-      server Discord yang mendukung fitur tersebut.
-    </li>
-
-    <li>
-      Mengelola preferensi pengguna dan pengaturan fitur.
-    </li>
-
-    <li>
-      Menerapkan cooldown serta membantu mencegah penyalahgunaan,
-      eksploitasi, atau manipulasi sistem Bot.
-    </li>
-  </ul>
-
-  <p>
-    Data pengguna tidak dijual atau disewakan kepada pihak ketiga.
-    Bot tidak secara sengaja membagikan data pengguna kepada pihak
-    ketiga untuk tujuan periklanan komersial.
-  </p>
-
-  <h2>4. Penyimpanan dan Keamanan Data</h2>
-
-  <ul>
-    <li>
-      Data pengguna disimpan menggunakan database dan infrastruktur
-      hosting yang dikonfigurasi untuk operasional Bot.
-    </li>
-
-    <li>
-      Akses ke lingkungan hosting dan database Bot dibatasi untuk
-      pihak yang memiliki otorisasi pengelolaan.
-    </li>
-
-    <li>
-      Langkah-langkah yang wajar dilakukan untuk melindungi informasi
-      yang disimpan. Namun, tidak ada layanan online atau sistem
-      penyimpanan yang dapat menjamin keamanan secara mutlak.
-    </li>
-
-    <li>
-      Bot tidak meminta kata sandi Discord, detail kartu pembayaran,
-      atau dokumen identitas resmi sebagai bagian dari fitur normalnya.
-    </li>
-  </ul>
-
-  <h2>5. Layanan Pihak Ketiga</h2>
-
-  <p>
-    Bot dapat berinteraksi dengan layanan pihak ketiga berikut
-    untuk menyediakan fitur-fiturnya:
-  </p>
-
-  <table>
-    <tr>
-      <th>Layanan</th>
-      <th>Fungsi</th>
-    </tr>
-
-    <tr>
-      <td>Discord API</td>
-      <td>Integrasi platform Discord dan fungsi Bot.</td>
-    </tr>
-
-    <tr>
-      <td>Google Gemini API</td>
-      <td>Fitur AI chat dan analisis gambar.</td>
-    </tr>
-
-    <tr>
-      <td>Jikan API (MyAnimeList)</td>
-      <td>Mengambil informasi karakter anime yang tersedia untuk publik.</td>
-    </tr>
-  </table>
-
-  <p>
-    Setiap layanan pihak ketiga beroperasi berdasarkan ketentuan
-    dan kebijakan privasinya masing-masing. Praktik pengelolaan data
-    mereka berada di luar kendali langsung pemilik Bot.
-  </p>
-
-  <h2>6. Hak Pengguna dan Penghapusan Data</h2>
-
-  <p>
-    Pengguna dapat:
-  </p>
-
-  <ul>
-    <li>
-      <strong>Meminta Penghapusan Data</strong> —
-      Hubungi Rizuki (@ryin.r) melalui server komunitas resmi untuk
-      meminta penghapusan data yang terkait dengan akun Bot mereka.
-      Permintaan dapat memerlukan verifikasi untuk memastikan bahwa
-      data tersebut benar-benar milik pengguna yang mengajukan.
-    </li>
-
-    <li>
-      <strong>Berhenti Menggunakan Bot</strong> —
-      Pengguna dapat berhenti berinteraksi dengan Bot kapan saja
-      atau meminta administrator server Discord mengeluarkan Bot
-      dari server.
-    </li>
-  </ul>
-
-  <p>
-    Mengeluarkan Bot dari server atau berhenti menggunakannya tidak
-    selalu menghapus data pengguna yang sebelumnya telah disimpan.
-    Permintaan penghapusan data secara terpisah mungkin diperlukan.
-  </p>
-
-  <h2>7. Privasi Anak</h2>
-
-  <p>
-    Bot tunduk pada persyaratan usia minimum yang ditetapkan oleh
-    <a href="https://discord.com/terms" target="_blank" rel="noopener noreferrer">
-      Ketentuan Layanan Discord
-    </a>
-    serta ketentuan lokal yang berlaku.
-    Bot tidak ditujukan untuk digunakan oleh individu yang berada
-    di bawah batas usia minimum yang diizinkan.
-  </p>
-
-  <h2>8. Perubahan Kebijakan</h2>
-
-  <p>
-    Kebijakan Privasi ini dapat diperbarui sewaktu-waktu apabila
-    diperlukan, termasuk ketika fitur Bot, praktik pengelolaan data,
+      document.querySelector('meta[name="theme-color"]')
+        .setAttribute("content", isLight ? "#f3f5fa" : "#090c12");
+    });
+  </script>
+</body>
+</html>,
     atau infrastruktur layanan mengalami perubahan.
     Versi terbaru akan dipublikasikan di Legal Center resmi.
     Perubahan penting juga dapat diumumkan melalui server komunitas resmi.
