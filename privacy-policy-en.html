@@ -1,405 +1,499 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Official Privacy Policy for the RykenRealm Discord Bot.">
-<meta name="theme-color" content="#0b0e14">
-<title>Privacy Policy — RykenRealm</title>
-<style>
-  :root {
-    --bg: #0b0e14;
-    --panel: #131826;
-    --text: #dbe2f0;
-    --muted: #8a93a8;
-    --accent: #7c5cff;
-    --accent2: #22d3ee;
-    --border: #232a3d;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090c12">
+  <meta name="description" content="Official Privacy Policy of the RykenRealm Discord Bot.">
+  <title>Privacy Policy — RykenRealm</title>
 
-  * { box-sizing: border-box; }
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #090c12;
+      --surface: #111722;
+      --surface-hover: #182131;
+      --border: rgba(255,255,255,.09);
+      --text: #edf2fa;
+      --muted: #929daf;
+      --accent: #8b9cff;
+      --accent-soft: rgba(139,156,255,.12);
+    }
 
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.65;
-    padding: 40px 20px;
-  }
+    body.light {
+      color-scheme: light;
+      --bg: #f3f5fa;
+      --surface: #fff;
+      --surface-hover: #edf0f8;
+      --border: rgba(20,30,50,.10);
+      --text: #172033;
+      --muted: #657087;
+      --accent: #536ce0;
+      --accent-soft: rgba(83,108,224,.10);
+    }
 
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    background: var(--panel);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 40px;
-  }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  h1 {
-    font-size: 28px;
-    margin-top: 0;
-    background: linear-gradient(90deg, var(--accent), var(--accent2));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse at 50% -15%, rgba(105,125,255,.12), transparent 55%),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      line-height: 1.75;
+      transition: background .25s, color .25s;
+    }
 
-  h2 {
-    font-size: 20px;
-    margin-top: 30px;
-    color: var(--accent2);
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 8px;
-  }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
 
-  p, li { color: var(--text); font-size: 15px; }
-  ul { padding-left: 20px; }
+    a:hover {
+      text-decoration: underline;
+    }
 
-  .update-date {
-    color: var(--muted);
-    font-size: 14px;
-    margin-bottom: 24px;
-  }
+    button {
+      font: inherit;
+    }
 
-  a {
-    color: var(--accent2);
-    text-decoration: none;
-  }
+    .container {
+      width: min(100% - 36px, 850px);
+      margin: auto;
+    }
 
-  a:hover { text-decoration: underline; }
+    header {
+      padding: 19px 0;
+      border-bottom: 1px solid var(--border);
+    }
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-  }
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
 
-  th, td {
-    border: 1px solid var(--border);
-    padding: 10px 14px;
-    text-align: left;
-    font-size: 14px;
-  }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      font-weight: 750;
+    }
 
-  th { background: rgba(124, 92, 255, 0.1); }
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
 
-  hr {
-    border: 0;
-    border-top: 1px solid var(--border);
-    margin: 30px 0;
-  }
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
 
-  .back {
-    display: inline-block;
-    margin-bottom: 20px;
-    font-weight: 600;
-    font-size: 14px;
-  }
+    .controls {
+      display: flex;
+      gap: 7px;
+    }
 
-  @media (max-width: 600px) {
-    body { padding: 16px 10px; }
-    .container { padding: 24px 18px; }
-    h1 { font-size: 24px; }
-    table { display: block; overflow-x: auto; }
-  }
-</style>
+    .control-btn {
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .control-btn:hover {
+      border-color: var(--accent);
+    }
+
+    main {
+      padding: 58px 0 75px;
+    }
+
+    .page-label {
+      display: inline-block;
+      margin-bottom: 15px;
+      padding: 5px 11px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      background: var(--surface);
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: clamp(30px, 6vw, 43px);
+      line-height: 1.2;
+      letter-spacing: -1.5px;
+    }
+
+    .subtitle {
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .updated {
+      margin-bottom: 34px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .content {
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      background: var(--surface);
+    }
+
+    h2 {
+      margin: 30px 0 10px;
+      font-size: 19px;
+      line-height: 1.4;
+      letter-spacing: -.3px;
+    }
+
+    h2:first-child {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 13px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    ul {
+      margin: 8px 0 17px 21px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    li {
+      margin-bottom: 7px;
+      padding-left: 3px;
+    }
+
+    strong {
+      color: var(--text);
+      font-weight: 650;
+    }
+
+    .note {
+      margin-top: 25px;
+      padding: 16px 18px;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 10px;
+      background: var(--accent-soft);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .back {
+      display: inline-flex;
+      margin-top: 25px;
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    footer {
+      padding: 23px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    footer strong {
+      color: var(--text);
+      font-weight: 650;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 26px, 850px);
+      }
+
+      main {
+        padding: 42px 0 55px;
+      }
+
+      .content {
+        padding: 21px 18px;
+      }
+
+      h2 {
+        font-size: 17px;
+      }
+
+      p, ul {
+        font-size: 13px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
-<div class="container">
-
-  <a class="back" href="./index.html">&larr; Back to Home</a>
-
-  <h1>Privacy Policy — RykenRealm</h1>
-
-  <div class="update-date">
-    <strong>Last updated:</strong> November 23, 2026
-  </div>
-
-  <p>
-    This Privacy Policy explains what data is collected, stored, and processed
-    by the Discord bot <strong>RykenRealm</strong> (hereinafter referred to as
-    <strong>"RykenRealm"</strong> or the <strong>"Bot"</strong>), developed and
-    managed by <strong>Rizuki (@ryin.r)</strong>.
-    By using the Bot, you acknowledge the practices described below.
-  </p>
-
-  <p>
-    Official community server:
-    <a href="https://discord.gg/kME469thr6">
-      https://discord.gg/kME469thr6
-    </a>
-  </p>
-
-  <hr>
-
-  <h2>1. Data Collected and Stored</h2>
-
-  <p>
-    The Bot may collect and store the following information to operate its
-    features and maintain user progress:
-  </p>
-
-  <ul>
-    <li>
-      <strong>Discord Account Information</strong> —
-      Discord User IDs and display names used to identify users and associate
-      their data with their accounts.
-    </li>
-
-    <li>
-      <strong>Server Information</strong> —
-      Discord Guild IDs used for server activation, whitelist management,
-      and server-specific features such as leaderboards.
-    </li>
-
-    <li>
-      <strong>Virtual Economy Data</strong> —
-      Virtual currency balances, job progress, virtual property ownership,
-      virtual stocks and cryptocurrency records, and other economy-related
-      progress.
-    </li>
-
-    <li>
-      <strong>RPG Data</strong> —
-      Character levels, inventories, dungeon and tower progress, crafting
-      information, and other RPG-related data.
-    </li>
-
-    <li>
-      <strong>Fictional Partner and Family Data</strong> —
-      Anime character selections, fictional relationship information,
-      and fictional child data associated with the Bot's partner and
-      family features.
-    </li>
-
-    <li>
-      <strong>User Preferences</strong> —
-      Language settings and other preferences provided or selected
-      when using supported Bot features.
-    </li>
-
-    <li>
-      <strong>Usage and Cooldown Information</strong> —
-      Feature usage records, cooldown timestamps, and relevant activity
-      statistics used to maintain feature functionality and help prevent
-      abuse.
-    </li>
-  </ul>
-
-  <p>
-    The Bot does not intend to store the contents of ordinary, non-command
-    conversations as part of its user database. However, certain features
-    may process message activity temporarily when required for their
-    functionality, such as chat activity or experience systems.
-  </p>
-
-  <h2>2. Data Processed by Third-Party Services</h2>
-
-  <ul>
-    <li>
-      <strong>AI Chat and Image Analysis</strong> —
-      Messages, prompts, or images submitted through supported AI features
-      may be forwarded to Google Gemini API for processing and generating
-      responses. Data handling by Google is governed by the
-      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
-        Google Privacy Policy
-      </a>.
-      The Bot does not intend to permanently store AI conversation history
-      in its own user database.
-    </li>
-
-    <li>
-      <strong>Media Conversion</strong> —
-      Files submitted through supported attachment-based media conversion
-      features may be temporarily processed to generate the requested output.
-      Processing depends on the feature and file type. Uploaded files are
-      not intended to be retained permanently by the Bot after processing.
-    </li>
-
-    <li>
-      <strong>Anime Character Search</strong> —
-      Character names submitted through the partner feature may be sent
-      to Jikan API to retrieve publicly available anime character information
-      from MyAnimeList.
-    </li>
-  </ul>
-
-  <h2>3. How Data Is Used</h2>
-
-  <p>
-    Information collected by the Bot is used for purposes such as:
-  </p>
-
-  <ul>
-    <li>
-      Operating Bot features and maintaining user progress across sessions.
-    </li>
-
-    <li>
-      Displaying leaderboards, rankings, and statistics within supported
-      Discord servers.
-    </li>
-
-    <li>
-      Managing user preferences and feature settings.
-    </li>
-
-    <li>
-      Enforcing cooldowns and helping prevent abuse, exploitation,
-      or manipulation of Bot systems.
-    </li>
-  </ul>
-
-  <p>
-    User data is not sold or rented to third parties. The Bot does not
-    intentionally share user data with third parties for commercial
-    advertising purposes.
-  </p>
-
-  <h2>4. Data Storage and Security</h2>
-
-  <ul>
-    <li>
-      User data is stored using the database and hosting infrastructure
-      configured for the Bot's operation.
-    </li>
-
-    <li>
-      Access to the Bot's hosting environment and database is restricted
-      to authorized management access.
-    </li>
-
-    <li>
-      Reasonable measures are taken to protect stored information.
-      However, no online service or storage system can guarantee
-      absolute security.
-    </li>
-
-    <li>
-      The Bot does not request Discord passwords, payment card details,
-      or government-issued identity documents as part of its normal features.
-    </li>
-  </ul>
-
-  <h2>5. Third-Party Services</h2>
-
-  <p>
-    The Bot may interact with the following third-party services
-    to provide its features:
-  </p>
-
-  <table>
-    <tr>
-      <th>Service</th>
-      <th>Purpose</th>
-    </tr>
-
-    <tr>
-      <td>Discord API</td>
-      <td>Discord platform integration and Bot functionality.</td>
-    </tr>
-
-    <tr>
-      <td>Google Gemini API</td>
-      <td>AI chat and image analysis features.</td>
-    </tr>
-
-    <tr>
-      <td>Jikan API (MyAnimeList)</td>
-      <td>Retrieving public anime character information.</td>
-    </tr>
-  </table>
-
-  <p>
-    Third-party services operate under their own terms and privacy policies.
-    Their data handling practices are outside the direct control of
-    the Bot owner.
-  </p>
-
-  <h2>6. User Rights and Data Deletion</h2>
-
-  <p>
-    Users may:
-  </p>
-
-  <ul>
-    <li>
-      <strong>Request Data Deletion</strong> —
-      Contact Rizuki (@ryin.r) through the official community server
-      to request the deletion of data associated with their Bot account.
-      Requests may require verification to ensure that the data belongs
-      to the requesting user.
-    </li>
-
-    <li>
-      <strong>Stop Using the Bot</strong> —
-      Users may stop interacting with the Bot at any time or ask a
-      Discord server administrator to remove it from their server.
-    </li>
-  </ul>
-
-  <p>
-    Removing the Bot from a server or stopping its use does not necessarily
-    delete previously stored user data. A separate deletion request may
-    be required.
-  </p>
-
-  <h2>7. Children's Privacy</h2>
-
-  <p>
-    The Bot is subject to the minimum age requirements established by
-    the
-    <a href="https://discord.com/terms" target="_blank" rel="noopener noreferrer">
-      Discord Terms of Service
-    </a>
-    and applicable local requirements.
-    The Bot is not intended to be used by individuals who are below
-    the minimum permitted age.
-  </p>
-
-  <h2>8. Policy Changes</h2>
-
-  <p>
-    This Privacy Policy may be updated when necessary, including when
-    Bot features, data practices, or service infrastructure change.
-    The latest version will be published on the official Legal Center.
-    Significant changes may also be announced through the official
-    community server.
-  </p>
-
-  <h2>9. Contact</h2>
-
-  <p>
-    For privacy questions, data-related requests, or concerns regarding
-    this policy, contact:
-  </p>
-
-  <ul>
-    <li>
-      Discord Community:
-      <a href="https://discord.gg/kME469thr6">
-        https://discord.gg/kME469thr6
+  <header>
+    <div class="container navbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">R</span>
+        <span>
+          RykenRealm
+          <small>Legal Center</small>
+        </span>
       </a>
-    </li>
 
-    <li>
-      Owner and Developer: <strong>Rizuki</strong> (@ryin.r)
-    </li>
-  </ul>
+      <div class="controls">
+        <button class="control-btn" id="languageBtn" type="button">ID</button>
+        <button class="control-btn" id="themeBtn"
+          type="button" aria-label="Toggle theme">☼</button>
+      </div>
+    </div>
+  </header>
 
-  <hr>
+  <main class="container">
+    <span class="page-label">Legal Documentation</span>
 
-  <p>
-    <em>
-      This Privacy Policy applies together with the
-      <a href="./terms-of-service-en.html">Terms of Service</a>
-      of RykenRealm.
-    </em>
-  </p>
+    <h1>Privacy Policy</h1>
+    <p class="subtitle">
+      Information about the data processed by RykenRealm and how it is handled.
+    </p>
+    <p class="updated">
+      Last updated: November 23, 2026
+    </p>
 
-</div>
+    <article class="content">
+      <h2>1. Introduction</h2>
+      <p>
+        Welcome to RykenRealm. This Privacy Policy explains how the
+        RykenRealm Discord bot collects, processes, uses, and stores
+        information when users interact with our services.
+      </p>
+      <p>
+        By using RykenRealm, you acknowledge that certain information
+        may be necessary for the bot's features to function.
+      </p>
+
+      <h2>2. Information We Process</h2>
+      <p>
+        Depending on the features you use, RykenRealm may process
+        the following information:
+      </p>
+      <ul>
+        <li><strong>Discord information:</strong> User ID, username or display name, and server information required for bot functionality.</li>
+        <li><strong>Economy data:</strong> Virtual balances, transactions, jobs, assets, stocks, and in-bot economic activity.</li>
+        <li><strong>Game data:</strong> XP, levels, RPG statistics, inventory, missions, game progress, and related information.</li>
+        <li><strong>Social data:</strong> Virtual partner, family, virtual children, and related settings.</li>
+        <li><strong>Preferences:</strong> Language, notifications, customization, and available feature preferences.</li>
+        <li><strong>Donation and support records:</strong> Records of donations or support status needed to manage rewards.</li>
+        <li><strong>Activity data:</strong> Cooldowns, feature activity records, and other information required to prevent abuse.</li>
+      </ul>
+
+      <h2>3. Discord Message Processing</h2>
+      <p>
+        RykenRealm may process Discord message content in certain
+        situations to support bot functionality.
+      </p>
+      <ul>
+        <li>Guild messages may be processed for the XP system and certain activity features.</li>
+        <li>Messages may be checked to trigger birthday celebrations for registered birthdays.</li>
+        <li>Direct messages (DMs) may be processed as input for certain games, such as Third Seven Eleven.</li>
+      </ul>
+      <p>
+        RykenRealm is not designed to store all user conversations
+        as chat history. However, temporary message processing may
+        occur when relevant features are used.
+      </p>
+
+      <h2>4. How We Use Information</h2>
+      <p>Processed information may be used to:</p>
+      <ul>
+        <li>Provide and operate RykenRealm features.</li>
+        <li>Maintain account progress, virtual economy data, and game progress.</li>
+        <li>Manage XP, levels, cooldowns, and rewards.</li>
+        <li>Operate social and personalization features.</li>
+        <li>Prevent abuse, manipulation, and rule violations.</li>
+        <li>Maintain system stability and improve service quality.</li>
+        <li>Handle user support and donation records.</li>
+      </ul>
+
+      <h2>5. Data Storage</h2>
+      <p>
+        Service data is stored using database infrastructure,
+        including MongoDB. The system also has local storage
+        fallback mechanisms in certain configurations.
+      </p>
+      <p>
+        Data is retained for as long as necessary to provide
+        features, maintain system integrity, support operations,
+        or address abuse and security issues.
+      </p>
+      <p>
+        Access to data is restricted to authorized parties
+        for service operation and management purposes.
+      </p>
+
+      <h2>6. Third-Party Services</h2>
+      <p>
+        Some RykenRealm features rely on external services
+        to provide specific functionality. Relevant information
+        may be sent to these services when those features are used.
+      </p>
+      <ul>
+        <li><strong>Discord:</strong> The platform where the bot operates and interacts with users.</li>
+        <li><strong>MongoDB:</strong> Database infrastructure used to store service data.</li>
+        <li><strong>Jikan API:</strong> Used to retrieve anime character information.</li>
+        <li><strong>Frankfurter API:</strong> Used to retrieve currency exchange rate information.</li>
+        <li><strong>CoinGecko API:</strong> Used to retrieve cryptocurrency market price information.</li>
+        <li><strong>Vyro Inference Engine:</strong> Used by the image upscaling feature. Images selected by users are sent to this external service for processing.</li>
+      </ul>
+      <p>
+        Each third-party service has its own privacy policy
+        and terms. RykenRealm does not control all data-handling
+        practices of external providers.
+      </p>
+      <p>
+        For image upscaling, we cannot confirm the external
+        provider's image retention or deletion practices.
+        Avoid uploading sensitive or confidential images.
+      </p>
+
+      <h2>7. Files and Media</h2>
+      <p>
+        Certain features allow users to upload attachments
+        for processing, including media conversion and image
+        processing.
+      </p>
+      <p>
+        Media conversion uses the processing mechanisms
+        available within the bot. Image upscaling uses an
+        external service as described above.
+      </p>
+      <p>
+        Do not submit files containing private, confidential,
+        or unauthorized material.
+      </p>
+
+      <h2>8. Information Security</h2>
+      <p>
+        We aim to apply reasonable measures to protect
+        information against unauthorized access, alteration,
+        or misuse.
+      </p>
+      <p>
+        However, no data storage or transmission system
+        can be guaranteed to be completely secure.
+      </p>
+
+      <h2>9. Data Deletion</h2>
+      <p>
+        If you wish to request deletion of data associated
+        with your Discord account, please contact the
+        RykenRealm administrators through an official
+        contact channel.
+      </p>
+      <p>
+        Requests may require account ownership verification
+        to prevent unauthorized deletion. Certain information
+        may need to be retained for security, system integrity,
+        or applicable legal requirements.
+      </p>
+
+      <h2>10. Children's Privacy</h2>
+      <p>
+        RykenRealm is a Discord bot, and its use is subject
+        to Discord's age requirements and applicable laws
+        in each user's region.
+      </p>
+      <p>
+        We do not intend to knowingly collect children's
+        personal information beyond what is necessary
+        for service operation.
+      </p>
+
+      <h2>11. Policy Changes</h2>
+      <p>
+        This Privacy Policy may be updated from time to time
+        to reflect changes to features, systems, services,
+        or applicable requirements.
+      </p>
+      <p>
+        The latest version will be published through
+        the RykenRealm Legal Center.
+      </p>
+
+      <h2>12. Contact</h2>
+      <p>
+        If you have questions, requests, or concerns about
+        this Privacy Policy, please contact the RykenRealm
+        administrators through our Discord server or
+        an official project contact channel.
+      </p>
+
+      <div class="note">
+        By using RykenRealm, you acknowledge that you have
+        read and understood this Privacy Policy.
+      </div>
+    </article>
+
+    <a class="back" href="index.html">← Back to Legal Center</a>
+  </main>
+
+  <footer>
+    <div class="container">
+      <strong>RykenRealm</strong> · Legal Center
+      <br>
+      © 2026 RykenRealm. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    const languageBtn = document.getElementById("languageBtn");
+    const themeBtn = document.getElementById("themeBtn");
+
+    languageBtn.addEventListener("click", () => {
+      window.location.href = "privacy-policy.html";
+    });
+
+    themeBtn.addEventListener("click", () => {
+      document.body.classList.toggle("light");
+
+      const isLight = document.body.classList.contains("light");
+      themeBtn.textContent = isLight ? "☾" : "☼";
+
+      document.querySelector('meta[name="theme-color"]')
+        .setAttribute("content", isLight ? "#f3f5fa" : "#090c12");
+    });
+  </script>
 </body>
-</html>
+        </html>
