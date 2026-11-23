@@ -9,8 +9,6 @@
 <link rel="icon" type="image/svg+xml" href="./favicon.svg">
 
 <style>
-
-<style>
 :root {
     color-scheme: dark;
     --bg: #08090b;
@@ -31,7 +29,7 @@ body.light {
     --text: #171719;
     --muted: #66666d;
     --border: rgba(0,0,0,.15);
-    --wave-opacity: .22;
+    --wave-opacity: .42;
     --line: rgba(0,0,0,.13);
 }
 
@@ -54,9 +52,7 @@ body {
     transition: background .5s ease, color .5s ease;
 }
 
-/* ==================================
-   MONOCHROME ANIMATED WALLPAPER
-================================== */
+/* ANIMATED WALLPAPER */
 
 .wallpaper {
     position: fixed;
@@ -83,6 +79,11 @@ body {
     overflow: visible;
     opacity: var(--wave-opacity);
     will-change: transform;
+}
+
+/* Make waves visible on light backgrounds */
+body.light .wallpaper svg {
+    filter: invert(1);
 }
 
 .wave-one {
@@ -118,7 +119,7 @@ body {
     }
 }
 
-/* Moving ambient light */
+/* Ambient light */
 
 .ambient-light {
     position: absolute;
@@ -158,9 +159,7 @@ body {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
 }
 
-/* ==================================
-   PAGE LAYOUT
-================================== */
+/* PAGE LAYOUT */
 
 nav,
 main,
@@ -178,12 +177,33 @@ nav {
     align-items: center;
 }
 
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.brand-mark {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--panel);
+    color: var(--text);
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+}
+
 .logo {
     color: var(--text);
     font-size: 19px;
     font-weight: 700;
     letter-spacing: .4px;
-    text-decoration: none;
 }
 
 .actions {
@@ -219,9 +239,7 @@ main {
     padding: 145px 0 110px;
 }
 
-/* ==================================
-   HERO TYPOGRAPHY
-================================== */
+/* HERO */
 
 .eyebrow {
     margin-bottom: 25px;
@@ -247,9 +265,7 @@ h1 {
     line-height: 1.85;
 }
 
-/* ==================================
-   DOCUMENT CARDS
-================================== */
+/* DOCUMENT CARDS */
 
 .section {
     margin-top: 95px;
@@ -361,9 +377,7 @@ h1 {
     transform: translate(4px, -4px);
 }
 
-/* ==================================
-   FOOTER
-================================== */
+/* FOOTER */
 
 footer {
     width: min(100% - 64px, 1120px);
@@ -378,9 +392,7 @@ footer {
     line-height: 1.7;
 }
 
-/* ==================================
-   TABLET
-================================== */
+/* TABLET */
 
 @media (max-width: 850px) {
     main {
@@ -409,14 +421,22 @@ footer {
     }
 }
 
-/* ==================================
-   MOBILE
-================================== */
+/* MOBILE */
 
 @media (max-width: 600px) {
     nav {
         width: calc(100% - 38px);
         padding: 21px 0;
+    }
+
+    .brand {
+        gap: 8px;
+    }
+
+    .brand-mark {
+        width: 31px;
+        height: 31px;
+        font-size: 19px;
     }
 
     .logo {
@@ -502,9 +522,7 @@ footer {
     }
 }
 
-/* ==================================
-   ACCESSIBILITY
-================================== */
+/* ACCESSIBILITY */
 
 @media (prefers-reduced-motion: reduce) {
     .wallpaper *,
@@ -529,7 +547,6 @@ footer {
 
 <!-- ANIMATED BACKGROUND -->
 <div class="wallpaper" aria-hidden="true">
-
     <div class="ambient-light"></div>
 
     <svg class="wave-one" viewBox="0 0 1600 1000"
@@ -573,15 +590,17 @@ footer {
               fill="none" stroke="url(#silverTwo)" stroke-width="35"
               stroke-linecap="round"/>
     </svg>
-
 </div>
 
 <nav>
-    <a href="index.html" class="logo">RykenRealm</a>
+    <a href="index.html" class="brand" aria-label="RykenRealm Home">
+        <span class="brand-mark" aria-hidden="true">R</span>
+        <span class="logo">RykenRealm</span>
+    </a>
 
     <div class="actions">
-        <button class="nav-button" id="languageBtn">ID</button>
-        <button class="nav-button" id="themeBtn">☀ Light</button>
+        <button class="nav-button" id="languageBtn" type="button">ID</button>
+        <button class="nav-button" id="themeBtn" type="button">Light</button>
     </div>
 </nav>
 
@@ -605,15 +624,11 @@ footer {
         </div>
 
         <div class="documents">
-
             <a href="terms-of-service-en.html"
                class="document" id="tosLink">
-
                 <span class="arrow">↗</span>
                 <span class="document-number">01 / TERMS</span>
-
                 <h2 id="tosTitle">Terms of Service</h2>
-
                 <p id="tosDescription">
                     Rules and conditions for using RykenRealm.
                 </p>
@@ -621,17 +636,13 @@ footer {
 
             <a href="privacy-policy-en.html"
                class="document" id="ppLink">
-
                 <span class="arrow">↗</span>
                 <span class="document-number">02 / PRIVACY</span>
-
                 <h2 id="ppTitle">Privacy Policy</h2>
-
                 <p id="ppDescription">
                     How information is collected, used, and handled.
                 </p>
             </a>
-
         </div>
     </section>
 </main>
@@ -646,6 +657,7 @@ const languageBtn = document.getElementById("languageBtn");
 const themeBtn = document.getElementById("themeBtn");
 
 let currentLanguage = "en";
+let currentTheme = "dark";
 
 const translations = {
     en: {
@@ -674,12 +686,13 @@ const translations = {
 };
 
 /* LANGUAGE */
-function setLanguage() {
-    currentLanguage = currentLanguage === "en" ? "id" : "en";
 
-    const t = translations[currentLanguage];
+function setLanguage(language) {
+    currentLanguage = language;
 
-    document.documentElement.lang = currentLanguage;
+    const t = translations[language];
+
+    document.documentElement.lang = language;
 
     Object.keys(t).forEach(key => {
         const element = document.getElementById(key);
@@ -687,52 +700,65 @@ function setLanguage() {
     });
 
     document.getElementById("tosLink").href =
-        currentLanguage === "en"
+        language === "en"
             ? "terms-of-service-en.html"
             : "terms-of-service.html";
 
     document.getElementById("ppLink").href =
-        currentLanguage === "en"
+        language === "en"
             ? "privacy-policy-en.html"
             : "privacy-policy.html";
 
-    languageBtn.textContent =
-        currentLanguage === "en" ? "ID" : "EN";
+    languageBtn.textContent = language === "en" ? "ID" : "EN";
 }
 
-languageBtn.addEventListener("click", setLanguage);
+languageBtn.addEventListener("click", () => {
+    setLanguage(currentLanguage === "en" ? "id" : "en");
+});
 
 /* DARK / LIGHT MODE */
+
 function applyTheme(theme) {
+    currentTheme = theme;
+
     document.body.classList.toggle("light", theme === "light");
 
-    themeBtn.textContent =
-        theme === "light" ? "☾ Dark" : "☀ Light";
+    // Button displays the theme that will be activated when clicked.
+    themeBtn.textContent = theme === "light" ? "Dark" : "Light";
+
+    themeBtn.setAttribute(
+        "aria-label",
+        theme === "light" ? "Switch to dark mode" : "Switch to light mode"
+    );
 
     document.querySelector('meta[name="theme-color"]').content =
         theme === "light" ? "#ededed" : "#08090b";
 }
 
-let savedTheme = "dark";
-
 try {
-    savedTheme = localStorage.getItem("rykenrealm-theme") || "dark";
-} catch (error) {}
+    const savedTheme = localStorage.getItem("rykenrealm-theme");
 
-applyTheme(savedTheme);
+    if (savedTheme === "light" || savedTheme === "dark") {
+        currentTheme = savedTheme;
+    }
+} catch (error) {
+    currentTheme = "dark";
+}
+
+applyTheme(currentTheme);
 
 themeBtn.addEventListener("click", () => {
-    const nextTheme = document.body.classList.contains("light")
-        ? "dark"
-        : "light";
+    const nextTheme = currentTheme === "light" ? "dark" : "light";
 
     applyTheme(nextTheme);
 
     try {
         localStorage.setItem("rykenrealm-theme", nextTheme);
-    } catch (error) {}
+    } catch (error) {
+        // Theme still works for the current page session.
+    }
 });
 </script>
 
 </body>
-                </html>
+    </html>
